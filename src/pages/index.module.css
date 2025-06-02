@@ -93,3 +93,153 @@
 .whyRotelItem p {
   margin-bottom: 0;
 }
+
+/*
+ * features section
+ */
+
+.featuresSection {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border-radius: 12px;
+  /*margin: 2rem 0;*/
+  /*padding: 3rem 1rem !important;*/
+}
+
+.featuresSection h2 {
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.featuresSection .sectionSubtitle {
+  color: #b8bcc8;
+  margin-bottom: 2rem;
+}
+
+.featureHighlightBox {
+  background: linear-gradient(145deg, #2a2d3a 0%, #1f2937 100%);
+  border: 1px solid #374151;
+  border-radius: 16px;
+  padding: 2rem;
+  height: 100%;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.featureHighlightBox::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #00d4ff 0%, #4ecdc4 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.featureHighlightBox:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  border-color: #4b5563;
+}
+
+.featureHighlightBox:hover::before {
+  opacity: 1;
+}
+
+.receiversBox:hover::before {
+  background: linear-gradient(90deg, #00d4ff 0%, #0ea5e9 100%);
+}
+
+.exportersBox:hover::before {
+  background: linear-gradient(90deg, #4ecdc4 0%, #10b981 100%);
+}
+
+.featureIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.featureHighlightBox h3 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.featureList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.featureList li {
+  color: #d1d5db;
+  font-size: 0.95rem;
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.5;
+  transition: color 0.2s ease;
+}
+
+.featureList li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  color: #00d4ff;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.exportersBox .featureList li::before {
+  color: #4ecdc4;
+}
+
+.featureList li:hover {
+  color: #ffffff;
+}
+
+/* Dark theme specific adjustments */
+[data-theme='dark'] .featuresSection {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+[data-theme='dark'] .featureHighlightBox {
+  background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%);
+  border-color: #334155;
+}
+
+[data-theme='dark'] .featureHighlightBox:hover {
+  border-color: #475569;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .featuresSection {
+    padding: 2rem 1rem !important;
+  }
+
+  .featureHighlightBox {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .featureIcon {
+    font-size: 2rem;
+  }
+
+  .featureHighlightBox h3 {
+    font-size: 1.3rem;
+  }
+
+  .featureList li {
+    font-size: 0.9rem;
+  }
+}

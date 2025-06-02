@@ -57,27 +57,26 @@ function HomepageHeader(): JSX.Element {
   );
 }
 
-// --- REPLACE WITH ACTUAL BENCHMARK DATA ---
-const coldStartData: ChartData = {
-  labels: ['Rotel Lambda', 'Collector A', 'Collector B'],
-  datasets: [{
-    label: 'Cold Start Time (ms) - Lower is Better',
-    data: [30, 180, 250], // EXAMPLE DATA
-    backgroundColor: 'rgba(227, 116, 0, 0.6)', // Rotel primary color, semi-transparent
-    borderColor: 'rgb(227, 116, 0)',
-    borderWidth: 1,
-  }],
-};
-
 const memoryUsageData: ChartData = {
-  labels: ['Rotel', 'Collector A', 'Collector B'],
+  labels: ['Rotel - OTLP/gRPC', 'Rotel - OTLP/HTTP', 'OTEL - OTLP/gRPC', 'OTEL - OTLP/HTTP'],
   datasets: [{
-    label: 'Memory Usage (MB) - Lower is Better',
-    data: [8, 45, 60], // EXAMPLE DATA
+    label: 'Memory Usage (MB)',
+    data: [25, 29, 98, 89],
     backgroundColor: 'rgba(75, 192, 192, 0.6)',
     borderColor: 'rgb(75, 192, 192)',
     borderWidth: 1,
   }],
+};
+
+const cpuUsageData: ChartData = {
+    labels: ['Rotel - OTLP/gRPC', 'Rotel - OTLP/HTTP', 'OTEL - OTLP/gRPC', 'OTEL - OTLP/HTTP'],
+    datasets: [{
+        label: 'CPU (%)',
+        data: [6.67, 4.33, 11.33, 7.33],
+        backgroundColor: 'rgba(75, 192, 192, 0.6)',
+        borderColor: 'rgb(75, 192, 192)',
+        borderWidth: 1,
+    }],
 };
 
 const coldstartData: LineChartData = {
@@ -144,17 +143,17 @@ const exampleRepos: ExampleRepo[] = [
   {
     title: "Rotel with Python FastAPI",
     description: "Integrating Rotel for telemetry in a Python FastAPI application.",
-    link: "https://github.com/streamfold/rotel-example-fastapi" // UPDATE LINK
+    link: "https://github.com/streamfold/fastapi-backend-example"
   },
   {
-    title: "Rotel on AWS Lambda (Python)",
-    description: "Using the rotel-lambda-extension for efficient telemetry in Python AWS Lambda.",
-    link: "https://github.com/streamfold/rotel-example-lambda-python" // UPDATE LINK
+    title: "AWS Lambda logs + traces to Clickhouse",
+    description: "Using the rotel-lambda-extension to send Lambda logs and application traces to Clickhouse.",
+    link: "https://github.com/streamfold/python-aws-lambda-clickhouse-example"
   },
   {
-    title: "Custom Python Processor with Rotel",
-    description: "Building and using a custom telemetry processor in Python with Rotel.",
-    link: "https://github.com/streamfold/rotel-example-custom-processor" // UPDATE LINK
+    title: "Node.js Lambda auto-instrumentation",
+    description: "Auto-instrumentation your Node.js Lambda application and send data to Honeycomb.",
+    link: "https://github.com/streamfold/nodejs-aws-lambda-example",
   }
 ];
 
@@ -191,7 +190,7 @@ export default function Home(): JSX.Element {
                           <div className="col col--6 margin-bottom--md">
                               <div className={clsx(styles.whyRotelItem, styles.featureBox)}>
                                   <h3>🐍 Native Python Integration</h3>
-                                  <p>Develop custom telemetry processors in Python, leveraging its rich ecosystem without performance compromises for the core collector.</p>
+                                  <p>Develop custom telemetry processors in Python, dev and test locally.</p>
                               </div>
                           </div>
                       </div>
@@ -199,20 +198,30 @@ export default function Home(): JSX.Element {
               </div>
           </section>
 
-        <section className={clsx('container padding-vert--lg text--center', styles.sectionShorter)}>
+        <section className={clsx('container padding-vert--lg text--center', styles.sectionShorter, styles.featuresSection)}>
           <h2>High performance and low overhead ⚡</h2>
-          <p className={styles.sectionSubtitle}>Rotel is engineered for speed and efficiency. See how it compares:</p>
+          {/*<p className={styles.sectionSubtitle}>Rotel maintains low memory overhead</p>*/}
           <div className="row">
             <div className={clsx('col col-6', styles.chartContainer)}>
               <BenchmarkChart data={memoryUsageData} title="Memory Overhead Comparison" />
             </div>
           </div>
-           <div className="text--center margin-top--md">
-             <p><em>Note: Benchmark charts show illustrative data. Refer to specific benchmark runs for precise numbers.</em></p>
-           </div>
+           {/*<div className="text--center margin-top--md">*/}
+           {/*    <p><em>Data taken from the Log10kDPS -*/}
+           {/*        ram_mib_max <a href="https://streamfold.github.io/rotel-otel-loadtests/benchmarks/">benchmark</a>.</em></p>*/}
+           {/*</div>*/}
+            {/*<p className={styles.sectionSubtitle}>Rotel maintains low memory overhead</p>*/}
+            <div className="row">
+                <div className={clsx('col col-6', styles.chartContainer)}>
+                    <BenchmarkChart data={cpuUsageData} title="CPU Comparison" />
+                </div>
+            </div>
+            <div className="text--center margin-top--md">
+                <p><em>Data taken from the Log10kDPS <a href="https://streamfold.github.io/rotel-otel-loadtests/benchmarks/">benchmark</a>.</em></p>
+            </div>
         </section>
 
-        <section className={clsx('container padding-vert--lg text--center', styles.sectionShorter)}>
+        <section className={clsx('container margin-top--lg padding-vert--lg text--center', styles.sectionShorter, styles.featuresSection)}>
           <h2>Ideal for serverless environments 📦</h2>
           <p className={styles.sectionSubtitle}>Small package size and low cold-start times are ideal for serverless environments</p>
             <LineChart data={coldstartData} title="AWS Lambda Coldstarts" xAxisLabel="Function Memory (MB)" yAxisLabel="Coldstart Time (ms)" />
@@ -224,9 +233,9 @@ export default function Home(): JSX.Element {
            </div>
         </section>
 
-        <section className={clsx('container padding-vert--lg text--center', styles.sectionShorter)}>
+        <section className={clsx('container margin-top--lg padding-vert--lg text--center', styles.sectionShorter, styles.featuresSection)}>
           <h2>Developer friendly with native language integrations ⚙️</h2>
-          <p className={styles.sectionSubtitle}>Rotel is engineered for speed and efficiency. See how it compares (example data):</p>
+          <p className={styles.sectionSubtitle}>Write custom telemetry processors in Python with full type support</p>
           <div className="row">
               <div className="col col--8 col--offset-2 text--left">
                   <CodeBlock title="email-redact-processor.py" language="python">
@@ -261,8 +270,40 @@ def redact_emails(text: str):
                   </CodeBlock>
               </div>
           </div>
- 
         </section>
+
+          <section className={clsx('container margin-top--lg padding-vert--lg text--center', styles.sectionShorter, styles.featuresSection)}>
+              <h2>Growing Feature Matrix 🚀</h2>
+              <p className={styles.sectionSubtitle}>Comprehensive telemetry collection with batteries included</p>
+              <div className="row justify-content-center">
+                  <div className="col col--offset-1 col--5 margin-bottom--md">
+                      <div className={clsx(styles.featureHighlightBox, styles.receiversBox)}>
+                          <div className={styles.featureIcon}>📥</div>
+                          <h3>Receivers & Processing</h3>
+                          <ul className={styles.featureList}>
+                              <li>OTLP/gRPC, OTLP/HTTP, OTLP/HTTP-JSON receivers</li>
+                              <li>Automatic batching for optimal delivery</li>
+                              <li>Custom Python processors</li>
+                              <li>Adaptive flushing that minimizes lambda overhead</li>
+                              <li>Simple custom resource attribution</li>
+                          </ul>
+                      </div>
+                  </div>
+                  <div className="col col--5 margin-bottom--md">
+                      <div className={clsx(styles.featureHighlightBox, styles.exportersBox)}>
+                          <div className={styles.featureIcon}>📤</div>
+                          <h3>Exporters & Destinations</h3>
+                          <ul className={styles.featureList}>
+                              <li>OTLP (gRPC/HTTP) exporters</li>
+                              <li>ClickHouse traces & logs exporter</li>
+                              <li>Datadog trace exporter</li>
+                              <li>AWS X-Ray tracing</li>
+                              <li>Debug & logging exporters</li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </section>
 
         <section className={clsx('container padding-vert--xl text--center', styles.sectionShorter, styles.altSectionBackground)}>
           <h2>Explore Rotel in Action 🛠️</h2>
