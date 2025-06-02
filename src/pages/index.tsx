@@ -4,6 +4,8 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import CodeBlock from '@theme/CodeBlock'
+import LineChart from "@site/src/components/LineChart";
+import {LineChartData} from "@site/src/components/LineChart";
 import BenchmarkChart from '@site/src/components/BenchmarkChart'; // Assuming BenchmarkChart props are typed in its own file
 
 import styles from './index.module.css';
@@ -36,20 +38,20 @@ function HomepageHeader(): JSX.Element {
       <div className="container">
         <h1 className="hero__title">{siteConfig.title}</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/"> {/* Updated to docs root */}
-            Get Started - 5min ⏱️
-          </Link>
-          <Link
-            className={clsx('button button--outline button--lg margin-left--md', styles.githubButton)}
-            href="https://github.com/streamfold/rotel" // Main project repo
-            target="_blank"
-            rel="noopener noreferrer">
-            View on GitHub <span aria-label="external link icon">↗️</span>
-          </Link>
-        </div>
+        {/*<div className={styles.buttons}>*/}
+        {/*  <Link*/}
+        {/*    className="button button--secondary button--lg"*/}
+        {/*    to="/docs/"> /!* Updated to docs root *!/*/}
+        {/*    Get Started - 5min ⏱️*/}
+        {/*  </Link>*/}
+        {/*  <Link*/}
+        {/*    className={clsx('button button--outline button--lg margin-left--md', styles.githubButton)}*/}
+        {/*    href="https://github.com/streamfold/rotel" // Main project repo*/}
+        {/*    target="_blank"*/}
+        {/*    rel="noopener noreferrer">*/}
+        {/*    View on GitHub <span aria-label="external link icon">↗️</span>*/}
+        {/*  </Link>*/}
+        {/*</div>*/}
       </div>
     </header>
   );
@@ -77,6 +79,65 @@ const memoryUsageData: ChartData = {
     borderWidth: 1,
   }],
 };
+
+const coldstartData: LineChartData = {
+    labels: ['256 MB', '512 MB', '1 GB', '2 GB', '3 GB', '4 GB'],
+  datasets: [
+    {
+      label: 'Rotel Lambda',
+        data: [360.565821,
+            323.432366,
+            29.682875,
+            166.006486,
+            197.312037,
+            150.604963
+        ],
+        borderColor: '#00D4FF', // Bright cyan
+        backgroundColor: 'rgba(0, 212, 255, 0.1)',
+        borderWidth: 3,
+        tension: 0.2,
+        pointRadius: 5,
+        pointHoverRadius: 8,
+        fill: false,
+    },
+      {
+          label: 'OpenTelemetry Lambda',
+          data: [459.143082,
+              506.922325,
+              261.203130,
+              390.840133,
+              426.790238,
+              539.534966,
+          ],
+          borderColor: '#FF6B6B', // Bright coral red
+          backgroundColor: 'rgba(255, 107, 107, 0.1)',
+          borderWidth: 3,
+          tension: 0.2,
+          pointRadius: 5,
+          pointHoverRadius: 8,
+          fill: false,
+      },
+      {
+          label: 'Datadog Lambda',
+          data: [1534.392516,
+              1040.621440,
+              625.236273,
+              530.351242,
+              597.770453,
+              636.898040,
+
+          ],
+          borderColor: '#4ECDC4', // Bright teal
+          backgroundColor: 'rgba(78, 205, 196, 0.1)',
+          borderWidth: 3,
+          tension: 0.2,
+          pointRadius: 5,
+          pointHoverRadius: 8,
+          fill: false,
+      },
+  ]
+};
+
 // --- END BENCHMARK DATA ---
 
 const exampleRepos: ExampleRepo[] = [
@@ -107,22 +168,32 @@ export default function Home(): JSX.Element {
       <main>
           <section className={clsx('container padding-vert--sm text--center', styles.sectionShorter)}>
               <div className="row margin-top--lg">
-                  <div className="col col--offset-2 col--8">
-                      <div className={styles.whyRotelItem}>
-                          <h3>🦀 Written in Rust</h3>
-                          <p>Designed for bare-metal performance, leading to lower resource consumption and operational costs.</p>
-                      </div>
-                      <div className={styles.whyRotelItem}>
-                          <h3>📉 Low Memory Overhead</h3>
-                          <p>Without a garbage collector, Rotel maintains low memory overhead important for serverless environments.</p>
-                      </div>
-                      <div className={styles.whyRotelItem}>
-                          <h3>⏱️ Optimized for Low Cold-Starts</h3>
-                          <p>Specifically tailored for serverless environments like AWS Lambda, ensuring your functions start fast.</p>
-                      </div>
-                      <div className={styles.whyRotelItem}>
-                          <h3>🐍 Native Python Integration</h3>
-                          <p>Develop custom telemetry processors in Python, leveraging its rich ecosystem without performance compromises for the core collector.</p>
+                  <div className="col col--12">
+                      <div className="row">
+                          <div className="col col--6 margin-bottom--md">
+                              <div className={clsx(styles.whyRotelItem, styles.featureBox)}>
+                                  <h3>🦀 Written in Rust</h3>
+                                  <p>Designed for bare-metal performance, leading to lower resource consumption and operational costs.</p>
+                              </div>
+                          </div>
+                          <div className="col col--6 margin-bottom--md">
+                              <div className={clsx(styles.whyRotelItem, styles.featureBox)}>
+                                  <h3>📉 Low Memory Overhead</h3>
+                                  <p>Without a garbage collector, Rotel maintains low memory overhead important for serverless environments.</p>
+                              </div>
+                          </div>
+                          <div className="col col--6 margin-bottom--md">
+                              <div className={clsx(styles.whyRotelItem, styles.featureBox)}>
+                                  <h3>⏱️ Optimized for Low Cold-Starts</h3>
+                                  <p>Specifically tailored for serverless environments like AWS Lambda, ensuring your functions start fast.</p>
+                              </div>
+                          </div>
+                          <div className="col col--6 margin-bottom--md">
+                              <div className={clsx(styles.whyRotelItem, styles.featureBox)}>
+                                  <h3>🐍 Native Python Integration</h3>
+                                  <p>Develop custom telemetry processors in Python, leveraging its rich ecosystem without performance compromises for the core collector.</p>
+                              </div>
+                          </div>
                       </div>
                   </div>
               </div>
@@ -144,14 +215,12 @@ export default function Home(): JSX.Element {
         <section className={clsx('container padding-vert--lg text--center', styles.sectionShorter)}>
           <h2>Ideal for serverless environments 📦</h2>
           <p className={styles.sectionSubtitle}>Small package size and low cold-start times are ideal for serverless environments</p>
-          <div className="row">
-            <div className={clsx('col col-6', styles.chartContainer)}>
-              {/* Assuming BenchmarkChart component is properly typed to accept ChartData */}
-              <BenchmarkChart data={coldStartData} title="Serverless Cold Start Comparison" />
-            </div>
-          </div>
+            <LineChart data={coldstartData} title="AWS Lambda Coldstarts" xAxisLabel="Function Memory (MB)" yAxisLabel="Coldstart Time (ms)" />
            <div className="text--center margin-top--md">
-             <p><em>Note: Benchmark charts show illustrative data. Refer to specific benchmark runs for precise numbers.</em></p>
+               <p><em>This chart compares cold start times between Rotel,
+                   the <a href="https://github.com/open-telemetry/opentelemetry-lambda/blob/main/collector/README.md">OpenTelemetry Lambda</a>,
+                   and the <a href="https://docs.datadoghq.com/serverless/aws_lambda/opentelemetry/?tab=python">Datadog OTEL Lambda</a> layers.
+             </em></p>
            </div>
         </section>
 

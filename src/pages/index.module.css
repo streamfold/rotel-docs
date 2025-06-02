@@ -3,12 +3,50 @@
  * and scoped locally.
  */
 
+
 .heroBanner {
-  padding: 4rem 0;
+  background: linear-gradient(to bottom, #A78BFA 0%, #312E81 100%) !important;
+
+  /*background: linear-gradient(135deg, #A78BFA 0%, #312E81 100%) !important;*/
+  color: white;
   text-align: center;
-  position: relative;
-  overflow: hidden;
 }
+
+/* Ensure text remains readable on the new gradient */
+.heroBanner .hero__title,
+.heroBanner .hero__subtitle {
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Optional: Adjust button styles to work better with the new background */
+.heroBanner .button--secondary {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #312E81;
+  border: none;
+}
+
+.heroBanner .button--secondary:hover {
+  background-color: rgba(255, 255, 255, 1);
+  color: #312E81;
+}
+
+.heroBanner .button--outline {
+  border-color: rgba(255, 255, 255, 0.8);
+  color: white;
+}
+
+.heroBanner .button--outline:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: white;
+}
+
+/*.heroBanner {*/
+/*  padding: 4rem 0;*/
+/*  text-align: center;*/
+/*  position: relative;*/
+/*  overflow: hidden;*/
+/*}*/
 
 @media screen and (max-width: 996px) {
   .heroBanner {
@@ -20,4 +58,38 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.featureBox {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 1.5rem;
+  height: 100%;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.featureBox:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* For light theme compatibility */
+[data-theme='light'] .featureBox {
+  border-color: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.02);
+}
+
+[data-theme='light'] .featureBox:hover {
+  border-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Ensure consistent height for all feature boxes */
+.whyRotelItem h3 {
+  margin-bottom: 0.75rem;
+}
+
+.whyRotelItem p {
+  margin-bottom: 0;
 }
