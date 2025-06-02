@@ -3,9 +3,7 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import CodeBlock from "@site/src/components/CodeBlock";
-import PrismCodeBlock from "@site/src/components/PrismCodeBlock";
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import CodeBlock from '@theme/CodeBlock'
 import BenchmarkChart from '@site/src/components/BenchmarkChart'; // Assuming BenchmarkChart props are typed in its own file
 
 import styles from './index.module.css';
@@ -107,9 +105,7 @@ export default function Home(): JSX.Element {
       description="High-performance, Rust-powered OpenTelemetry collector with low memory overhead, Python integration, and serverless optimization.">
       <HomepageHeader />
       <main>
-        {/* <HomepageFeatures /> */}
           <section className={clsx('container padding-vert--sm text--center', styles.sectionShorter)}>
-              {/*<h2>Why Choose Rotel?</h2>*/}
               <div className="row margin-top--lg">
                   <div className="col col--offset-2 col--8">
                       <div className={styles.whyRotelItem}>
@@ -163,16 +159,14 @@ export default function Home(): JSX.Element {
           <h2>Developer friendly with native language integrations ⚙️</h2>
           <p className={styles.sectionSubtitle}>Rotel is engineered for speed and efficiency. See how it compares (example data):</p>
           <div className="row">
-              <div className="col col--8 col--offset-2">
-                  <h3 className="text-lg font-medium mb-2">Python Processor</h3>
-                  <PrismCodeBlock title="example.py" language="python" theme="dark">
+              <div className="col col--8 col--offset-2 text--left">
+                  <CodeBlock title="email-redact-processor.py" language="python">
                       {`import re
 
 from rotel_sdk.open_telemetry.common.v1 import AnyValue
 from rotel_sdk.open_telemetry.logs.v1 import ResourceLogs
 
 email_pattern = r'\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b'
-
 
 def process(resource_logs: ResourceLogs):
     for scope_log in resource_logs.scope_logs:
@@ -195,7 +189,7 @@ def redact_emails(text: str):
     new_body = AnyValue()
     new_body.string_value = re.sub(email_pattern, '**[email redacted]**', text)
     return new_body`}
-                  </PrismCodeBlock>
+                  </CodeBlock>
               </div>
           </div>
  
