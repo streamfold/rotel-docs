@@ -1,0 +1,8 @@
+{
+  "label": "Node.js Rotel",
+  "position": 7,
+  "link": {
+    "type": "generated-index",
+    "description": "Node.js package for the Rotel lightweight OpenTelemetry collector."
+  }
+}

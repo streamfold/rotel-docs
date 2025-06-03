@@ -1,0 +1,8 @@
+{
+  "label": "AWS Lambda Extension",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "Lambda Extension for Rotel."
+  }
+}
