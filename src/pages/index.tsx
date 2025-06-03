@@ -38,20 +38,20 @@ function HomepageHeader(): JSX.Element {
       <div className="container">
         <h1 className="hero__title">{siteConfig.title}</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
-        {/*<div className={styles.buttons}>*/}
-        {/*  <Link*/}
-        {/*    className="button button--secondary button--lg"*/}
-        {/*    to="/docs/"> /!* Updated to docs root *!/*/}
-        {/*    Get Started - 5min ⏱️*/}
-        {/*  </Link>*/}
-        {/*  <Link*/}
-        {/*    className={clsx('button button--outline button--lg margin-left--md', styles.githubButton)}*/}
-        {/*    href="https://github.com/streamfold/rotel" // Main project repo*/}
-        {/*    target="_blank"*/}
-        {/*    rel="noopener noreferrer">*/}
-        {/*    View on GitHub <span aria-label="external link icon">↗️</span>*/}
-        {/*  </Link>*/}
-        {/*</div>*/}
+        <div className={styles.buttons}>
+          <Link
+            className="button button--secondary button--lg"
+            to="/docs/"> {/* Updated to docs root */}
+            Get Started - 5min ⏱️
+          </Link>
+          <Link
+            className={clsx('button button--outline button--lg margin-left--md', styles.githubButton)}
+            href="https://github.com/streamfold/rotel" // Main project repo
+            target="_blank"
+            rel="noopener noreferrer">
+            View on GitHub <span aria-label="external link icon">↗️</span>
+          </Link>
+        </div>
       </div>
     </header>
   );
