@@ -6,7 +6,8 @@ import Layout from '@theme/Layout';
 import CodeBlock from '@theme/CodeBlock'
 import LineChart from "@site/src/components/LineChart";
 import {LineChartData} from "@site/src/components/LineChart";
-import BenchmarkChart from '@site/src/components/BenchmarkChart'; // Assuming BenchmarkChart props are typed in its own file
+import BarChart from "@site/src/components/BarChart";
+import {BarChartData} from "@site/src/components/BarChart";
 
 import styles from './index.module.css';
 
@@ -57,26 +58,26 @@ function HomepageHeader(): JSX.Element {
   );
 }
 
-const memoryUsageData: ChartData = {
-  labels: ['Rotel - OTLP/gRPC', 'Rotel - OTLP/HTTP', 'OTEL - OTLP/gRPC', 'OTEL - OTLP/HTTP'],
-  datasets: [{
-    label: 'Memory Usage (MB)',
-    data: [25, 29, 98, 89],
-    backgroundColor: 'rgba(75, 192, 192, 0.6)',
-    borderColor: 'rgb(75, 192, 192)',
-    borderWidth: 1,
-  }],
+const memUsageBarData: BarChartData = {
+    labels: ['Rotel - OTLP/gRPC', 'Rotel - OTLP/HTTP', 'OTEL - OTLP/gRPC', 'OTEL - OTLP/HTTP'],
+    datasets: [{
+        label: 'Memory Usage (MB)',
+        data: [25, 29, 98, 89],
+        backgroundColor: ['#3B82F6', '#3B82F6', '#EF4444', '#EF4444'], // First 2 blue, last 2 red
+        borderColor: ['#1D4ED8', '#1D4ED8', '#DC2626', '#DC2626'],
+        borderWidth: 1
+    }]
 };
 
-const cpuUsageData: ChartData = {
+const cpuUsageBarData: BarChartData = {
     labels: ['Rotel - OTLP/gRPC', 'Rotel - OTLP/HTTP', 'OTEL - OTLP/gRPC', 'OTEL - OTLP/HTTP'],
     datasets: [{
         label: 'CPU (%)',
         data: [6.67, 4.33, 11.33, 7.33],
-        backgroundColor: 'rgba(75, 192, 192, 0.6)',
-        borderColor: 'rgb(75, 192, 192)',
-        borderWidth: 1,
-    }],
+        backgroundColor: ['#3B82F6', '#3B82F6', '#EF4444', '#EF4444'], // First 2 blue, last 2 red
+        borderColor: ['#1D4ED8', '#1D4ED8', '#DC2626', '#DC2626'],
+        borderWidth: 1
+    }]
 };
 
 const coldstartData: LineChartData = {
@@ -199,25 +200,20 @@ export default function Home(): JSX.Element {
           </section>
 
         <section className={clsx('container padding-vert--lg text--center', styles.sectionShorter, styles.featuresSection)}>
-          <h2>High performance and low overhead ⚡</h2>
-          {/*<p className={styles.sectionSubtitle}>Rotel maintains low memory overhead</p>*/}
+          <h2>High-performance and low overhead ⚡</h2>
+            <p className={styles.sectionSubtitle}>Rotel requires fewer resources for the same workloads</p>
           <div className="row">
             <div className={clsx('col col-6', styles.chartContainer)}>
-              <BenchmarkChart data={memoryUsageData} title="Memory Overhead Comparison" />
+              <BarChart data={memUsageBarData} title="Memory Overhead Comparison" />
             </div>
           </div>
-           {/*<div className="text--center margin-top--md">*/}
-           {/*    <p><em>Data taken from the Log10kDPS -*/}
-           {/*        ram_mib_max <a href="https://streamfold.github.io/rotel-otel-loadtests/benchmarks/">benchmark</a>.</em></p>*/}
-           {/*</div>*/}
-            {/*<p className={styles.sectionSubtitle}>Rotel maintains low memory overhead</p>*/}
             <div className="row">
                 <div className={clsx('col col-6', styles.chartContainer)}>
-                    <BenchmarkChart data={cpuUsageData} title="CPU Comparison" />
+                    <BarChart data={cpuUsageBarData} title="CPU Comparison" />
                 </div>
             </div>
             <div className="text--center margin-top--md">
-                <p><em>Data taken from the Log10kDPS <a href="https://streamfold.github.io/rotel-otel-loadtests/benchmarks/">benchmark</a>.</em></p>
+                <p><em>Comparison of memory and CPU usage of Rotel and the OpenTelemetry collector. Results from the Log10kDPS <a href="https://streamfold.github.io/rotel-otel-loadtests/benchmarks/">benchmark</a>.</em></p>
             </div>
         </section>
 
