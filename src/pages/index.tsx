@@ -172,14 +172,8 @@ export default function Home(): JSX.Element {
                       <div className="row">
                           <div className="col col--6 margin-bottom--md">
                               <div className={clsx(styles.whyRotelItem, styles.featureBox)}>
-                                  <h2>🦀 Written in Rust</h2>
-                                  <p>Designed for bare-metal performance, leading to lower resource consumption and operational costs.</p>
-                              </div>
-                          </div>
-                          <div className="col col--6 margin-bottom--md">
-                              <div className={clsx(styles.whyRotelItem, styles.featureBox)}>
-                                  <h2>📉 Low Memory Overhead</h2>
-                                  <p>Without a garbage collector, Rotel maintains low memory overhead important for serverless environments.</p>
+                                  <h2>⚡ Blazing Fast Performance with No Overhead</h2>
+                                  <p>Written in Rust to deliver near bare-metal speeds and minimal resource consumption, free from garbage collector overhead.</p>
                               </div>
                           </div>
                           <div className="col col--6 margin-bottom--md">
@@ -190,8 +184,14 @@ export default function Home(): JSX.Element {
                           </div>
                           <div className="col col--6 margin-bottom--md">
                               <div className={clsx(styles.whyRotelItem, styles.featureBox)}>
+                                  <h2>📦 Flexible and Lightweight Deployment </h2>
+                                  <p>With a &lt;10MB compressed size, Rotel easily bundles with runtime packages for Python and Node.js—reducing complex deployment models.</p>
+                              </div>
+                          </div>
+                          <div className="col col--6 margin-bottom--md">
+                              <div className={clsx(styles.whyRotelItem, styles.featureBox)}>
                                   <h2>🐍 Native Python Integration</h2>
-                                  <p>Develop custom telemetry processors in Python, dev and test locally.</p>
+                                  <p>Develop custom telemetry processors in Python with the ability to dev and test locally.</p>
                               </div>
                           </div>
                       </div>
