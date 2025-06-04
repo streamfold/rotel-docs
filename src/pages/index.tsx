@@ -147,13 +147,13 @@ const exampleRepos: ExampleRepo[] = [
     link: "https://github.com/streamfold/fastapi-backend-example"
   },
   {
-    title: "AWS Lambda logs + traces to Clickhouse",
+    title: "AWS Lambda + Clickhouse",
     description: "Using the rotel-lambda-extension to send Lambda logs and application traces to Clickhouse.",
     link: "https://github.com/streamfold/python-aws-lambda-clickhouse-example"
   },
   {
-    title: "Node.js Lambda auto-instrumentation",
-    description: "Auto-instrumentation your Node.js Lambda application and send data to Honeycomb.",
+    title: "Node.js Lambda + Honeycomb",
+    description: "Use OpenTelemetry Node.js auto-instrumentation and send data to Honeycomb.",
     link: "https://github.com/streamfold/nodejs-aws-lambda-example",
   }
 ];
@@ -172,25 +172,25 @@ export default function Home(): JSX.Element {
                       <div className="row">
                           <div className="col col--6 margin-bottom--md">
                               <div className={clsx(styles.whyRotelItem, styles.featureBox)}>
-                                  <h3>🦀 Written in Rust</h3>
+                                  <h2>🦀 Written in Rust</h2>
                                   <p>Designed for bare-metal performance, leading to lower resource consumption and operational costs.</p>
                               </div>
                           </div>
                           <div className="col col--6 margin-bottom--md">
                               <div className={clsx(styles.whyRotelItem, styles.featureBox)}>
-                                  <h3>📉 Low Memory Overhead</h3>
+                                  <h2>📉 Low Memory Overhead</h2>
                                   <p>Without a garbage collector, Rotel maintains low memory overhead important for serverless environments.</p>
                               </div>
                           </div>
                           <div className="col col--6 margin-bottom--md">
                               <div className={clsx(styles.whyRotelItem, styles.featureBox)}>
-                                  <h3>⏱️ Optimized for Low Cold-Starts</h3>
+                                  <h2>⏱️ Optimized for Low Cold-Starts</h2>
                                   <p>Specifically tailored for serverless environments like AWS Lambda, ensuring your functions start fast.</p>
                               </div>
                           </div>
                           <div className="col col--6 margin-bottom--md">
                               <div className={clsx(styles.whyRotelItem, styles.featureBox)}>
-                                  <h3>🐍 Native Python Integration</h3>
+                                  <h2>🐍 Native Python Integration</h2>
                                   <p>Develop custom telemetry processors in Python, dev and test locally.</p>
                               </div>
                           </div>
@@ -328,7 +328,7 @@ def redact_emails(text: str):
             ))}
           </div>
            <div className="text--center margin-top--lg"> {/* Increased margin */}
-             <Link className="button button--outline button--secondary button--lg" to="/docs/examples/overview">
+             <Link className="button button--outline button--secondary button--lg" to="/docs/category/examples">
                 See More Examples
              </Link>           
            </div>
