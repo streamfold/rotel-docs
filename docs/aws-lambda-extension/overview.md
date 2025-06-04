@@ -34,7 +34,7 @@ The layer supports the Amazon Linux 2023
 [Lambda runtime](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtimes-supported)
 (`provided.al2023`).
 
-The _{version}_ field should match the integer value for the latest release on the
+The _version_ field should match the integer value for the latest release on the
 [Releases](https://github.com/streamfold/rotel-lambda-extension/releases) page,
 for example `v12-alpha` should use `12` as the version.
 
