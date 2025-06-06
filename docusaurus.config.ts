@@ -6,7 +6,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Rotel',
-  tagline: 'Lightweight OpenTelemetry collector written in Rust',
+  tagline: 'High Performance, Resource Efficient OpenTelemetry Collector',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
