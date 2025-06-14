@@ -5,11 +5,18 @@
 
 
 .heroBanner {
-  background: linear-gradient(to bottom, #A78BFA 0%, #312E81 100%) !important;
+  /*background: linear-gradient(to bottom, #A78BFA 0%, #312E81 100%) !important;*/
+
+  /*background: linear-gradient(to bottom, rgb(227, 227, 227) 0%, #000000 100%) !important;*/
+
+  background-color: #1e293b;
 
   /*background: linear-gradient(135deg, #A78BFA 0%, #312E81 100%) !important;*/
   color: white;
   text-align: center;
+
+  border-bottom: 5px solid rgba(78, 205, 196, 0.5);
+  box-shadow: 0 5px 20px -3px rgba(0, 212, 255, 0.4);
 }
 
 /* Ensure text remains readable on the new gradient */
@@ -40,13 +47,6 @@
   background-color: rgba(255, 255, 255, 0.1);
   border-color: white;
 }
-
-/*.heroBanner {*/
-/*  padding: 4rem 0;*/
-/*  text-align: center;*/
-/*  position: relative;*/
-/*  overflow: hidden;*/
-/*}*/
 
 @media screen and (max-width: 996px) {
   .heroBanner {

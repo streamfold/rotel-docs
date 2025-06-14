@@ -78,12 +78,12 @@ const config: Config = {
       disableSwitch: true,
       respectPrefersColorScheme: false,
     },
-    image: 'img/red_pepper.png',
+    image: 'img/red-pepper.svg',
     navbar: {
       title: 'Rotel',
       logo: {
         alt: 'Rotel Logo',
-        src: 'img/red_pepper.png',
+        src: 'img/red-pepper.svg',
       },
       items: [
         {

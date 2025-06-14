@@ -4,6 +4,8 @@ sidebar_position: 4
 
 # AWS X-Ray Exporter
 
+Export OpenTelemetry traces to AWS X-Ray.
+
 | Telemetry Type | Support |
 |----------------|---------|
 | Traces         | Alpha   |

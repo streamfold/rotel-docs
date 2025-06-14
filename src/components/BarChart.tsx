@@ -83,7 +83,7 @@ export default function BarChart({ data, options, title }: BenchmarkChartProps):
         maintainAspectRatio: false,
         plugins: {
             legend: {
-                //position: 'top' as const,
+                position: 'top' as const,
                 display: false,
             },
             title: {

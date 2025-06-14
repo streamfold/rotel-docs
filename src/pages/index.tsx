@@ -8,6 +8,7 @@ import LineChart from "@site/src/components/LineChart";
 import {LineChartData} from "@site/src/components/LineChart";
 import BarChart from "@site/src/components/BarChart";
 import {BarChartData} from "@site/src/components/BarChart";
+import RedPepper from "./red-pepper.svg";
 
 import styles from './index.module.css';
 
@@ -37,8 +38,9 @@ function HomepageHeader(): JSX.Element {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+          <RedPepper />
+          {/*<h1 className="hero__title">{siteConfig.title}</h1>*/}
+          <p className="hero__subtitle">Rotel: {siteConfig.tagline}</p>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
@@ -59,23 +61,23 @@ function HomepageHeader(): JSX.Element {
 }
 
 const memUsageBarData: BarChartData = {
-    labels: ['Rotel - OTLP/gRPC', 'Rotel - OTLP/HTTP', 'OTEL - OTLP/gRPC', 'OTEL - OTLP/HTTP'],
+    labels: ['Rotel - Logs', 'Rotel - Traces', 'Rotel - Metrics', 'OTEL - Logs', 'OTEL - Traces', 'OTEL - Metrics'],
     datasets: [{
         label: 'Memory Usage (MB)',
-        data: [25, 29, 98, 89],
-        backgroundColor: ['#3B82F6', '#3B82F6', '#EF4444', '#EF4444'], // First 2 blue, last 2 red
-        borderColor: ['#1D4ED8', '#1D4ED8', '#DC2626', '#DC2626'],
+        data: [23, 23, 18, 98, 98, 98],
+        backgroundColor: ['#3B82F6', '#3B82F6', '#3B82F6', '#EF4444', '#EF4444', '#EF4444'],
+        borderColor: ['#1D4ED8', '#1D4ED8', '#1D4ED8', '#DC2626', '#DC2626', '#DC2626'],
         borderWidth: 1
     }]
 };
 
 const cpuUsageBarData: BarChartData = {
-    labels: ['Rotel - OTLP/gRPC', 'Rotel - OTLP/HTTP', 'OTEL - OTLP/gRPC', 'OTEL - OTLP/HTTP'],
+    labels: ['Rotel - Logs', 'Rotel - Traces', 'Rotel - Metrics', 'OTEL - Logs', 'OTEL - Traces', 'OTEL - Metrics'],
     datasets: [{
         label: 'CPU (%)',
-        data: [6.67, 4.33, 11.33, 7.33],
-        backgroundColor: ['#3B82F6', '#3B82F6', '#EF4444', '#EF4444'], // First 2 blue, last 2 red
-        borderColor: ['#1D4ED8', '#1D4ED8', '#DC2626', '#DC2626'],
+        data: [5.33, 5.67, 17.33, 8.67, 10.33, 21.00],
+        backgroundColor: ['#3B82F6', '#3B82F6', '#3B82F6', '#EF4444', '#EF4444', '#EF4444'],
+        borderColor: ['#1D4ED8', '#1D4ED8', '#1D4ED8', '#DC2626', '#DC2626', '#DC2626'],
         borderWidth: 1
     }]
 };
@@ -148,14 +150,14 @@ const exampleRepos: ExampleRepo[] = [
   },
   {
     title: "AWS Lambda + Clickhouse",
-    description: "Using the rotel-lambda-extension to send Lambda logs and application traces to Clickhouse.",
+    description: "Using the Lambda Extension to send Lambda logs and application traces to Clickhouse.",
     link: "https://github.com/streamfold/python-aws-lambda-clickhouse-example"
   },
   {
     title: "Node.js Lambda + Honeycomb",
     description: "Use OpenTelemetry Node.js auto-instrumentation and send data to Honeycomb.",
     link: "https://github.com/streamfold/nodejs-aws-lambda-example",
-  }
+  },
 ];
 
 export default function Home(): JSX.Element {
@@ -173,25 +175,28 @@ export default function Home(): JSX.Element {
                           <div className="col col--6 margin-bottom--md">
                               <div className={clsx(styles.whyRotelItem, styles.featureBox)}>
                                   <h2>⚡ Blazing Fast Performance with No Overhead</h2>
-                                  <p>Written in Rust to deliver near bare-metal speeds and minimal resource consumption, free from garbage collector overhead.</p>
+                                  <p>Written in Rust to deliver bare-metal speeds and minimal resource consumption, free from garbage collector overhead.</p>
                               </div>
                           </div>
                           <div className="col col--6 margin-bottom--md">
                               <div className={clsx(styles.whyRotelItem, styles.featureBox)}>
-                                  <h2>⏱️ Optimized for Low Cold-Starts</h2>
+                                  <h2>⏱️ Very Fast Cold-Starts</h2>
                                   <p>Specifically tailored for serverless environments like AWS Lambda, ensuring your functions start fast.</p>
                               </div>
                           </div>
                           <div className="col col--6 margin-bottom--md">
                               <div className={clsx(styles.whyRotelItem, styles.featureBox)}>
                                   <h2>📦 Flexible and Lightweight Deployment </h2>
-                                  <p>With a &lt;10MB compressed size, Rotel easily bundles with runtime packages for Python and Node.js—reducing complex deployment models.</p>
+                                  <p>Deploy Rotel to the cloud with pre-built Docker
+                                      containers, import as <a href="https://github.com/streamfold/pyrotel">Python</a> / <a href="https://github.com/streamfold/rotel-nodejs">Node.js</a> packages,
+                                      or load the <a href="https://github.com/streamfold/rotel-lambda-extension">extension layer</a> on AWS Lambda.</p>
                               </div>
                           </div>
                           <div className="col col--6 margin-bottom--md">
                               <div className={clsx(styles.whyRotelItem, styles.featureBox)}>
                                   <h2>🐍 Native Python Integration</h2>
-                                  <p>Develop custom telemetry processors in Python with the ability to dev and test locally.</p>
+                                  <p>Easily develop custom telemetry processors in Python using Rust pyo3 bindings and full IDE type
+                                      support.</p>
                               </div>
                           </div>
                       </div>
@@ -213,7 +218,7 @@ export default function Home(): JSX.Element {
                 </div>
             </div>
             <div className="text--center margin-top--md">
-                <p><em>Comparison of memory and CPU usage of Rotel and the OpenTelemetry collector. Results from the Log10kDPS <a href="https://streamfold.github.io/rotel-otel-loadtests/benchmarks/">benchmark</a>.</em></p>
+                <p><em>Comparison of memory and CPU usage of Rotel and the OpenTelemetry collector. Results from the loadtest <a href="https://streamfold.github.io/rotel-otel-loadtests/benchmarks/">benchmarks</a>.</em></p>
             </div>
         </section>
 
@@ -279,9 +284,9 @@ def redact_emails(text: str):
                           <ul className={styles.featureList}>
                               <li>OTLP/gRPC, OTLP/HTTP, OTLP/HTTP-JSON receivers</li>
                               <li>Automatic batching for optimal delivery</li>
-                              <li>Custom Python processors</li>
+                              <li>Python processor support</li>
+                              <li>Out-of-the-box processors or write your own</li>
                               <li>Adaptive flushing that minimizes lambda overhead</li>
-                              <li>Simple custom resource attribution</li>
                           </ul>
                       </div>
                   </div>
@@ -291,7 +296,7 @@ def redact_emails(text: str):
                           <h3>Exporters & Destinations</h3>
                           <ul className={styles.featureList}>
                               <li>OTLP (gRPC/HTTP) exporters</li>
-                              <li>ClickHouse traces & logs exporter</li>
+                              <li>Clickhouse exporter</li>
                               <li>Datadog trace exporter</li>
                               <li>AWS X-Ray tracing</li>
                               <li>Debug & logging exporters</li>

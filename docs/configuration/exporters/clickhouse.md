@@ -4,6 +4,8 @@ sidebar_position: 3
 
 # Clickhouse Exporter
 
+Export OpenTelemetry metrics, logs and traces to Clickhouse.
+
 | Telemetry Type | Support |
 |----------------|---------|
 | Traces         | Alpha   |

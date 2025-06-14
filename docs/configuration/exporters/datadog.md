@@ -4,6 +4,8 @@ sidebar_position: 2
 
 # Datadog Exporter
 
+Export OpenTelemetry traces to Datadog.
+
 | Telemetry Type | Support |
 |----------------|---------|
 | Traces         | Alpha   |

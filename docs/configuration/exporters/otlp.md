@@ -4,6 +4,8 @@ sidebar_position: 1
 
 # OTLP Exporter
 
+Export OpenTelemetry metrics, logs, and traces to any OTLP endpoint.
+
 | Telemetry Type | Support |
 |----------------|---------|
 | Metrics        | Alpha   |
