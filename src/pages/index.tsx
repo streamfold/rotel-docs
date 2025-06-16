@@ -247,7 +247,7 @@ import itertools
 from rotel_sdk.open_telemetry.common.v1 import AnyValue
 from rotel_sdk.open_telemetry.logs.v1 import ResourceLogs
 
-email_pattern = r'\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\\b'
+email_pattern = r'\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b'
 
 def process_logs(resource_logs: ResourceLogs):
     for log_record in itertools.chain.from_iterable(
