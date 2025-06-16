@@ -10,7 +10,7 @@ If an email is found, we redact the email and replace it with the string `[email
 Open up your editor or Python IDE and paste the following into a file called `redact_emails_in_logs.py` and run with the
 following command.
 
-```python
+```python title="redact_emails_in_logs.py"
 import re
 import itertools
 
