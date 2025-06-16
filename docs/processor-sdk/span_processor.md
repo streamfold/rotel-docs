@@ -10,7 +10,7 @@ Your processor must implement a function called `process_spans` in order for rot
 
 The following is an example OTel ResourceSpan processor called append_resource_attributes_to_spans.py which adds the OS name, version, and a timestamp named rotel.process.time to the Resource Attributes of a batch of Spans. Open up your editor or Python IDE and paste the following into a file called append_resource_attributes_to_spans.py and run with the following command.
 
-```python
+```python title="append_resource_attributes_to_spans.py"
 import platform
 from datetime import datetime
 
