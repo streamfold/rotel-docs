@@ -28,6 +28,7 @@ interface CustomChartDataset {
     backgroundColor: string | string[]; // Array of colors for individual bars
     borderColor: string | string[];     // Array of border colors for individual bars
     borderWidth: number;
+    barThickness: number;
 }
 
 export interface BarChartData {

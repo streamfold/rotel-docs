@@ -61,24 +61,26 @@ function HomepageHeader(): JSX.Element {
 }
 
 const memUsageBarData: BarChartData = {
-    labels: ['Rotel - Logs', 'Rotel - Traces', 'Rotel - Metrics', 'OTEL - Logs', 'OTEL - Traces', 'OTEL - Metrics'],
+    labels: ['Rotel - Logs', 'OTEL - Logs', 'Rotel - Traces', 'OTEL - Traces', 'Rotel - Metrics', 'OTEL - Metrics'],
     datasets: [{
         label: 'Memory Usage (MB)',
-        data: [23, 23, 18, 98, 98, 98],
-        backgroundColor: ['#3B82F6', '#3B82F6', '#3B82F6', '#EF4444', '#EF4444', '#EF4444'],
-        borderColor: ['#1D4ED8', '#1D4ED8', '#1D4ED8', '#DC2626', '#DC2626', '#DC2626'],
-        borderWidth: 1
+        data: [23, 98, 23, 98, 18, 98],
+        backgroundColor: ['rgba(59, 130, 246, 0.6)', 'rgba(239, 68, 68, 0.5)', 'rgba(59, 130, 246, 0.6)', 'rgba(239, 68, 68, 0.5)', 'rgba(59, 130, 246, 0.6)', 'rgba(239, 68, 68, 0.5)'],
+        borderColor: ['rgba(59, 130, 246, 0.7)', 'rgba(239, 68, 68, 0.7)', 'rgba(59, 130, 246, 0.7)', 'rgba(239, 68, 68, 0.7)', 'rgba(59, 130, 246, 0.7)', 'rgba(239, 68, 68, 0.7)'],
+        borderWidth: 1,
+        barThickness: 100,
     }]
 };
 
 const cpuUsageBarData: BarChartData = {
-    labels: ['Rotel - Logs', 'Rotel - Traces', 'Rotel - Metrics', 'OTEL - Logs', 'OTEL - Traces', 'OTEL - Metrics'],
+    labels: ['Rotel - Logs', 'OTEL - Logs', 'Rotel - Traces', 'OTEL - Traces', 'Rotel - Metrics', 'OTEL - Metrics'],
     datasets: [{
         label: 'CPU (%)',
-        data: [5.33, 5.67, 17.33, 8.67, 10.33, 21.00],
-        backgroundColor: ['#3B82F6', '#3B82F6', '#3B82F6', '#EF4444', '#EF4444', '#EF4444'],
-        borderColor: ['#1D4ED8', '#1D4ED8', '#1D4ED8', '#DC2626', '#DC2626', '#DC2626'],
-        borderWidth: 1
+        data: [5.33, 8.67, 5.67, 10.33, 17.33, 21.00],
+        backgroundColor: ['rgba(59, 130, 246, 0.6)', 'rgba(239, 68, 68, 0.5)', 'rgba(59, 130, 246, 0.6)', 'rgba(239, 68, 68, 0.5)', 'rgba(59, 130, 246, 0.6)', 'rgba(239, 68, 68, 0.5)'],
+        borderColor: ['rgba(59, 130, 246, 0.7)', 'rgba(239, 68, 68, 0.7)', 'rgba(59, 130, 246, 0.7)', 'rgba(239, 68, 68, 0.7)', 'rgba(59, 130, 246, 0.7)', 'rgba(239, 68, 68, 0.7)'],
+        borderWidth: 1,
+        barThickness: 100,
     }]
 };
 
