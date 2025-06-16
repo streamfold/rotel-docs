@@ -174,13 +174,13 @@ export default function Home(): JSX.Element {
                       <div className="row">
                           <div className="col col--6 margin-bottom--md">
                               <div className={clsx(styles.whyRotelItem, styles.featureBox)}>
-                                  <h2>⚡ Blazing Fast Performance with No Overhead</h2>
+                                  <h2>⚡ Exceptional Performance with No Overhead</h2>
                                   <p>Written in Rust to deliver bare-metal speeds and minimal resource consumption, free from garbage collector overhead.</p>
                               </div>
                           </div>
                           <div className="col col--6 margin-bottom--md">
                               <div className={clsx(styles.whyRotelItem, styles.featureBox)}>
-                                  <h2>⏱️ Very Fast Cold-Starts</h2>
+                                  <h2>⏱️ Blazing Fast Cold-Starts</h2>
                                   <p>Specifically tailored for serverless environments like AWS Lambda, ensuring your functions start fast.</p>
                               </div>
                           </div>
@@ -195,8 +195,7 @@ export default function Home(): JSX.Element {
                           <div className="col col--6 margin-bottom--md">
                               <div className={clsx(styles.whyRotelItem, styles.featureBox)}>
                                   <h2>🐍 Native Python Integration</h2>
-                                  <p>Easily develop custom telemetry processors in Python using Rust pyo3 bindings and full IDE type
-                                      support.</p>
+                                  <p>Easily develop custom telemetry processors in Python using Rust pyo3 bindings with full IDE support including type hints and autocompletion.</p>
                               </div>
                           </div>
                       </div>
