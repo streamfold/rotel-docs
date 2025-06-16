@@ -39,8 +39,8 @@ function HomepageHeader(): JSX.Element {
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
           <RedPepper />
-          {/*<h1 className="hero__title">{siteConfig.title}</h1>*/}
-          <p className="hero__subtitle">Rotel: {siteConfig.tagline}</p>
+          <h1 className="hero__title">{siteConfig.title}</h1>
+          <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
@@ -242,34 +242,34 @@ export default function Home(): JSX.Element {
               <div className="col col--8 col--offset-2 text--left">
                   <CodeBlock title="email-redact-processor.py" language="python">
                       {`import re
+import itertools
 
 from rotel_sdk.open_telemetry.common.v1 import AnyValue
 from rotel_sdk.open_telemetry.logs.v1 import ResourceLogs
 
-email_pattern = r'\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b'
+email_pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
 
-def process(resource_logs: ResourceLogs):
-    for scope_log in resource_logs.scope_logs:
-        for log_record in scope_log.log_records:
-            if log_record.body is not None and log_record.body.value is not None:
-                if re.search(email_pattern, log_record.body.value):
-                    log_record.body = redact_emails(log_record.body.value)
+def process_logs(resource_logs: ResourceLogs):
+    for log_record in itertools.chain.from_iterable(
+        scope_log.log_records for scope_log in resource_logs.scope_logs
+    ):
+        if hasattr(log_record, 'body') and log_record.body \\
+        and hasattr(log_record.body, 'value'):
+            if log_record.body.value and re.search(email_pattern, log_record.body.value):
+                if log_record.body is not None:
+                    log_record.body = redact_emails(log_record.body)
 
-
-def redact_emails(text: str):
+def redact_emails(body: AnyValue) -> AnyValue:
     """
     Searches for email addresses in a string and replaces them with '*** redacted'
-    
-    Args:
-        text (str): The input string to search for email addresses
-        
-    Returns:
-        str: The string with email addresses replaced by '*** redacted'
     """
-    new_body = AnyValue()
-    new_body.string_value = re.sub(email_pattern, '**[email redacted]**', text)
-    return new_body`}
-                  </CodeBlock>
+    if body.value is None or not isinstance(body.value, str):
+        return body
+    redacted_body, matches = re.subn(email_pattern, '**[email redacted]**', body.value)
+    if matches == 0:
+        return body
+    return AnyValue(redacted_body)`}
+                 </CodeBlock>
               </div>
           </div>
         </section>
