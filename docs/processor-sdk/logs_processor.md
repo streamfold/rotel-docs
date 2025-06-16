@@ -30,17 +30,17 @@ def process_logs(resource_logs: ResourceLogs):
 
 def redact_emails(body: AnyValue) -> AnyValue:
     """
-    Searches for email addresses in a string and replaces them with '*** redacted'
+    Searches for email addresses in a string and replaces them with '[email redacted]'
     
     Args:
         text (str): The input string to search for email addresses
         
     Returns:
-        str: The string with email addresses replaced by '*** redacted'
+        str: The string with email addresses replaced by '[email redacted]'
     """
     if body.value is None or not isinstance(body.value, str):
         return body
-    redacted_body, matches = re.subn(email_pattern, '**[email redacted]**', body.value)
+    redacted_body, matches = re.subn(email_pattern, '[email redacted]', body.value)
     if matches == 0:
         return body
     return AnyValue(redacted_body)

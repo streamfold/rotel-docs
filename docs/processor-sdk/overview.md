@@ -4,16 +4,16 @@ sidebar_position: 1
 
 # Overview
 
-Rotel includes a Python processor SDK that allows you to write custom OTel processors in Python. The SDK makes it easy to filter and transform OpenTelemetry data
-data before sending to an exporter. Rotel's Rust bindings for Python are implemented with [pyo3](https://github.com/pyo3/pyo3) providing a high-performance OpenTelemetry processor API bundled as a Python extension. The SDK provides interfaces for processing both traces and logs data (metrics coming soon!) through a simple
+Rotel includes a Python processor SDK that allows you to write custom OTel processors in Python. The SDK makes it easy to filter and transform OpenTelemetry data 
+before sending to an exporter. Rotel's Rust bindings for Python are implemented with [pyo3](https://github.com/pyo3/pyo3) providing a high-performance OpenTelemetry processor API bundled as a Python extension. The SDK provides interfaces for processing both traces and logs data (metrics coming soon!) through a simple
 Python API.
 
 The processor SDK enables you to:
 
-- Access and modify trace spans, including span data, attributes, events, links and status
-- Process log records, including severity, body content, and associated attributes
-- Modify resource attributes across traces and logs
-- Transform data using custom Python logic before it is exported
+- Access and modify trace spans, including span data, attributes, events, links and status.
+- Process log records, including severity, body content, and associated attributes.
+- Modify resource attributes across traces and logs.
+- Transform data using custom Python logic before it is exported.
 
 ## Supported Telemetry Types
 
