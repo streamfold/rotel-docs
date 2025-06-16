@@ -38,7 +38,7 @@ specifying:
 `--clickhouse-exporter-async-insert false`.
 
 The exporter will not generate the table schema if it does not exist. Use the
-[clickhouse-ddl](/src/bin/clickhouse-ddl/README.md) command for generating the necessary table DDL for Clickhouse. The
+[clickhouse-ddl](https://github.com/streamfold/rotel/blob/main/src/bin/clickhouse-ddl/README.md) command for generating the necessary table DDL for Clickhouse. The
 DDL matches the schema used in the
 OpenTelemetry [Clickhouse exporter](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/exporter/clickhouseexporter/README.md).
 
