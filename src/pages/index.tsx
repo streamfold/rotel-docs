@@ -48,7 +48,7 @@ function HomepageHeader(): JSX.Element {
             Get Started - 5min ⏱️
           </Link>
           <Link
-            className={clsx('button button--outline button--lg margin-left--md', styles.githubButton)}
+            className={clsx('button button--primary button--lg margin-left--md', styles.githubButton)}
             href="https://github.com/streamfold/rotel" // Main project repo
             target="_blank"
             rel="noopener noreferrer">
@@ -68,7 +68,7 @@ const memUsageBarData: BarChartData = {
         backgroundColor: ['rgba(59, 130, 246, 0.6)', 'rgba(239, 68, 68, 0.5)', 'rgba(59, 130, 246, 0.6)', 'rgba(239, 68, 68, 0.5)', 'rgba(59, 130, 246, 0.6)', 'rgba(239, 68, 68, 0.5)'],
         borderColor: ['rgba(59, 130, 246, 0.7)', 'rgba(239, 68, 68, 0.7)', 'rgba(59, 130, 246, 0.7)', 'rgba(239, 68, 68, 0.7)', 'rgba(59, 130, 246, 0.7)', 'rgba(239, 68, 68, 0.7)'],
         borderWidth: 1,
-        barThickness: 100,
+        maxBarThickness: 100,
     }]
 };
 
@@ -80,7 +80,7 @@ const cpuUsageBarData: BarChartData = {
         backgroundColor: ['rgba(59, 130, 246, 0.6)', 'rgba(239, 68, 68, 0.5)', 'rgba(59, 130, 246, 0.6)', 'rgba(239, 68, 68, 0.5)', 'rgba(59, 130, 246, 0.6)', 'rgba(239, 68, 68, 0.5)'],
         borderColor: ['rgba(59, 130, 246, 0.7)', 'rgba(239, 68, 68, 0.7)', 'rgba(59, 130, 246, 0.7)', 'rgba(239, 68, 68, 0.7)', 'rgba(59, 130, 246, 0.7)', 'rgba(239, 68, 68, 0.7)'],
         borderWidth: 1,
-        barThickness: 100,
+        maxBarThickness: 100,
     }]
 };
 
