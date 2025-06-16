@@ -21,7 +21,8 @@ from rotel_sdk.open_telemetry.trace.v1 import ResourceSpans
 
 def process_spans(resource_spans: ResourceSpans):
     resource = resource_spans.resource
-    # If resource is None, we'll create a new one to store our attributes, otherwise we'll append to the existing Resource
+    # If resource is None, we'll create a new one to store our attributes, otherwise we'll
+    # append to the existing Resource
     if resource is None:
         resource = Resource()
 
