@@ -242,4 +242,12 @@
   .featureList li {
     font-size: 0.9rem;
   }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .buttons a:nth-child(2) {
+    margin-top: 20px;
+  }
 }
