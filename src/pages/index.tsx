@@ -167,7 +167,7 @@ export default function Home(): JSX.Element {
   return (
     <Layout
       title={`${siteConfig.title} - ${siteConfig.tagline}`}
-      description="High-performance, Rust-powered OpenTelemetry collector with low memory overhead, Python integration, and serverless optimization.">
+      description="High-performance, Resource Efficient OpenTelemetry Collector.">
       <HomepageHeader />
       <main>
           <section className={clsx('container padding-vert--sm text--center', styles.sectionShorter)}>
