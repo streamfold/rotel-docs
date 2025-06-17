@@ -85,17 +85,3 @@ def process_spans(resource_spans: ResourceSpans):
         attrs = processor.process_attributes(span.attributes)
         span.attributes = attrs
 ```
-
-Now start rotel and the processor with the following command and use a load generator to send some log messages to rotel
-that contain email addresses.
-When you view the logs in your observability backend you should now see the email address are redacted.
-
-```commandline
-./rotel start --otlp-exporter-endpoint <otlp-endpoint-url> --otlp-with-logs-processor ./redact_emails_in_logs.py`
-```
-
-For this example we'll use a log body with the following content.
-
-```text
-192.168.1.45 - - [23/May/2025:14:32:17 +0000] "POST /contact-form HTTP/1.1" 200 1247 "https://example.com/contact" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" "email=john.doe@company.com&subject=Support Request&message=Need help with login issues"
-```
