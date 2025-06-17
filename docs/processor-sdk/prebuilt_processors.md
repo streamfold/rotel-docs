@@ -4,7 +4,7 @@ sidebar_position: 6
 
 # Prebuilt Processors
 
-Rotel also ships with an expanding list of prebuilt processors that you can use right out of the box or modify. To the extent possible rotel matches the configuration and behavior of existing processors from [opentelemetry-collector-contrib](https://github.com/open-telemetry/opentelemetry-collector-contrib). Prebuilt processors are found in the [processors](https://github.com/streamfold/rotel/tree/main/rotel_python_processor_sdk/processors) folder under the rotel_python_processor_sdk directory.                                                         
+Rotel also ships with an expanding list of prebuilt processors that you can use right out of the box. To the greatest extent possible rotel matches the configuration and behavior of existing processors from [opentelemetry-collector-contrib](https://github.com/open-telemetry/opentelemetry-collector-contrib). Prebuilt processors are found in the [processors](https://github.com/streamfold/rotel/tree/main/rotel_python_processor_sdk/processors) folder under the [rotel_python_processor_sdk](https://github.com/streamfold/rotel/tree/main/rotel_python_processor_sdk) directory.                                                         
 
 ## Available prebuilt processors
 
@@ -13,7 +13,7 @@ Rotel also ships with an expanding list of prebuilt processors that you can use 
 | Attributes Processor | logs, traces              |
 | Redaction Processor  | logs, traces              |
 
-## Example: Using the prebuilt Attribute Processor
+## Using prebuilt processors
 
 In order to use a prebuilt processor simply add the directory containing prebuilt processors to your python `sys.path`. 
 
@@ -22,11 +22,12 @@ import sys
 sys.path.append('/path/to/processors')
 ```
 
+## Example: Attribute Processor
 Check out the [attributes_processor_test.py](https://github.com/streamfold/rotel/blob/main/rotel_python_processor_sdk/python_tests/attributes_processor_test.py) for a full example on how to use the prebuilt Attributes processor.
 
 After we import the AttributeProcessor and a few other configuration types we create a new `Config` and specify the actions we wish to perform. Then we simply create a new procesor with the constructor `AttributeProcessor(config: Config)`. Finally in our `process_logs` and `process_spans` functions we call our processor.
 
-```python title="redact_emails_in_logs.py"
+```python title="attributes_processor_test.py"
 import itertools
 import sys
 
