@@ -54,7 +54,10 @@ When you view the logs in your observability backend you should now see the emai
 ./rotel start --exporter blackhole  --otlp-with-logs-processor ./redact_email_in_logs.py --debug-log logs --debug-log-verbosity detailed
 ```
 
-Next run the following `telemetrygen` command. If you haven't installed `telemetrygen` yet, use the following command to install `go install github.com/open-telemetry/opentelemetry-collector-contrib/cmd/telemetrygen@latest`
+If you haven't installed `telemetrygen` yet, use the following command to install 
+`go install github.com/open-telemetry/opentelemetry-collector-contrib/cmd/telemetrygen@latest`
+
+Next run the following `telemetrygen` command. 
 
 ```text
 telemetrygen logs --otlp-endpoint 127.0.0.1:4317 --otlp-insecure --body '192.168.1.45 - - [23/May/2025:14:32:17 +0000] "POST /contact-form HTTP/1.1" 200 1247 "https://example.com/contact" "Mozilla/5.0 (Windows NT 10.0; Win64; x6     4) AppleWebKit/537.36" "email=john.doe@company.com&subject=Support Request&message=Need help with login issues"'
