@@ -19,7 +19,7 @@ In order to use a prebuilt processor simply add the directory containing prebuil
 
 ```python
 import sys
-sys.path.append('/path/to/processors')
+sys.path.append('/github/rotel/rotel_python_processor_sdk/processors')
 ```
 
 ## Example: Attribute Processor
