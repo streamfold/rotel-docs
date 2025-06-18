@@ -4,7 +4,7 @@ sidebar_position: 6
 
 # Prebuilt Processors
 
-Rotel also ships with an expanding list of prebuilt processors that you can use right out of the box. To the greatest extent possible rotel matches the configuration and behavior of existing processors from [opentelemetry-collector-contrib](https://github.com/open-telemetry/opentelemetry-collector-contrib). Prebuilt processors are found in the [processors](https://github.com/streamfold/rotel/tree/main/rotel_python_processor_sdk/processors) folder under the [rotel_python_processor_sdk](https://github.com/streamfold/rotel/tree/main/rotel_python_processor_sdk) directory.                                                         
+The Rotel Github repository includes a number of prebuilt processors that you can use right out of the box. To the greatest extent possible rotel matches the configuration and behavior of existing processors from [opentelemetry-collector-contrib](https://github.com/open-telemetry/opentelemetry-collector-contrib). Prebuilt processors are found in the [processors](https://github.com/streamfold/rotel/tree/main/rotel_python_processor_sdk/processors) folder under the [rotel_python_processor_sdk](https://github.com/streamfold/rotel/tree/main/rotel_python_processor_sdk) directory.                                                         
 
 ## Available prebuilt processors
 
@@ -42,27 +42,32 @@ processor_config = Config(
     actions=[
         # INSERT: Add 'host.name' if not exists
         ActionKeyValue(key="host.name", action=Action.INSERT, value="my-server-1"),
+
         # UPDATE: Change 'http.status_code' to string type
         ActionKeyValue(key="http.status_code", action=Action.UPDATE, value="OK"),
+
         # UPSERT: Add or update 'env' attribute
         ActionKeyValue(key="env", action=Action.UPSERT, value="production"),
+
         # UPSERT with from_attribute: Copy 'user.email' to 'email'
         ActionKeyValue(key="email", action=Action.UPSERT, from_attribute="user.email"),
+
         # HASH: Hash 'user.id'
         ActionKeyValue(key="user.id", action=Action.HASH),
+
         # HASH with regex: Hash any attribute starting with 'trace'
         ActionKeyValue(key="", action=Action.HASH, regex_pattern=r"^trace.*"),
+
         # EXTRACT: Extract 'id' and 'name' from 'raw_data'
         ActionKeyValue(key="raw_data", action=Action.EXTRACT,
                        regex_pattern=r"id:(?P<extracted_id>\d+),name:(?P<extracted_name>\w+)"),
+
         # CONVERT: Convert 'temp_str_int' to int
         ActionKeyValue(key="temp_str_int", action=Action.CONVERT, converted_type="int"),
-        # CONVERT: Convert 'temp_str_bool' to bool
-        ActionKeyValue(key="temp_str_bool", action=Action.CONVERT, converted_type="bool"),
-        # CONVERT: Convert 'temp_int_float' to float
-        ActionKeyValue(key="temp_int_float", action=Action.CONVERT, converted_type="double"),
+
         # DELETE: Remove 'path' attribute
         ActionKeyValue(key="path", action=Action.DELETE),
+
         # DELETE with regex: Remove any attribute ending with '.secret'
         ActionKeyValue(key="", action=Action.DELETE, regex_pattern=r".*\.secret$"),
     ]

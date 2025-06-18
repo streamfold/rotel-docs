@@ -54,7 +54,7 @@ When you view the logs in your observability backend you should now see the emai
 ./rotel start --exporter blackhole  --otlp-with-logs-processor ./redact_email_in_logs.py --debug-log logs --debug-log-verbosity detailed
 ```
 
-Next run the following `telemetrygen` command
+Next run the following `telemetrygen` command. If you haven't installed `telemetrygen` yet, use the following command to install `go install github.com/open-telemetry/opentelemetry-collector-contrib/cmd/telemetrygen@latest`
 
 ```text
 telemetrygen logs --otlp-endpoint 127.0.0.1:4317 --otlp-insecure --body '192.168.1.45 - - [23/May/2025:14:32:17 +0000] "POST /contact-form HTTP/1.1" 200 1247 "https://example.com/contact" "Mozilla/5.0 (Windows NT 10.0; Win64; x6     4) AppleWebKit/537.36" "email=john.doe@company.com&subject=Support Request&message=Need help with login issues"'
@@ -63,8 +63,8 @@ telemetrygen logs --otlp-endpoint 127.0.0.1:4317 --otlp-insecure --body '192.168
 With `debug-log` enabled rotel will print out the ResourceLogs before and after executing your processor.
 
 ```
-=== BEFORE ===
 2025-06-18T04:00:17.219929Z  INFO Starting Rotel. grpc_endpoint="127.0.0.1:4317" http_endpoint="127.0.0.1:4318"
+INFO OTLP payload before processing
 ResourceLog #0
 Resource SchemaURL: https://opentelemetry.io/schemas/1.4.0
 ScopeLogs #0
@@ -81,7 +81,7 @@ Attributes:
     Span ID        : 
 Flags: 0
 
-=== AFTER ===
+INFO OTLP payload after processing
 ResourceLog #0
 Resource SchemaURL: https://opentelemetry.io/schemas/1.4.0
 ScopeLogs #0

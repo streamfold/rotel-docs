@@ -50,7 +50,7 @@ telemetrygen traces --otlp-endpoint 127.0.0.1:4317 --otlp-insecure
 With `debug-log` enabled rotel will print out the ResourceSpans before and after executing your processor.
 
 ```
-=== Before ===
+INFO OTLP payload before processing
 ResourceSpans #0
 Resource SchemaURL: https://opentelemetry.io/schemas/1.4.0
 Resource attributes:
@@ -85,7 +85,7 @@ Attributes:
      -> net.peer.ip: Str(1.2.3.4)
      -> peer.service: Str(telemetrygen-server)
 
-=== After ===
+INFO OTLP payload after processing
 ResourceSpans #0
 Resource SchemaURL: https://opentelemetry.io/schemas/1.4.0
 Resource attributes:
