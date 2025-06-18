@@ -35,9 +35,94 @@ def process_spans(resource_spans: ResourceSpans):
     resource.attributes.append(KeyValue("rotel.process.time", AnyValue(current_time)))
 ```
 
-Now start rotel and the processor with the following command and use a load generator to generate some spans and send to rotel. When you view the spans in your observability backend you should now see the newly added attributes.
+Start rotel and the processor with the following command. 
 
 ```commandline
-./rotel start --otlp-exporter-endpoint `<otlp-endpoint-url>` --otlp-with-trace-processor ./append_resource_attributes_to_spans.py
+./rotel start --exporter blackhole --otlp-with-trace-processor ./append_resource_attributes.py --debug-log traces --debug-log-verbosity detailed
 ```
+
+Now open a new terminal and run the following telemetrygen command
+
+```commandline
+telemetrygen traces --otlp-endpoint 127.0.0.1:4317 --otlp-insecure
+```
+
+Rotel will write to STDOUT the before and after processing.
+
+```
+=== Before ===
+ResourceSpans #0
+Resource SchemaURL: https://opentelemetry.io/schemas/1.4.0
+Resource attributes:
+     -> service.name: Str(telemetrygen)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope telemetrygen 
+Span #0
+    Trace ID       : e199fc80864d844728ebad88ccfadc67
+    Parent ID      : 4e4fb0523f19a0d7
+    ID             : a94838a53a9b92c0
+    Name           : okey-dokey-0
+    Kind           : SPAN_KIND_SERVER
+Start time: 1750218567597408000
+End time: 1750218567597531000
+    Status code    : STATUS_CODE_UNSET
+    Status message : 
+Attributes:
+     -> net.peer.ip: Str(1.2.3.4)
+     -> peer.service: Str(telemetrygen-client)
+Span #1
+    Trace ID       : e199fc80864d844728ebad88ccfadc67
+    Parent ID      : 
+    ID             : 4e4fb0523f19a0d7
+    Name           : lets-go
+    Kind           : SPAN_KIND_CLIENT
+Start time: 1750218567597408000
+End time: 1750218567597531000
+    Status code    : STATUS_CODE_UNSET
+    Status message : 
+Attributes:
+     -> net.peer.ip: Str(1.2.3.4)
+     -> peer.service: Str(telemetrygen-server)
+
+=== After ===
+ResourceSpans #0
+Resource SchemaURL: https://opentelemetry.io/schemas/1.4.0
+Resource attributes:
+     -> service.name: Str(telemetrygen)
+     -> os.name: Str(Darwin)
+     -> os.version: Str(23.3.0)
+     -> rotel.process.time: Str(2025-06-17 20:49:27)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope telemetrygen 
+Span #0
+    Trace ID       : e199fc80864d844728ebad88ccfadc67
+    Parent ID      : 4e4fb0523f19a0d7
+    ID             : a94838a53a9b92c0
+    Name           : okey-dokey-0
+    Kind           : SPAN_KIND_SERVER
+Start time: 1750218567597408000
+End time: 1750218567597531000
+    Status code    : STATUS_CODE_UNSET
+    Status message : 
+Attributes:
+     -> net.peer.ip: Str(1.2.3.4)
+     -> peer.service: Str(telemetrygen-client)
+Span #1
+    Trace ID       : e199fc80864d844728ebad88ccfadc67
+    Parent ID      : 
+    ID             : 4e4fb0523f19a0d7
+    Name           : lets-go
+    Kind           : SPAN_KIND_CLIENT
+Start time: 1750218567597408000
+End time: 1750218567597531000
+    Status code    : STATUS_CODE_UNSET
+    Status message : 
+Attributes:
+     -> net.peer.ip: Str(1.2.3.4)
+     -> peer.service: Str(telemetrygen-server)
+
+```
+
 

@@ -51,11 +51,50 @@ that contain email addresses.
 When you view the logs in your observability backend you should now see the email address are redacted.
 
 ```commandline
-./rotel start --otlp-exporter-endpoint <otlp-endpoint-url> --otlp-with-logs-processor ./redact_emails_in_logs.py`
+./rotel start --exporter blackhole  --otlp-with-logs-processor ./redact_email_in_logs.py --debug-log logs --debug-log-verbosity detailed
 ```
 
-For this example we'll use a log body with the following content.
+Next run the following `telemetrygen` command
 
 ```text
-192.168.1.45 - - [23/May/2025:14:32:17 +0000] "POST /contact-form HTTP/1.1" 200 1247 "https://example.com/contact" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" "email=john.doe@company.com&subject=Support Request&message=Need help with login issues"
+telemetrygen logs --otlp-endpoint 127.0.0.1:4317 --otlp-insecure --body '192.168.1.45 - - [23/May/2025:14:32:17 +0000] "POST /contact-form HTTP/1.1" 200 1247 "https://example.com/contact" "Mozilla/5.0 (Windows NT 10.0; Win64; x6     4) AppleWebKit/537.36" "email=john.doe@company.com&subject=Support Request&message=Need help with login issues"'
+```
+
+Rotel will print out the before and after values of the OTLP log message
+
+```
+=== BEFORE ===
+2025-06-18T04:00:17.219929Z  INFO Starting Rotel. grpc_endpoint="127.0.0.1:4317" http_endpoint="127.0.0.1:4318"
+ResourceLog #0
+Resource SchemaURL: https://opentelemetry.io/schemas/1.4.0
+ScopeLogs #0
+ScopeLogs SchemaURL: 
+LogRecord #0
+ObservedTimestamp: 0
+Timestamp: 1750219220720478000
+SeverityText: Info
+SeverityNumber: SEVERITY_NUMBER_INFO(9)
+Body: Str(192.168.1.45 - - [23/May/2025:14:32:17 +0000] "POST /contact-form HTTP/1.1" 200 1247 "https://example.com/contact" "Mozilla/5.0 (Windows NT 10.0; Win64; x6     4) AppleWebKit/537.36" "email=john.doe@company.com&subject=Support Request&message=Need help with login issues")
+Attributes:
+     -> app: Str(server)
+    Trace ID       : 
+    Span ID        : 
+Flags: 0
+
+=== AFTER ===
+ResourceLog #0
+Resource SchemaURL: https://opentelemetry.io/schemas/1.4.0
+ScopeLogs #0
+ScopeLogs SchemaURL: 
+LogRecord #0
+ObservedTimestamp: 0
+Timestamp: 1750219220720478000
+SeverityText: Info
+SeverityNumber: SEVERITY_NUMBER_INFO(9)
+Body: Str(192.168.1.45 - - [23/May/2025:14:32:17 +0000] "POST /contact-form HTTP/1.1" 200 1247 "https://example.com/contact" "Mozilla/5.0 (Windows NT 10.0; Win64; x6     4) AppleWebKit/537.36" "email=[email redacted]&subject=Support Request&message=Need help with login issues")
+Attributes:
+     -> app: Str(server)
+    Trace ID       : 
+    Span ID        : 
+Flags: 0
 ```
