@@ -47,7 +47,7 @@ Now open a new terminal and run the following telemetrygen command
 telemetrygen traces --otlp-endpoint 127.0.0.1:4317 --otlp-insecure
 ```
 
-Rotel will write to STDOUT the before and after processing.
+With `debug-log` enabled rotel will print out the ResourceSpans before and after executing your processor.
 
 ```
 === Before ===

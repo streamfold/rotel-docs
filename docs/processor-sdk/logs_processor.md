@@ -60,7 +60,7 @@ Next run the following `telemetrygen` command
 telemetrygen logs --otlp-endpoint 127.0.0.1:4317 --otlp-insecure --body '192.168.1.45 - - [23/May/2025:14:32:17 +0000] "POST /contact-form HTTP/1.1" 200 1247 "https://example.com/contact" "Mozilla/5.0 (Windows NT 10.0; Win64; x6     4) AppleWebKit/537.36" "email=john.doe@company.com&subject=Support Request&message=Need help with login issues"'
 ```
 
-Rotel will print out the before and after values of the OTLP log message
+With `debug-log` enabled rotel will print out the ResourceLogs before and after executing your processor.
 
 ```
 === BEFORE ===
