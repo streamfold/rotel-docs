@@ -25,7 +25,7 @@ sys.path.append('/github/rotel/rotel_python_processor_sdk/processors')
 ## Example: Attribute Processor
 Check out the [attributes_processor_test.py](https://github.com/streamfold/rotel/blob/main/rotel_python_processor_sdk/python_tests/attributes_processor_test.py) for a full example on how to use the prebuilt Attributes processor.
 
-After we import the AttributeProcessor and a few other configuration types we create a new `Config` and specify the actions we wish to perform. Then we simply create a new procesor with the constructor `AttributeProcessor(config: Config)`. Finally in our `process_logs` and `process_spans` functions we call our processor.
+After we import the AttributeProcessor, and a few other configuration types, we create a new `Config` and specify the actions we wish to perform. Then we create a new processor with the constructor `AttributeProcessor(config: Config)`. Finally in our `process_logs` and `process_spans` functions we call our processor.
 
 ```python title="attributes_processor_test.py"
 import itertools
