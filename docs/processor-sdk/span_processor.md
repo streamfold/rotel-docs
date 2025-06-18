@@ -41,6 +41,12 @@ Start rotel and the processor with the following command.
 ./rotel start --exporter blackhole --otlp-with-trace-processor ./append_resource_attributes.py --debug-log traces --debug-log-verbosity detailed
 ```
 
+If you haven't installed `telemetrygen` yet, use the following command to install 
+
+```commandline
+go install github.com/open-telemetry/opentelemetry-collector-contrib/cmd/telemetrygen@latest`
+```
+
 Now open a new terminal and run the following telemetrygen command
 
 ```commandline

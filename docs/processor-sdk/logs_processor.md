@@ -55,7 +55,10 @@ When you view the logs in your observability backend you should now see the emai
 ```
 
 If you haven't installed `telemetrygen` yet, use the following command to install 
-`go install github.com/open-telemetry/opentelemetry-collector-contrib/cmd/telemetrygen@latest`
+
+```commandline
+go install github.com/open-telemetry/opentelemetry-collector-contrib/cmd/telemetrygen@latest`
+```
 
 Next run the following `telemetrygen` command. 
 
