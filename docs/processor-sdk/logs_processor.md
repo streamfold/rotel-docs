@@ -46,9 +46,7 @@ def redact_emails(body: AnyValue) -> AnyValue:
     return AnyValue(redacted_body)
 ```
 
-Now start rotel and the processor with the following command and use a load generator to send some log messages to rotel
-that contain email addresses.
-When you view the logs in your observability backend you should now see the email address are redacted.
+Now start rotel and the processor with the following command. 
 
 ```commandline
 ./rotel start --exporter blackhole  --otlp-with-logs-processor ./redact_email_in_logs.py --debug-log logs --debug-log-verbosity detailed
