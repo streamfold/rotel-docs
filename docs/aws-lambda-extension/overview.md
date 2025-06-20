@@ -31,6 +31,19 @@ The layer supports the Amazon Linux 2023
 [Lambda runtime](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtimes-supported)
 (`provided.al2023`).
 
+## Disabling CloudWatch Logs
+
+By default, AWS Lambda will send all Lambda logs to Amazon CloudWatch. To reduce costs, you may want to disable those logs if you are forwarding your logs to an external logging provider.
+
+1. Open the AWS Console and navigate to AWS Lambda
+2. Navigate to your Lambda function
+3. Select Configuration -> Permissions
+4. Click the execution role under "Role Name" to pop over to the IAM console
+5. Edit the role in the IAM console and remove any `logs:*` actions
+    - if you are using a custom policy, edit the policy to remove `logs:*` actions
+    - if you are using an AWS Managed policy, like `AWSLambdaBasicExecutionRole`, remove it from the role
+6. Save the role and your next execution should not send logs to CloudWatch
+
 ## Examples
 
 These are example repos demonstrating how to use the Rotel Lambda Extension.
