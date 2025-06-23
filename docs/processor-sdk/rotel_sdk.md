@@ -22,6 +22,7 @@ pip install rotel-sdk --pre
 | rotel_sdk.open_telemetry.resource.v1 | Resource                                                            |
 | rotel_sdk.open_telemetry.trace.v1    | ResourceSpans, ScopeSpans, Span, Event, Link, Status                |
 | rotel_sdk.open_telemetry.logs.v1     | ResourceLogs, ScopeLogs, LogRecord                                  |
+| rotel_sdk.open_telemetry.metrics.v1  | ResourceMetrics, ScopeMetrics, Metric, MetricData, Gauge, Sum, Histogram, ExponentialHistogram, Summary, ExponentialHistogramBuckets, NumberDataPoint, HistogramDataPoint, ExponentialHistogramDataPoint, SummaryDataPoint, ValueAtQuantile, Exemplar, AggregationTemporality, NumberDataPointValue, ExemplarValue |
 
 
 

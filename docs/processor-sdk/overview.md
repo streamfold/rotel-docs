@@ -12,7 +12,8 @@ The processor SDK enables you to:
 
 - Access and modify trace spans, including span data, attributes, events, links and status.
 - Process log records, including severity, body content, and associated attributes.
-- Modify resource attributes across traces and logs.
+- Process and transform metrics data, including gauges, sums, histograms, exponential histograms, and summaries with their data points, exemplars, and quantile values.
+- Modify resource attributes across traces, logs, and metrics.
 - Transform data using custom Python logic before it is exported.
 
 ## Supported Telemetry Types
@@ -21,7 +22,7 @@ The processor SDK enables you to:
 |----------------|-------------|
 | Traces         | Alpha       |
 | Logs           | Alpha       |
-| Metrics        | Coming Soon |
+| Metrics        | Alpha       |
 
 ## Example
 
