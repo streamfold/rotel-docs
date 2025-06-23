@@ -10,7 +10,7 @@ In order to use the Rotel Python processor SDK you need a `python processor enab
 
 1. Download a prebuilt Rotel python processor enabled binary. You can find prebuilt python processor enabled binaries for rotel at Github on the [releases](https://github.com/streamfold/rotel/releases) page. Python processor versions of Rotel are prefixed with the string `rotel_py_processor`. Choose a release that matches your system architecture and the version of Python you have installed. 
 
-    For example if you are running rotel on linux x86_64 with Python 3.13 installed, choose `rotel_py_processor_3.13_v0.0.1-alpha17_x86_64-unknown-linux-gnu.tar.gz`.
+    For example if you are running rotel on linux x86_64 with Python 3.13 installed, choose `rotel_py_processor_3.13_v0.0.1-alpha19_x86_64-unknown-linux-gnu.tar.gz`.
 
 2. Build from source.
 ```
