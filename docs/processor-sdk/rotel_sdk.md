@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Install rotel-sdk
 
-The [rotel-sdk](https://pypi.org/project/rotel-sdk/) python package provides type hints for the Rotel processor SDK and is intended for use in your IDE of choice. The package is compatible with pyright and other popular python LSP type checker and auto-complete integrations. 
+The [rotel-sdk](https://pypi.org/project/rotel-sdk/) python package provides type hints for the processor SDK and is intended for use in your IDE of choice. The `rotel-sdk` should integrate seamlessly with pyright and other Python language servers for type checking and auto-completion.
 
 The best way to get started is to create a new development environment for writing your processors and install `rotel-sdk`
 

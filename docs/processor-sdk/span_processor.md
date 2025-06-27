@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Writing a span processor
 
-Your processor must implement a function called `process_spans` in order for rotel to execute your processor. Each time `process_spans` is called your processor will be handed an instance of the ResourceSpan class for you to manipulate as you like.
+Span processors must implement a function called `process_spans` in order for rotel to execute your processor. Each time `process_spans` is called your processor will be handed an instance of the ResourceSpan class for you to manipulate as you like.
 
 ## ResourceSpan processor example
 
@@ -38,7 +38,7 @@ def process_spans(resource_spans: ResourceSpans):
 Start rotel and the processor with the following command. 
 
 ```commandline
-./rotel start --exporter blackhole --otlp-with-trace-processor ./append_resource_attributes.py --debug-log traces --debug-log-verbosity detailed
+./rotel start --exporter blackhole --otlp-with-trace-processor ./append_resource_attributes_to_spans.py --debug-log traces --debug-log-verbosity detailed
 ```
 
 If you haven't installed `telemetrygen` yet, use the following command to install 
