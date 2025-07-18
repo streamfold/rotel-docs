@@ -115,6 +115,11 @@ function formatPullRequestString(str) {
     });
 }
 
+function replaceGitHubUsername(text: string): string {
+    // Replace "by @username" with "([@username](https://github.com/username))"
+    return text.replace(/by @(\w+)$/mg, '([@$1](https://github.com/$1))');
+}
+
 export function formatReleaseContent(entry: ChangelogEntry): string {
     const repositorySlug = entry.repository.name.replace(/[^a-zA-Z0-9]/g, '-');
     let content = `---
@@ -145,8 +150,10 @@ repository:
     // Add the release body content
     if (entry.content) {
         // Remove the Full Changelog link
-        content +=
-            formatPullRequestString(entry.content.replace(/^\*\*Full Changelog.*$/m, '')) + '\n\n';
+        var body = formatPullRequestString(entry.content.replace(/^\*\*Full Changelog.*$/m, ''));
+        body = replaceGitHubUsername(body);
+
+        content += body + '\n\n';
     }
 
     // Add assets section if there are any
@@ -154,7 +161,7 @@ repository:
         content += `## Downloads\n\n`;
         entry.assets.forEach(asset => {
             const sizeInMB = (asset.size / (1024 * 1024)).toFixed(2);
-            content += `- [${asset.name}](${asset.url}) (${sizeInMB} MB, ${asset.downloads} downloads)\n`;
+            content += `- [${asset.name}](${asset.url}) (${sizeInMB} MB)\n`;
         });
         content += '\n';
     }
@@ -177,7 +184,8 @@ export async function createBlogFiles(
 
     // Create individual release files
     for (const entry of entries) {
-        const fileName = `${entry.date.toISOString().split('T')[0]}-${entry.version.replace(/[^a-zA-Z0-9]/g, '-')}.md`;
+        //const fileName = `${entry.date.toISOString().split('T')[0]}-${entry.version.replace(/[^a-zA-Z0-9]/g, '-')}.md`;
+        const fileName = `${entry.repository.name}--${entry.version.replace(/[^a-zA-Z0-9]/g, '-')}.md`
         const filePath = path.join(outputPath, fileName);
         const content = formatReleaseContent(entry);
 
