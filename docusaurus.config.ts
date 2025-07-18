@@ -4,6 +4,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
+const defaultLocale = 'en';
+
 const config: Config = {
   title: 'Rotel',
   tagline: 'High Performance, Resource Efficient OpenTelemetry Collector',
@@ -106,6 +108,37 @@ const config: Config = {
     ],
   ],
 
+  plugins: [
+    [
+      './src/plugins/changelog/index.ts',
+      {
+        blogTitle: 'Rotel changelog',
+        // Not useful, but permits to run git commands earlier
+        // Otherwise the sitemap plugin will run them in postBuild()
+        showLastUpdateAuthor: true, // showLastUpdate,
+        showLastUpdateTime: true, // showLastUpdate,
+        blogDescription:
+            'Keep yourself up-to-date about new features in every release',
+        blogSidebarCount: 'ALL',
+        blogSidebarTitle: 'Changelog',
+        routeBasePath: '/changelog',
+        showReadingTime: false,
+        postsPerPage: 20,
+        archiveBasePath: null,
+        authorsMapPath: 'authors.json',
+        feedOptions: {
+          type: 'all',
+          title: 'Rotel Changelog',
+          description:
+              'Keep yourself up-to-date about new features in every release',
+          copyright: `Copyright © ${new Date().getFullYear()} Streamfold, Inc.`,
+          language: defaultLocale,
+        },
+        onInlineAuthors: 'ignore',
+      },
+    ],
+  ],
+
   themeConfig: {
     // Replace with your project's social card
     colorMode: {
@@ -127,6 +160,7 @@ const config: Config = {
           position: 'left',
           label: 'Docs',
         },
+        {to: '/changelog', label: 'Changelog', position: 'left'},
         //{to: '/blog', label: 'Blog', position: 'left'},
         {
           href: 'https://github.com/streamfold/rotel',
@@ -163,6 +197,10 @@ const config: Config = {
         {
           title: 'More',
           items: [
+            {
+              label: 'Changelog',
+              to: '/changelog',
+            },
             // {
             //   label: 'Blog',
             //   to: '/blog',
