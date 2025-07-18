@@ -120,11 +120,6 @@ export function formatReleaseContent(entry: ChangelogEntry): string {
     let content = `---
 title: "${entry.title} (${entry.repository.displayName})"
 date: ${entry.date.toISOString()}
-authors:
-  - name: ${entry.author.name}
-    title: Contributor
-    url: ${entry.author.url}
-    image_url: ${entry.author.avatar}
 tags: [release, ${repositorySlug}]
 custom_edit_url: null
 repository:
@@ -134,6 +129,16 @@ repository:
 ---
 
 `;
+
+    // TODO: The author only represents the person that created the release, ideally we'd
+    // lookup all authors that contributed changes to the PR. Until we have more contributions,
+    // skip populating the authors metadata.
+    // authors:
+    //   - name: ${entry.author.name}
+    //     title: Contributor
+    //     url: ${entry.author.url}
+    //     image_url: ${entry.author.avatar}
+
 
     content += '\n<!-- truncate -->\n'
 
