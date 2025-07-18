@@ -147,19 +147,28 @@ const ChangelogPlugin: typeof pluginContentBlog =
       blogPostComponent: '@theme/ChangelogPage',
     });
 
-    // TODO: This should be an argument
+    // TODO: This should be an argument, but because this is based on plugin-content-blog,
+    // we can't extend the options easily
     const repositories = [
       {
         owner: 'streamfold',
         name: 'rotel',
         displayName: 'Rotel',
-        badgeColor: '#007acc',
       },
       {
         owner: 'streamfold',
         name: 'rotel-lambda-extension',
         displayName: 'Lambda Extension',
-        badgeColor: '#ff6b35',
+      },
+      {
+        owner: 'streamfold',
+        name: 'pyrotel',
+        displayName: 'Python',
+      },
+      {
+        owner: 'streamfold',
+        name: 'rotel-nodejs',
+        displayName: 'Node.js',
       },
     ];
 

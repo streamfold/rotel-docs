@@ -5,7 +5,6 @@ export interface Repository {
     owner: string;
     name: string;
     displayName: string;
-    badgeColor: string;
 }
 
 export interface GitHubRelease {
@@ -130,7 +129,6 @@ custom_edit_url: null
 repository:
   name: ${entry.repository.name}
   displayName: ${entry.repository.displayName}
-  badgeColor: ${entry.repository.badgeColor}
 ---
 
 `;
