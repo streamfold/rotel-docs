@@ -30,7 +30,7 @@ The argument form of `--exporters` takes `name:type` pairs separated by commas, 
 the second part is the type of exporter. You can exclude the name if there is a single exporter by that name, which means
 the name is the same as the exporter type.
 
-Next you must set environment variables of the form `ROTEL_EXPORTER_{NAME}_{PARAMETER}` to configure the multiple
+Next you must set environment variables in the form `ROTEL_EXPORTER_{NAME}_{PARAMETER}` to configure the multiple
 exporters. These variable names are dynamic and use the custom name to differentiate settings for similar exporter types.
 These must be specified by environment variables, there are no CLI argument alternatives for them.
 The `{PARAMETER}` fields match the configuration options for the given exporter type.
