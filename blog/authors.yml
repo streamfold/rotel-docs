@@ -1,25 +1,24 @@
-yangshun:
-  name: Yangshun Tay
-  title: Ex-Meta Staff Engineer, Co-founder GreatFrontEnd
-  url: https://linkedin.com/in/yangshun
-  image_url: https://github.com/yangshun.png
-  page: true
+mheffner:
+  name: Mike Heffner
+  title: Founder, Streamfold
+  url: https://www.linkedin.com/in/mike-heffner/
+  image_url: https://github.com/mheffner.png
+  page: false
   socials:
-    x: yangshunz
-    linkedin: yangshun
-    github: yangshun
-    newsletter: https://www.greatfrontend.com
+    x: mheffner
+    linkedin: mike-heffner
+    github: mheffner
+    bluesky: mike.heffner.io
 
-slorber:
-  name: Sébastien Lorber
-  title: Docusaurus maintainer
-  url: https://sebastienlorber.com
-  image_url: https://github.com/slorber.png
-  page:
-    # customize the url of the author page at /blog/authors/<permalink>
-    permalink: '/all-sebastien-lorber-articles'
+rjenkins:
+  name: Ray Jenkins
+  title: Founder, Streamfold
+  url: https://www.linkedin.com/in/ray-jenkins-2186819/
+  image_url: https://github.com/rjenkins.png
+  page: false
   socials:
-    x: sebastienlorber
-    linkedin: sebastienlorber
-    github: slorber
-    newsletter: https://thisweekinreact.com
+    x: _rayjenkins
+    linkedin: ray-jenkins-2186819
+    github: rjenkins
+    bluesky: ramond.bsky.social
+
