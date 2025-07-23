@@ -46,8 +46,7 @@ logs, and traces.
 | --kafka-exporter-sasl-mechanism                           |                   | PLAIN, SCRAM-SHA-256, SCRAM-SHA-512                                         |
 | --kafka-exporter-security-protocol                        | PLAINTEXT         | PLAINTEXT, SSL, SASL_PLAINTEXT, SASL_SSL                                    |
 
-The Kafka broker addresses must be specified (comma-separated for multiple brokers). The exporter will create separate
-topics for traces, metrics, and logs. Data can be serialized as JSON or Protobuf format.
+The Kafka broker addresses must be specified (comma-separated for multiple brokers). Data can be serialized as JSON or Protobuf format.
 
 #### Acknowledgement Modes
 
@@ -130,19 +129,4 @@ the [librdkafka configuration documentation](https://github.com/confluentinc/lib
 for all available parameters.
 
 The Kafka exporter uses the high-performance rdkafka library and includes built-in retry logic and error handling.
-
-#### Testing the Kafka Exporter
-
-To run integration tests that verify actual Kafka functionality:
-
-```shell
-# Start test environment
-./scripts/kafka-test-env.sh start
-
-# Run integration tests
-cargo test --test kafka_integration_tests --features integration-tests
-
-# Stop test environment  
-./scripts/kafka-test-env.sh stop
-```
 
