@@ -1,3 +1,18 @@
+---
+sidebar_position: 5
+---
+
+# Kafka Exporter
+
+Export OpenTelemetry metrics, logs, and traces to Kafka.
+
+| Telemetry Type | Support |
+| -------------- | ------- |
+| Traces         | Alpha   |
+| Logs           | Alpha   |
+| Metrics        | Alpha   |
+
+
 ### Kafka exporter configuration (Experimental)
 
 The Kafka exporter can be selected by passing `--exporter kafka`. The Kafka exporter supports metrics,
