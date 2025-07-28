@@ -167,7 +167,7 @@ export default function Home(): JSX.Element {
   return (
     <Layout
       title={`${siteConfig.title} - ${siteConfig.tagline}`}
-      description="High-performance, Resource Efficient OpenTelemetry Collector.">
+      description="High-performance, Resource Efficient OpenTelemetry Collection.">
       <HomepageHeader />
       <main>
           <section className={clsx('container padding-vert--sm text--center', styles.sectionShorter)}>
