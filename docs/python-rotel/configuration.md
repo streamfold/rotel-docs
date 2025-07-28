@@ -6,15 +6,15 @@ sidebar_position: 3
 
 This is the full list of global options and their environment variable alternatives. Any defaults left blank in the table are either False or None.
 
-| Option Name        | Type      | Environ              | Default              | Options               |
-|--------------------|-----------|----------------------|----------------------|-----------------------|
-| enabled            | bool      | ROTEL_ENABLED        |                      |                       |
-| pid_file           | str       | ROTEL_PID_FILE       | /tmp/rotel-agent.pid |                       |
-| log_file           | str       | ROTEL_LOG_FILE       | /tmp/rotel-agent.log |                       |
-| log_format         | str       | ROTEL_LOG_FORMAT     | text                 | json, text            |
-| debug_log          | list[str] | ROTEL_DEBUG_LOG      |                      | traces, metrics, logs |
-| otlp_grpc_endpoint | str       | ROTEL_OTLP_GRPC_ENDPOINT | localhost:4317   |                       |
-| otlp_http_endpoint | str       | ROTEL_OTLP_HTTP_ENDPOINT | localhost:4318   |                       |
+| Option Name        | Type      | Environ                  | Default              | Options               |
+| ------------------ | --------- | ------------------------ | -------------------- | --------------------- |
+| enabled            | bool      | ROTEL_ENABLED            |                      |                       |
+| pid_file           | str       | ROTEL_PID_FILE           | /tmp/rotel-agent.pid |                       |
+| log_file           | str       | ROTEL_LOG_FILE           | /tmp/rotel-agent.log |                       |
+| log_format         | str       | ROTEL_LOG_FORMAT         | text                 | json, text            |
+| debug_log          | list[str] | ROTEL_DEBUG_LOG          |                      | traces, metrics, logs |
+| otlp_grpc_endpoint | str       | ROTEL_OTLP_GRPC_ENDPOINT | localhost:4317       |                       |
+| otlp_http_endpoint | str       | ROTEL_OTLP_HTTP_ENDPOINT | localhost:4318       |                       |
 
 For each exporter you would like to use, see the configuration options below. Exporters should be
 assigned to the `exporters` dict with a custom name.
@@ -24,7 +24,7 @@ assigned to the `exporters` dict with a custom name.
 To construct an OTLP exporter, use the method `Config.otlp_exporter()` with the following options.
 
 | Option Name            | Type           | Environ                                    | Default | Options      |
-|------------------------|----------------|--------------------------------------------|---------|--------------|
+| ---------------------- | -------------- | ------------------------------------------ | ------- | ------------ |
 | endpoint               | str            | ROTEL_OTLP_EXPORTER_ENDPOINT               |         |              |
 | protocol               | str            | ROTEL_OTLP_EXPORTER_PROTOCOL               | grpc    | grpc or http |
 | headers                | dict[str, str] | ROTEL_OTLP_EXPORTER_CUSTOM_HEADERS         |         |              |
@@ -47,7 +47,7 @@ that supports traces at the moment. To use it instead of the OTLP exporter,
 use the method `Config.datadog_exporter()` with the following options.
 
 | Option Name     | Type | Environ                                | Default | Options                |
-|-----------------|------|----------------------------------------|---------|------------------------|
+| --------------- | ---- | -------------------------------------- | ------- | ---------------------- |
 | region          | str  | ROTEL_DATADOG_EXPORTER_REGION          | us1     | us1, us3, us5, eu, ap1 |
 | custom_endpoint | str  | ROTEL_DATADOG_EXPORTER_CUSTOM_ENDPOINT |         |                        |
 | api_key         | str  | ROTEL_DATADOG_EXPORTER_API_KEY         |         |                        |
@@ -59,7 +59,7 @@ To use the Clickhouse exporter instead of the OTLP exporter,
 use the method `Config.clickhouse_exporter()` with the following options.
 
 | Option Name  | Type | Environ                                | Default | Options |
-|--------------|------|----------------------------------------|---------|---------|
+| ------------ | ---- | -------------------------------------- | ------- | ------- |
 | endpoint     | str  | ROTEL_CLICKHOUSE_EXPORTER_ENDPOINT     |         |         |
 | database     | str  | ROTEL_CLICKHOUSE_EXPORTER_DATABASE     | otel    |         |
 | table_prefix | str  | ROTEL_CLICKHOUSE_EXPORTER_TABLE_PREFIX | otel    |         |
