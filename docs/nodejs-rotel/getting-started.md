@@ -32,7 +32,7 @@ rotel.start()
 
 ### Environment variables
 
-You can also configure rotel entirely with environment variables. In your application startup, insert:
+You can also configure Rotel entirely with environment variables. In your application startup, insert:
 ```javascript
 const { Rotel } = require("@streamfold/rotel");
 new Rotel().start();
@@ -47,7 +47,7 @@ Any typed configuration options will override environment variables of the same 
 
 ## OpenTelemetry SDK configuration
 
-Once the rotel collector agent is running, you may need to configure your application's instrumentation. If you are using the default rotel endpoints of *localhost:4317* and *localhost:4318*, then you should not need to change anything.
+Once Rotel is running, you may need to configure your application's instrumentation. If you are using the default Rotel endpoints of *localhost:4317* and *localhost:4318*, then you should not need to change anything.
 
 To set the endpoint the OpenTelemetry SDK will use, set the following environment variable:
 

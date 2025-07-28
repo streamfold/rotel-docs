@@ -8,7 +8,7 @@ const defaultLocale = 'en';
 
 const config: Config = {
   title: 'Rotel',
-  tagline: 'High Performance, Resource Efficient OpenTelemetry Collector',
+  tagline: 'High Performance, Resource Efficient OpenTelemetry Collection',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future

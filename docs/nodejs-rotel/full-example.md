@@ -39,7 +39,7 @@ function initRotel() {
 
 function initOtel() {
   const exporter = new OTLPTraceExporter({                                                                                                                   
-    url: 'http://127.0.0.1:4317', // points to out local rotel collector                                                                                                                    
+    url: 'http://127.0.0.1:4317', // points to our local rotel
   });                                                                                                                                                  
                                                                                                                                                      
   // Initialize the tracer provider                                                                                                                    

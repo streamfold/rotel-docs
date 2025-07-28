@@ -5,8 +5,7 @@ sidebar_position: 2
 # Configuration
 
 The Rotel Lambda Extension is configured using the same environment variables documented
-for the Rotel collector,
-[documented here](https://github.com/streamfold/rotel?tab=readme-ov-file#configuration).
+for Rotel, [documented here](/docs/category/configuration).
 
 To ease configuration for Lambda environments, you can set `ROTEL_ENV_FILE` to the path
 name of a file and that file will be interpreted as an `.env` file. For example, set
