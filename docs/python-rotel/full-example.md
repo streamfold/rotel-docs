@@ -40,7 +40,10 @@ if os.environ.get("ROTEL_ENABLED") == "true":
 
     rotel = Rotel(
         enabled=True,
-        exporter=otlp_exporter,
+        exporters = {
+            'axiom': otlp_exporter,
+        },
+        exporters_traces = ['axiom']
     )
 
     # Start the agent
