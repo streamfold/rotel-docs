@@ -70,6 +70,11 @@ export default async function handler(
     // }
     
     const resp = await context.next();
+    
+    // Skip redirects
+    if (resp.status === 301) {
+      return resp;
+    }
 
   try {
     // Prepare the logging payload
