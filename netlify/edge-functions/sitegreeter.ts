@@ -137,4 +137,5 @@ export default async function handler(
 
 export const config = {
   path: "/*", // Match all paths - adjust as needed for your use case
+  excludedPath: ["/*.css", "/*.js", "/*.svg", "/*.png", "/*.ico"], // exclude static assets
 };
