@@ -26,7 +26,7 @@ export default function About(): JSX.Element {
                 alt="Ray - Founder" 
                 className={styles.founderImage}
               />
-              <h3>Ray</h3>
+              <h3>Ray Jenkins</h3>
               <p className={styles.founderTitle}>Founder</p>
               <div className={styles.founderBio}>
                 <p>
@@ -68,7 +68,7 @@ export default function About(): JSX.Element {
                 alt="Mike - Founder" 
                 className={styles.founderImage}
               />
-              <h3>Mike</h3>
+              <h3>Mike Heffner</h3>
               <p className={styles.founderTitle}>Founder</p>
               <div className={styles.founderBio}>
                 <p>
