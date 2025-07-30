@@ -90,7 +90,7 @@ export default async function handler(
         },
         ip: context.ip,
         request_id: context.requestId,
-        server_region: context.site?.region || "unknown",
+        server_region: context.server?.region || "unknown",
       },
       timestamp: new Date().toISOString(),
       status_code: resp.status,
