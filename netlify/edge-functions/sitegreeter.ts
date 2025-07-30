@@ -35,6 +35,8 @@ export default async function handler(
   // Get the logging endpoint from environment variable, fallback to example
   const loggingEndpoint =
     Netlify.env.get("LOGGING_ENDPOINT") || "https://post.example.com/netlify";
+  const loggingKey =
+    Netlify.env.get("LOGGING_KEY") || "unknown";
 
     // Parse URL for query parameters
     const url = new URL(request.url);
@@ -106,6 +108,7 @@ export default async function handler(
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "X-Logging-Key": loggingKey,
       },
       body: JSON.stringify(payload),
       signal: AbortSignal.timeout(500), // tight bound of 500ms
