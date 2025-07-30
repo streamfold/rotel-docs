@@ -162,10 +162,12 @@ const config: Config = {
         },
         {to: '/changelog', label: 'Changelog', position: 'left'},
         //{to: '/blog', label: 'Blog', position: 'left'},
+        {to: '/about', label: 'About', position: 'right', className: 'navbar-about-link'},
         {
           href: 'https://github.com/streamfold/rotel',
           label: 'GitHub',
           position: 'right',
+          className: 'navbar-github-link',
         },
       ],
     },
@@ -200,6 +202,10 @@ const config: Config = {
             {
               label: 'Changelog',
               to: '/changelog',
+            },
+            {
+              label: 'About',
+              to: '/about',
             },
             // {
             //   label: 'Blog',
