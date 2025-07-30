@@ -97,6 +97,25 @@
   margin-bottom: 0;
 }
 
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.socialIcon {
+  width: 24px;
+  height: 24px;
+  color: var(--ifm-color-primary);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.socialIcon:hover {
+  color: var(--ifm-color-primary-darker);
+  transform: translateY(-2px);
+}
+
 .investorsSection {
   margin-top: 4rem;
   padding: 3rem 0;
