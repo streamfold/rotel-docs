@@ -60,16 +60,6 @@ export default async function handler(
         headers[key] = value;
       }
     }
-
-    // // Read request body (if present)
-    // let body = "";
-    // if (request.method !== "GET" && request.method !== "HEAD") {
-    //   try {
-    //     body = await request.text();
-    //   } catch (error) {
-    //     console.warn("Failed to read request body:", error);
-    //   }
-    // }
     
     const resp = await context.next();
     
@@ -116,30 +106,11 @@ export default async function handler(
       console.error("Failed to send log to endpoint:", error);
     });
 
-    // Continue processing the original request
-    // This example just returns a simple response, but you would typically
-    // either proxy to another service or serve content
-    // return new Response("Request logged successfully", {
-    //   status: 200,
-    //   headers: {
-    //     "Content-Type": "text/plain",
-    //     "X-Request-ID": context.requestId,
-    //   },
-    // });
-
     return resp;
   } catch (error) {
     console.error("Error in edge function:", error);
 
     return resp;
-
-    // Still try to continue serving the original request even if logging fails
-    // return new Response("Internal server error", {
-    //   status: 500,
-    //   headers: {
-    //     "Content-Type": "text/plain",
-    //   },
-    // });
   }
 }
 
