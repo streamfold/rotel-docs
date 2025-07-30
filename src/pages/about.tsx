@@ -27,7 +27,6 @@ export default function About(): JSX.Element {
                 className={styles.founderImage}
               />
               <h3>Ray Jenkins</h3>
-              <p className={styles.founderTitle}>Founder</p>
               <div className={styles.founderBio}>
                 <p>
                   Ray is a veteran distributed systems engineer with three decades of experience building fault-tolerant, scalable infrastructure. 
@@ -69,7 +68,6 @@ export default function About(): JSX.Element {
                 className={styles.founderImage}
               />
               <h3>Mike Heffner</h3>
-              <p className={styles.founderTitle}>Founder</p>
               <div className={styles.founderBio}>
                 <p>
                   Mike is a veteran systems engineer with over two decades of experience building high-performance infrastructure for observability and telemetry. 
