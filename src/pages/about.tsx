@@ -5,13 +5,13 @@ import styles from './about.module.css';
 export default function About(): JSX.Element {
   return (
     <Layout
-      title="About Rotel"
-      description="Learn about Rotel and the team behind it">
+      title="About Streamfold: The team behind Rotel"
+      description="Learn about Streamfold and the team behind Rotel">
       <div className={styles.aboutContainer}>
         <div className={styles.heroSection}>
-          <h1>🌶️<br/>About Rotel</h1>
+          <h1>🌶️<br/>About Streamfold: The team behind Rotel</h1>
           <p className={styles.mission}>
-            Rotel is on a mission to create the most resource efficient, high performance collection data plane for OpenTelemetry. 
+            Streamfold is on a mission to create the most resource efficient, high performance collection data plane for OpenTelemetry. 
             We believe that observability should be accessible to everyone without compromising on performance. 
             Rotel ensures minimal resource usage while maintaining the highest standards of reliability and performance.
           </p>
@@ -70,7 +70,7 @@ export default function About(): JSX.Element {
               <h3>Mike Heffner</h3>
               <div className={styles.founderBio}>
                 <p>
-                  Mike is a veteran systems engineer with over two decades of experience building high-performance infrastructure for observability and telemetry. 
+                  Mike is an accomplished systems engineer with over two decades of experience building high-performance infrastructure for observability and telemetry. 
                   He specializes in distributed systems, stream processing, and high-scale observability systems.
                 </p>
                 <p>
