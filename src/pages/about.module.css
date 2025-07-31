@@ -87,6 +87,8 @@
   font-size: 1.1rem;
   line-height: 1.7;
   color: var(--ifm-font-color-base);
+  text-align: left;
+  padding-top: 1rem;
 }
 
 .founderBio p {

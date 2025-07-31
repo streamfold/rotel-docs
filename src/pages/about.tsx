@@ -30,7 +30,7 @@ export default function About(): JSX.Element {
               <div className={styles.founderBio}>
                 <p>
                   Ray is a veteran distributed systems engineer with three decades of experience building fault-tolerant, scalable infrastructure. 
-                  He specializes in stream processing, large-scale databases, and observability systems that handle billions of events daily.
+                  He specializes in stream processing, large-scale distributed databases, and high-scale observability systems.
                 </p>
                 <p>
                   Previously, Ray held senior engineering and leadership roles at Segment, Snowflake, Librato, and IBM, 
