@@ -137,3 +137,17 @@ rotel = Rotel(
 )
 rotel.start()
 ```
+
+## Processors
+
+You can pass a list of Python files to Rotel that support the Python Processor SDK,
+by setting the following top-level config values. Each takes a list of absolute file paths to files implementing the
+processor SDK.
+
+| Option Name        | Type      |
+| ------------------ | --------- |
+| processors_metrics | list[str] |
+| processors_traces  | list[str] |
+| processors_logs    | list[str] |
+
+See the [Python Processor SDK](https://rotel.dev/docs/processor-sdk/overview) docs for more information.
