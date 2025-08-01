@@ -1,24 +1,10 @@
 mheffner:
   name: Mike Heffner
-  title: Founder, Streamfold
-  url: https://www.linkedin.com/in/mike-heffner/
   image_url: https://github.com/mheffner.png
   page: false
-  socials:
-    x: mheffner
-    linkedin: mike-heffner
-    github: mheffner
-    bluesky: mike.heffner.io
 
 rjenkins:
   name: Ray Jenkins
-  title: Founder, Streamfold
-  url: https://www.linkedin.com/in/ray-jenkins-2186819/
   image_url: https://github.com/rjenkins.png
   page: false
-  socials:
-    x: _rayjenkins
-    linkedin: ray-jenkins-2186819
-    github: rjenkins
-    bluesky: ramond.bsky.social
 

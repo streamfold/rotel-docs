@@ -85,22 +85,24 @@ const config: Config = {
           editUrl:
             'https://github.com/streamfold/rotel-docs/tree/main/',
         },
-        // blog: {
-        //   showReadingTime: true,
-        //   feedOptions: {
-        //     type: ['rss', 'atom'],
-        //     xslt: true,
-        //   },
-        //   // Please change this to your repo.
-        //   // Remove this to remove the "edit this page" links.
-        //   // editUrl:
-        //   //   'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        //   // Useful options to enforce blogging best practices
-        //   onInlineTags: 'warn',
-        //   onInlineAuthors: 'warn',
-        //   onUntruncatedBlogPosts: 'warn',
-        // },
-        blog: false, // TODO: bring back when ready to blog
+        blog: {
+          blogTitle: 'Blog',
+          blogDescription: 'Rotel Blog',
+          blogSidebarCount: 0, // increase when we have multiple posts
+          showReadingTime: false,
+          feedOptions: {
+            type: ['rss', 'atom'],
+            xslt: true,
+          },
+          // Please change this to your repo.
+          // Remove this to remove the "edit this page" links.
+          // editUrl:
+          //   'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          // Useful options to enforce blogging best practices
+          onInlineTags: 'warn',
+          onInlineAuthors: 'warn',
+          onUntruncatedBlogPosts: 'warn',
+        },
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -161,7 +163,7 @@ const config: Config = {
           label: 'Docs',
         },
         {to: '/changelog', label: 'Changelog', position: 'left'},
-        //{to: '/blog', label: 'Blog', position: 'left'},
+        {to: '/blog', label: 'Blog', position: 'left'},
         {to: '/about', label: 'About', position: 'right', className: 'navbar-about-link'},
         {
           href: 'https://github.com/streamfold/rotel',
@@ -207,10 +209,10 @@ const config: Config = {
               label: 'About',
               to: '/about',
             },
-            // {
-            //   label: 'Blog',
-            //   to: '/blog',
-            // },
+            {
+              label: 'Blog',
+              to: '/blog',
+            },
             {
               label: 'GitHub',
               href: 'https://github.com/streamfold/rotel',
