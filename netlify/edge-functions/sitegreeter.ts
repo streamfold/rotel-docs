@@ -35,38 +35,37 @@ export default async function handler(
   // Get the logging endpoint from environment variable, fallback to example
   const loggingEndpoint =
     Netlify.env.get("LOGGING_ENDPOINT") || "https://post.example.com/netlify";
-  const loggingKey =
-    Netlify.env.get("LOGGING_KEY") || "unknown";
+  const loggingKey = Netlify.env.get("LOGGING_KEY") || "unknown";
 
-    // Parse URL for query parameters
-    const url = new URL(request.url);
-    const queryParams: Record<string, string> = {};
-    url.searchParams.forEach((value, key) => {
-      queryParams[key] = value;
-    });
+  // Parse URL for query parameters
+  const url = new URL(request.url);
+  const queryParams: Record<string, string> = {};
+  url.searchParams.forEach((value, key) => {
+    queryParams[key] = value;
+  });
 
-    // Extract headers (filter out sensitive ones)
-    const headers: Record<string, string> = {};
-    const allowedHeaders = [
-      "user-agent",
-      "referer",
-      "accept",
-      "accept-language",
-      "origin",
-    ];
+  // Extract headers (filter out sensitive ones)
+  const headers: Record<string, string> = {};
+  const allowedHeaders = [
+    "user-agent",
+    "referer",
+    "accept",
+    "accept-language",
+    "origin",
+  ];
 
-    for (const [key, value] of request.headers.entries()) {
-      if (allowedHeaders.includes(key.toLowerCase())) {
-        headers[key] = value;
-      }
+  for (const [key, value] of request.headers.entries()) {
+    if (allowedHeaders.includes(key.toLowerCase())) {
+      headers[key] = value;
     }
-    
-    const resp = await context.next();
-    
-    // Skip redirects
-    if (resp.status === 301) {
-      return resp;
-    }
+  }
+
+  const resp = await context.next();
+
+  // Skip redirects
+  if (resp.status === 301) {
+    return resp;
+  }
 
   try {
     // Prepare the logging payload
@@ -116,5 +115,15 @@ export default async function handler(
 
 export const config = {
   path: "/*", // Match all paths - adjust as needed for your use case
-  excludedPath: ["/*.css", "/*.js", "/*.svg", "/*.png", "/*.jpg", "/*.ico", "/site.webmanifest"], // exclude static assets
+  // exclude static assets
+  excludedPath: [
+    "/*.css",
+    "/*.js",
+    "/*.svg",
+    "/*.png",
+    "/*.jpg",
+    "/*.ico",
+    "/*.php", // ignore scanning bots
+    "/site.webmanifest",
+  ],
 };
