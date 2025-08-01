@@ -75,7 +75,7 @@ export default function About(): JSX.Element {
                 </p>
                 <p>
                   Previously, Mike held senior engineering and leadership roles at Librato and Netlify, where he architected infrastructure 
-                  and data pipelines. His expertise in modern observability practices drives his mission to make 
+                  and data pipelines. His expertise in modern observability practices drives his desire to make 
                   monitoring more accessible and resource-efficient.
                 </p>
               </div>
