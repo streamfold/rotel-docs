@@ -29,12 +29,12 @@ export default function About(): JSX.Element {
               <h3>Ray Jenkins</h3>
               <div className={styles.founderBio}>
                 <p>
-                  Ray is a veteran distributed systems engineer with three decades of experience building fault-tolerant, scalable infrastructure. 
-                  He specializes in stream processing, large-scale distributed databases, and high-scale observability systems.
+                  Ray is a distributed systems engineer with three decades of experience building fast, reliable and scalable infrastructure. 
+                  He specializes in stream processing, large distributed databases, and high-scale observability systems.
                 </p>
                 <p>
-                  Previously, Ray held senior engineering and leadership roles at Segment, Snowflake, Librato, and IBM, 
-                  where he led teams through hypergrowth phases and architected critical infrastructure for data processing and observability platforms.
+                  Previously, Ray held senior engineering and leadership roles at Snowflake, Segment, Librato, and IBM, 
+                  where he led teams through hypergrowth phases and architected core infrastructure for data processing and observability platforms.
                 </p>
               </div>
               <div className={styles.socialLinks}>
@@ -70,12 +70,12 @@ export default function About(): JSX.Element {
               <h3>Mike Heffner</h3>
               <div className={styles.founderBio}>
                 <p>
-                  Mike is an accomplished systems engineer with over two decades of experience building high-performance infrastructure for observability and telemetry. 
+                  Mike is an systems engineer with over two decades of experience building high-performance infrastructure. 
                   He specializes in distributed systems, stream processing, and high-scale observability systems.
                 </p>
                 <p>
-                  Previously, Mike held senior engineering and leadership roles at Librato and Netlify, where he architected critical infrastructure 
-                  and data pipelines. His deep expertise in modern observability practices drives his mission to make 
+                  Previously, Mike held senior engineering and leadership roles at Librato and Netlify, where he architected infrastructure 
+                  and data pipelines. His expertise in modern observability practices drives his mission to make 
                   monitoring more accessible and resource-efficient.
                 </p>
               </div>
