@@ -29,7 +29,7 @@ export default function About(): JSX.Element {
               <h3>Ray Jenkins</h3>
               <div className={styles.founderBio}>
                 <p>
-                  Ray is a distributed systems engineer with three decades of experience building fast, reliable and scalable infrastructure. 
+                  Ray is a distributed systems engineer with three decades of experience building fast, reliable, and scalable infrastructure. 
                   He specializes in stream processing, large distributed databases, and high-scale observability systems.
                 </p>
                 <p>
