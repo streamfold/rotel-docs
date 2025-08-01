@@ -28,6 +28,8 @@ interface LoggingPayload {
   status_code: number;
 }
 
+const timeout_ms = 750;
+
 export default async function handler(
   request: Request,
   context: Context,
@@ -100,7 +102,7 @@ export default async function handler(
         "X-Logging-Key": loggingKey,
       },
       body: JSON.stringify(payload),
-      signal: AbortSignal.timeout(500), // tight bound of 500ms
+      signal: AbortSignal.timeout(timeout_ms),
     }).catch((error) => {
       console.error("Failed to send log to endpoint:", error);
     });
