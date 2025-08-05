@@ -298,8 +298,8 @@ def redact_emails(body: AnyValue) -> AnyValue:
                           <ul className={styles.featureList}>
                               <li>OTLP (gRPC/HTTP) exporters</li>
                               <li>Clickhouse exporter</li>
-                              <li>Datadog trace exporter</li>
-                              <li>AWS X-Ray tracing</li>
+                              <li>Kafka exporter</li>
+                              <li>Datadog & AWS X-Ray trace exporters</li>
                               <li>Debug & logging exporters</li>
                           </ul>
                       </div>
