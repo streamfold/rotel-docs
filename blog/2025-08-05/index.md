@@ -119,7 +119,9 @@ Rotel only receives OTLP data at the moment, but we want to expand this to inclu
 
 ### Expanding Processor and OTTL support
 
-We have shown that we can integrate native language processor support with Python via our SDK with low overhead. We plan to expand on these efforts to improve the integration of Python into the processing path and develop a rich processor framework users can build upon. We’re also exploring pure Rust processors for high-volume and compute intensive workloads like: filtering, transformation, and tail sampling. We also intend to investigate OTTL support. While anything written in a domain specific language like OTTL can be expressed in Python, supporting OTTL will help alleviate switching costs for users who have invested significant time building OTTL processor expressions. We would love to know which processors are most important to the community and which may be particularly well suited for a systems-level approach.
+We have shown that we can integrate native language processor support with Python via our SDK with low overhead. We plan to expand on these efforts to improve the integration of Python into the processing path and develop a rich processor framework users can build upon. We’re also exploring pure Rust processors for high-volume and compute intensive workloads like: filtering, transformation, and tail sampling.
+
+We also intend to investigate OTTL support. While anything written in a domain specific language like OTTL can be expressed in Python, supporting OTTL will help alleviate switching costs for users who have invested significant time building OTTL processor expressions. We would love to know which processors are most important to the community and which may be particularly well suited for a systems-level approach.
 
 ### Durable Pipelines
 
