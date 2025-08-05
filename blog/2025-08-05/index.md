@@ -3,7 +3,7 @@ slug: rotel-fast-and-efficient-opentelemetry-collection-in-rust
 title: "Rotel: Fast and Efficient OpenTelemetry Collection in Rust"
 authors: [rjenkins, mheffner]
 tags: [announcements]
-image: ./red-pepper.svg
+image: ./red_pepper.png
 ---
 
 Observability shouldn't be a resource hog, that’s why at the end of last year, we started an ambitious new project – Rotel. We’ve been excited to see the rise of OpenTelemetry as a vendor neutral standard for telemetry and it's inspired us to apply our systems experience to develop a high-performance, resource efficient data plane for collecting OpenTelemetry data. 
