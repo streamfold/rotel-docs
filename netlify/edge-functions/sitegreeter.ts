@@ -28,17 +28,12 @@ interface LoggingPayload {
   status_code: number;
 }
 
-const timeout_ms = 750;
+const timeout_ms = 1000;
 
 export default async function handler(
   request: Request,
   context: Context,
 ): Promise<Response> {
-  // Get the logging endpoint from environment variable, fallback to example
-  const loggingEndpoint =
-    Netlify.env.get("LOGGING_ENDPOINT") || "https://post.example.com/netlify";
-  const loggingKey = Netlify.env.get("LOGGING_KEY") || "unknown";
-
   // Parse URL for query parameters
   const url = new URL(request.url);
   const queryParams: Record<string, string> = {};
@@ -69,6 +64,28 @@ export default async function handler(
     return resp;
   }
 
+  // Fire async event to send results
+  setTimeout(() => {
+    postResults(request, context, headers, queryParams, resp.status).catch(
+      console.error,
+    );
+  }, 0);
+
+  return resp;
+}
+
+async function postResults(
+  request: Request,
+  context: Context,
+  headers: Record<string, string>,
+  queryParams: Record<string, string>,
+  status: any,
+): Promise<void> {
+  // Get the logging endpoint from environment variable, fallback to example
+  const loggingEndpoint =
+    Netlify.env.get("LOGGING_ENDPOINT") || "https://post.example.com/netlify";
+  const loggingKey = Netlify.env.get("LOGGING_KEY") || "unknown";
+
   try {
     // Prepare the logging payload
     const payload: LoggingPayload = {
@@ -91,10 +108,9 @@ export default async function handler(
         server_region: context.server?.region || "unknown",
       },
       timestamp: new Date().toISOString(),
-      status_code: resp.status,
+      status_code: status,
     };
 
-    // Send to logging endpoint asynchronously (don't wait for response)
     await fetch(loggingEndpoint, {
       method: "POST",
       headers: {
@@ -106,12 +122,8 @@ export default async function handler(
     }).catch((error) => {
       console.error("Failed to send log to endpoint:", error);
     });
-
-    return resp;
   } catch (error) {
     console.error("Error in edge function:", error);
-
-    return resp;
   }
 }
 
