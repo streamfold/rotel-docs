@@ -7,8 +7,8 @@ sidebar_position: 4
 Export OpenTelemetry metrics to Cloudwatch Logs in EMF format.
 
 | Telemetry Type | Support |
-|----------------|---------|
-| Metrics         | Alpha   |
+| -------------- | ------- |
+| Metrics        | Alpha   |
 
 The AWS EMF exporter can be selected by passing `--exporter awsemf`. The AWS EMF exporter only supports metrics. The
 AWS EMF exporter will convert metrics into the AWS Cloudwatch [Embedded metric format](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Embedded_Metric_Format_Specification.html) and
@@ -29,7 +29,7 @@ are automatically sourced from Rotel's environment on startup.
 | --awsemf-exporter-include-dimensions                   |                  |                  |
 | --awsemf-exporter-exclude-dimensions                   |                  |                  |
 
-**DIMENSION FILTERING**:
+## Dimension Filtering
 
 By default all resource and metric data point attributes will be included as dimensions in the Cloudwatch Metric. You
 can use the `include-dimensions` and `exclude-dimensions` options to selectively filter which dimensions are included
@@ -44,7 +44,7 @@ names from the metrics. The `*` character can be used to match zero-or-more char
 By default all dimensions are included (`include-dimensions=*`), but you can also selectively filter which to include.
 The `exclude-dimensions` takes precedence, so any dimension that matches an exclude pattern will be excluded.
 
-Example:
+### Example
 
 - `--awsemf-exporter-include-dimensions service.*,http.*`
 - `--awsemf-exporter-exclude-dimensions *.internal`
@@ -56,7 +56,7 @@ With these options, here's how the following attributes would be handled:
 - `http.internal`: excluded
 - `telemetry.sdk.language`: excluded
 
-**NOTE**:
+## Notes
 
 - If the log stream or log group do not exist, the exporter will attempt to create them automatically. Make sure that the credentials have the
   right IAM permissions.
