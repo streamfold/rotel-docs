@@ -44,7 +44,7 @@ function HomepageHeader(): JSX.Element {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/"> {/* Updated to docs root */}
+            to="/docs/setup/getting-started"> {/* Updated to docs root */}
             Get Started - 5min ⏱️
           </Link>
           <Link
@@ -284,7 +284,7 @@ def redact_emails(body: AnyValue) -> AnyValue:
                           <h3>Receivers & Processing</h3>
                           <ul className={styles.featureList}>
                               <li>OTLP/gRPC, OTLP/HTTP, OTLP/HTTP-JSON receivers</li>
-                              <li>Automatic batching for optimal delivery</li>
+                              <li>Kafka receiver for metric, logs, and traces</li>
                               <li>Python processor support</li>
                               <li>Out-of-the-box processors or write your own</li>
                               <li>Adaptive flushing that minimizes lambda overhead</li>
@@ -296,11 +296,11 @@ def redact_emails(body: AnyValue) -> AnyValue:
                           <div className={styles.featureIcon}>📤</div>
                           <h3>Exporters & Destinations</h3>
                           <ul className={styles.featureList}>
-                              <li>OTLP (gRPC/HTTP) exporters</li>
-                              <li>Clickhouse exporter</li>
-                              <li>Kafka exporter</li>
-                              <li>Datadog & AWS X-Ray trace exporters</li>
-                              <li>Debug & logging exporters</li>
+                              <li>OTLP (gRPC/HTTP)</li>
+                              <li>Clickhouse</li>
+                              <li>Kafka</li>
+                              <li>Datadog, AWS X-Ray, and AWS EMF</li>
+                              <li>Debug & logging</li>
                           </ul>
                       </div>
                   </div>
