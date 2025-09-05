@@ -55,7 +55,7 @@ telemetrygen traces --otlp-insecure --duration 5s
 
 From the Rotel container you’ll then see log messages indicating it has received trace spans.
 
-See the full [Getting Started](https://rotel.dev/docs/setup/getting-started) guide for more information.
+See the full [Getting Started](/docs/setup/getting-started) guide for more information.
 
 ## Advanced Capabilities
 
