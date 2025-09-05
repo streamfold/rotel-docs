@@ -115,7 +115,7 @@ Rotel’s early roadmap came from our own experience and the feedback of users. 
 
 Rotel started with full OpenTelemetry Protocol (OTLP) compatibility and has grown to support a handful of exporter integrations. We want to expand support for additional use cases, both on the receiver and exporter sides. Object storage is crucial for building large-scale telemetry systems, so we plan to add an exporter for it along with support for popular columnar storage formats. Work is already in progress on an Apache Parquet writer.
 
-Rotel only receives OTLP data at the moment, but we want to expand this to include file log tailing and remote scraping of endpoints like Prometheus. We have recently added a Kafka exporter and Kafka receiver, allowing for stream processing of OpenTelemetry data.
+Rotel only receives OTLP data at the moment, but we want to expand this to include file log tailing and remote scraping of endpoints like Prometheus. We have recently added a Kafka exporter and Kafka receiver, allowing users to build end-to-end stream processing of OpenTelemetry data with Rotel.
 
 ### Expanding Processor and OTTL support
 
@@ -125,7 +125,7 @@ We also intend to investigate OTTL support. While anything written in a domain s
 
 ### Durable Pipelines
 
-You can hope for the best, but sometimes you have to plan for the worst, and telemetry pipelines are no exception. Rotel should provide the option to build durable pipelines with options like guaranteed at-least-once delivery, for receivers and exporters that support it. Rotel should allow telemetry to be spooled to disk or S3 when export destinations are offline for extended durations. We want to support durability with little to no overhead and in a way that is simple to configure.
+You can hope for the best, but sometimes you have to plan for the worst, and telemetry pipelines are no exception. Rotel should provide the option to build durable pipelines with options like guaranteed at-least-once delivery, for receivers and exporters that support it. Rotel should allow telemetry to be spooled to disk or S3 when export destinations are offline for extended durations. We want to support durability with little to no overhead and in a way that is simple to configure. Check out the [RFC](https://github.com/streamfold/rotel/discussions/186) to join in the discussion on adding delivery acknowledgement to Rotel.
 
 ### OpenTelemetry Arrow
 
