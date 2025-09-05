@@ -1,10 +1,8 @@
 # Getting started
 
-To quickly get started with Rotel you can leverage the pre-built Docker images.
+To quickly get started with Rotel you can leverage the pre-built Docker images. Alternatively, you can download a binary from the [releases](https://github.com/streamfold/rotel/releases) page.
 
 ## Running Rotel
-
-We use the prebuilt docker image for this example, but you can also download a binary from the [releases](https://github.com/streamfold/rotel/releases) page.
 
 Execute Rotel with the following arguments:
 
