@@ -6,7 +6,7 @@ tags: [announcements]
 image: ./red_pepper.png
 ---
 
-Observability shouldn't be a resource hog, that’s why at the end of last year, we started an ambitious new project – Rotel. We’ve been excited to see the rise of OpenTelemetry as a vendor neutral standard for telemetry and it's inspired us to apply our systems experience to develop a high-performance, resource efficient data plane for collecting OpenTelemetry data. 
+Observability shouldn't be a resource hog, that’s why at the end of last year, we started an ambitious new project – Rotel. We’ve been excited to see the rise of OpenTelemetry as a vendor neutral standard for telemetry and it's inspired us to apply our systems experience to develop a high-performance, resource efficient data plane for collecting OpenTelemetry data.
 
 Rotel is a new open-source alternative for collecting OpenTelemetry data and is engineered to be an efficient, high-performance solution for receiving, processing, and exporting OpenTelemetry data. Rotel runs as a standalone process and consumes telemetry from external processes or other collection agents. It consumes **75% less memory and 50% less CPU** in benchmarks, so it is particularly well-suited for environments where resource optimization is paramount.
 
@@ -30,11 +30,11 @@ Beyond the practical implications, these questions also felt like an **exciting 
 
 ### Key Capabilities
 
-* **Comprehensive OTLP Support:** Rotel acts as an OTLP receiver and exporter, supporting gRPC, HTTP/Protobuf, and HTTP/JSON.  
-* **Flexible Exporter Options:** Beyond standard OTLP export, Rotel includes exporters for ClickHouse, Datadog, Kafka, and AWS X-Ray.  
-* **Resource Efficiency:** Up to 75% less memory utilization and 50% less cpu usage on [OpenTelemetry collector benchmarks](https://streamfold.github.io/rotel-otel-loadtests/benchmarks/).  
-* **Serverless Extension**: Easily deploy Rotel on AWS Lambda as an extension with very fast cold-start times.  
-* **Robust Data Delivery:** Built-in batching, retry mechanisms, and configurable timeouts ensure reliable data delivery  
+* **Comprehensive OTLP Support:** Rotel acts as an OTLP receiver and exporter, supporting gRPC, HTTP/Protobuf, and HTTP/JSON.
+* **Flexible Exporter Options:** Beyond standard OTLP export, Rotel includes exporters for ClickHouse, Datadog, Kafka, AWS EMF, and AWS X-Ray.
+* **Resource Efficiency:** Up to 75% less memory utilization and 50% less cpu usage on [OpenTelemetry collector benchmarks](https://streamfold.github.io/rotel-otel-loadtests/benchmarks/).
+* **Serverless Extension**: Easily deploy Rotel on AWS Lambda as an extension with very fast cold-start times.
+* **Robust Data Delivery:** Built-in batching, retry mechanisms, and configurable timeouts ensure reliable data delivery
 * **Runtime Integrations:** Easily bundle Rotel with popular runtimes. We provide simple to use integrations for Python ([streamfold/pyrotel](https://github.com/streamfold/pyrotel)) and Node.js ([streamfold/rotel-nodejs](https://github.com/streamfold/rotel-nodejs)).
 
 ## Getting Started
@@ -53,9 +53,9 @@ go install github.com/open-telemetry/opentelemetry-collector-contrib/cmd/telemet
 telemetrygen traces --otlp-insecure --duration 5s
 ```
 
-From the Rotel container you’ll then see log messages indicating it has received trace spans. 
+From the Rotel container you’ll then see log messages indicating it has received trace spans.
 
-See the full [Getting Started](https://rotel.dev/docs/setup/getting-started) guide for more information.
+See the full [Getting Started](/docs/setup/getting-started) guide for more information.
 
 ## Advanced Capabilities
 
@@ -115,7 +115,7 @@ Rotel’s early roadmap came from our own experience and the feedback of users. 
 
 Rotel started with full OpenTelemetry Protocol (OTLP) compatibility and has grown to support a handful of exporter integrations. We want to expand support for additional use cases, both on the receiver and exporter sides. Object storage is crucial for building large-scale telemetry systems, so we plan to add an exporter for it along with support for popular columnar storage formats. Work is already in progress on an Apache Parquet writer.
 
-Rotel only receives OTLP data at the moment, but we want to expand this to include file log tailing and remote scraping of endpoints like Prometheus. We have recently added a Kafka exporter and plan to follow this with support for a Kafka receiver soon.  
+Rotel only receives OTLP data at the moment, but we want to expand this to include file log tailing and remote scraping of endpoints like Prometheus. We have recently added a Kafka exporter and Kafka receiver, allowing users to build end-to-end stream processing of OpenTelemetry data with Rotel.
 
 ### Expanding Processor and OTTL support
 
@@ -125,7 +125,7 @@ We also intend to investigate OTTL support. While anything written in a domain s
 
 ### Durable Pipelines
 
-You can hope for the best, but sometimes you have to plan for the worst, and telemetry pipelines are no exception. Rotel should provide the option to build durable pipelines with options like guaranteed at-least-once delivery, for receivers and exporters that support it. Rotel should allow telemetry to be spooled to disk or S3 when export destinations are offline for extended durations. We want to support durability with little to no overhead and in a way that is simple to configure.
+You can hope for the best, but sometimes you have to plan for the worst, and telemetry pipelines are no exception. Rotel should provide the option to build durable pipelines with options like guaranteed at-least-once delivery, for receivers and exporters that support it. Rotel should allow telemetry to be spooled to disk or S3 when export destinations are offline for extended durations. We want to support durability with little to no overhead and in a way that is simple to configure. Check out the [RFC](https://github.com/streamfold/rotel/discussions/186) to join in the discussion on adding delivery acknowledgement to Rotel.
 
 ### OpenTelemetry Arrow
 
