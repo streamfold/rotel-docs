@@ -10,7 +10,7 @@ files.
 
 ## AWS Secrets Manager Example
 
-```shell
+```bash
 ROTEL_OTLP_EXPORTER_ENDPOINT=https://api.axiom.co
 ROTEL_OTLP_EXPORTER_PROTOCOL=http
 ROTEL_OTLP_EXPORTER_CUSTOM_HEADERS="Authorization=Bearer ${arn:aws:secretsmanager:us-east-1:123377354456:secret:axiom-api-key-r1l7G9},X-Axiom-Dataset=${AXIOM_DATASET}"
@@ -28,7 +28,7 @@ if the secret named `axiom-r1l7G9` contained:
 ```
 
 Then the following example would extract those values:
-```shell
+```bash
 ROTEL_OTLP_EXPORTER_ENDPOINT=https://api.axiom.co
 ROTEL_OTLP_EXPORTER_PROTOCOL=http
 ROTEL_OTLP_EXPORTER_CUSTOM_HEADERS="Authorization=Bearer ${arn:aws:secretsmanager:us-east-1:123377354456:secret:axiom-r1l7G9#key},X-Axiom-Dataset=${arn:aws:secretsmanager:us-east-1:123377354456:secret:axiom-r1l7G9#dataset}"
@@ -37,7 +37,7 @@ ROTEL_OTLP_EXPORTER_CUSTOM_HEADERS="Authorization=Bearer ${arn:aws:secretsmanage
 
 ## AWS Parameter Store Example
 
-```shell
+```bash
 ROTEL_OTLP_EXPORTER_ENDPOINT=https://api.axiom.co
 ROTEL_OTLP_EXPORTER_PROTOCOL=http
 ROTEL_OTLP_EXPORTER_CUSTOM_HEADERS="Authorization=Bearer ${arn:aws:ssm:us-east-1:123377354456:parameter/axiom-api-key},X-Axiom-Dataset=${AXIOM_DATASET}"
@@ -47,12 +47,12 @@ ROTEL_OTLP_EXPORTER_CUSTOM_HEADERS="Authorization=Bearer ${arn:aws:ssm:us-east-1
 
 In addition to the `${arn:...}` format, you can also use a URI format with the prefix `secret://`. This can be easier to use in configuration
 formats that reserve the `${..}` syntax for variable interpolation. The URI format must be set at the beginning of the variable name, so:
-```shell
+```bash
 ROTEL_CLICKHOUSE_EXPORTER_PASSWORD="secret://arn:aws:ssm:us-east-1:123377354456:parameter/clickhouse-password"
 ```
 
 This supports the `#json-key` format as well to extract JSON secrets:
-```shell
+```bash
 ROTEL_CLICKHOUSE_EXPORTER_PASSWORD="secret://arn:aws:secretsmanager:us-east-1:123377354456:secret:ch-creds-r1l7G9#password"
 ```
 
