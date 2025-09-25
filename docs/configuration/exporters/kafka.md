@@ -61,7 +61,7 @@ durability:
 
 For secure connections, you can configure SASL authentication:
 
-```shell
+```bash
 rotel start --exporter kafka \
   --kafka-exporter-brokers "broker1:9092,broker2:9092" \
   --kafka-exporter-sasl-username "your-username" \
@@ -106,7 +106,7 @@ These options override the global partitioner setting for specific telemetry typ
 For advanced use cases, you can set arbitrary Kafka producer configuration parameters using the
 `--kafka-exporter-custom-config` option. This accepts comma-separated key=value pairs:
 
-```shell
+```bash
 rotel start --exporter kafka \
   --kafka-exporter-custom-config "enable.idempotence=true,max.in.flight.requests.per.connection=1" \
   --kafka-exporter-brokers "broker1:9092,broker2:9092"
@@ -115,7 +115,7 @@ rotel start --exporter kafka \
 **Configuration Precedence**: Custom configuration parameters are applied *after* all built-in options, meaning they
 will override any conflicting built-in settings. For example:
 
-```shell
+```bash
 # The custom config will override the built-in batch size setting
 rotel start --exporter kafka \
   --kafka-exporter-batch-size 500000 \

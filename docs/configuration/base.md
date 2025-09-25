@@ -7,7 +7,7 @@ sidebar_position: 1
 Rotel is configured on the command line with multiple flags. See the table below for the full list of options. Rotel
 will also output the full argument list:
 
-```shell
+```bash
 rotel start --help
 ```
 

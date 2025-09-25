@@ -22,7 +22,7 @@ First start by defining the set of exporters that you would like to use, optiona
 to differentiate their configuration options. For example, to export logs and metrics to two separate Clickhouse nodes
 while exporting traces to Datadog, we'll use the following `--exporters` argument (or `ROTEL_EXPORTERS` envvar):
 
-```shell
+```bash
 --exporters logging:clickhouse,stats:clickhouse,datadog
 ```
 
@@ -45,7 +45,7 @@ would need to include a username/password, but we are skipping those for brevity
 Lastly, the user would need to connect these exporters to the telemetry types. Using the requirements above, the user
 would specify the following:
 
-```shell
+```bash
 --exporters-traces datadog --exporters-metrics stats --exporters-logs logging
 ```
 
