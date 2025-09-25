@@ -49,10 +49,6 @@ to credentials specified as: `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` and op
 
 ### Traces
 
-_Tracing requires that you
-enable [Transaction Search](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Transaction-Search.html)
-in the AWS console before you can send OTLP traces._
-
 Here is the full environment variable configuration to send traces to Cloudwatch, swap the region code as needed.
 
 ```bash
@@ -62,10 +58,15 @@ ROTEL_OTLP_EXPORTER_TRACES_ENDPOINT=https://xray.<region code>.amazonaws.com/v1/
 ROTEL_OTLP_EXPORTER_AUTHENTICATOR=sigv4auth
 ```
 
-### Logs
+:::note
 
-_To send OTLP logs to Cloudwatch you must create a log group and log stream. Exporting will fail if these do not exist
-ahead of time and they are not created by default._
+Tracing requires that you
+enable [Transaction Search](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Transaction-Search.html)
+in the AWS console before you can send OTLP traces.
+
+:::
+
+### Logs
 
 Here is the full environment variable configuration to send logs to Cloudwatch, swap the region code and
 log group/stream as needed.
@@ -77,3 +78,10 @@ ROTEL_OTLP_EXPORTER_TRACES_ENDPOINT=https://logs.<region code>.amazonaws.com/v1/
 ROTEL_OTLP_EXPORTER_LOGS_CUSTOM_HEADERS="x-aws-log-group=<log group>,x-aws-log-stream=<log stream>"
 ROTEL_OTLP_EXPORTER_AUTHENTICATOR=sigv4auth
 ```
+
+:::note
+
+To send OTLP logs to Cloudwatch you must create a log group and log stream. Exporting will fail if these do not exist
+ahead of time and they are not created by default.
+
+:::
