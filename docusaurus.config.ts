@@ -232,12 +232,12 @@ const config: Config = {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
-    announcementBar: {
-      id: 'announce_blog_post',
-      content: '📢 Check out our recent <a target="_blank" rel="noopener noreferrer" href="/blog/rotel-fast-and-efficient-opentelemetry-collection-in-rust">announcement</a> about Rotel on our blog. 🎉',
-      backgroundColor: "#25c2a0",
-      isCloseable: true,
-    },
+    // announcementBar: {
+    //   id: 'announce_blog_post',
+    //   content: '📢 Check out our recent <a target="_blank" rel="noopener noreferrer" href="/blog/rotel-fast-and-efficient-opentelemetry-collection-in-rust">announcement</a> about Rotel on our blog. 🎉',
+    //   backgroundColor: "#25c2a0",
+    //   isCloseable: true,
+    // },
   } satisfies Preset.ThemeConfig,
 };
 

@@ -64,7 +64,13 @@ export async function fetchGitHubReleases(
     owner: string,
     repo: string,
 ): Promise<GitHubRelease[]> {
-    const url = `https://api.github.com/repos/${owner}/${repo}/releases`;
+  // Don't fetch releases in local dev mode because we'll likely hit Github
+  // API request limits. Override by setting FORCE_FETCH_GITHUB_RELEASES envvar.
+  if (!process.env.CI && !process.env.FORCE_FETCH_GITHUB_RELEASES) {
+    return [];
+  }
+
+  const url = `https://api.github.com/repos/${owner}/${repo}/releases`;
 
     try {
 
