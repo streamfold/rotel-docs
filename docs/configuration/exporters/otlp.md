@@ -52,10 +52,11 @@ to credentials specified as: `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` and op
 Here is the full environment variable configuration to send traces to Cloudwatch, swap the region code as needed.
 
 ```bash
-ROTEL_EXPORTER=otlp
-ROTEL_OTLP_EXPORTER_PROTOCOL=http
-ROTEL_OTLP_EXPORTER_TRACES_ENDPOINT=https://xray.<region code>.amazonaws.com/v1/traces
-ROTEL_OTLP_EXPORTER_AUTHENTICATOR=sigv4auth
+ROTEL_EXPORTERS=traces:otlp
+ROTEL_EXPORTER_TRACES_PROTOCOL=http
+ROTEL_EXPORTER_TRACES_ENDPOINT=https://xray.<region code>.amazonaws.com
+ROTEL_EXPORTER_TRACES_AUTHENTICATOR=sigv4auth
+ROTEL_EXPORTERS_TRACES=traces
 ```
 
 :::note
@@ -72,11 +73,12 @@ Here is the full environment variable configuration to send logs to Cloudwatch, 
 log group/stream as needed.
 
 ```bash
-ROTEL_EXPORTER=otlp
-ROTEL_OTLP_EXPORTER_PROTOCOL=http
-ROTEL_OTLP_EXPORTER_TRACES_ENDPOINT=https://logs.<region code>.amazonaws.com/v1/logs
-ROTEL_OTLP_EXPORTER_LOGS_CUSTOM_HEADERS="x-aws-log-group=<log group>,x-aws-log-stream=<log stream>"
-ROTEL_OTLP_EXPORTER_AUTHENTICATOR=sigv4auth
+ROTEL_EXPORTERS=logs:otlp
+ROTEL_EXPORTER_LOGS_PROTOCOL=http
+ROTEL_EXPORTER_LOGS_ENDPOINT=https://logs.<region code>.amazonaws.com
+ROTEL_EXPORTER_LOGS_CUSTOM_HEADERS="x-aws-log-group=<log group>,x-aws-log-stream=<log stream>"
+ROTEL_EXPORTER_LOGS_AUTHENTICATOR=sigv4auth
+ROTEL_EXPORTERS_LOGS=logs
 ```
 
 :::note
