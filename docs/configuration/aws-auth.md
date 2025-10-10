@@ -38,7 +38,7 @@ rotel start --exporter blackhole
 The exact location depends on your operating system, but Rotel supports AWS configuration files
 for defining roles and permissions. Here's an example from a profile at `$HOME/.aws/config`:
 
-```toml
+```text
 [profile testing]
 aws_access_key_id=AKIAIOSFODNN7EXAMPLE
 aws_secret_access_key=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
