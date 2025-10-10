@@ -14,8 +14,8 @@ The AWS EMF exporter can be selected by passing `--exporter awsemf`. The AWS EMF
 AWS EMF exporter will convert metrics into the AWS Cloudwatch [Embedded metric format](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Embedded_Metric_Format_Specification.html) and
 send those as JSON log lines to Cloudwatch. Cloudwatch will convert the log lines into Cloudwatch Metrics.
 
-AWS Credentials including `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` and `AWS_SESSION_TOKEN` for the EMF exporter
-are automatically sourced from Rotel's environment on startup.
+See the [AWS Auth](/docs/configuration/aws-auth) page for instructions on how to retrieve credentials necessary
+for exporting to Cloudwatch.
 
 | Option                                                 | Default          | Options          |
 | ------------------------------------------------------ | ---------------- | ---------------- |
