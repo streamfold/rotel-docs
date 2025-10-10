@@ -17,9 +17,8 @@ enforce the max
 batch size of 50 with the warning
 `INFO AWS X-Ray only supports a batch size of 50 segments, setting batch max size to 50`
 
-AWS Credentials including `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` and `AWS_SESSION_TOKEN` for the X-Ray exporter
-are
-automatically sourced from Rotel's environment on startup.
+See the [AWS Auth](/docs/configuration/aws-auth) page for instructions on how to retrieve credentials necessary
+for exporting to X-Ray.
 
 | Option                             | Default   | Options          |
 | ---------------------------------- | --------- | ---------------- |
