@@ -39,6 +39,12 @@ Any of the options that start with `--otlp-exporter*` can be set per telemetry t
 example, to set a custom endpoint to export traces to, set: `--otlp-exporter-traces-endpoint`. For other telemetry
 types their value falls back to the top-level OTLP exporter config.
 
+:::note
+
+Selecting _http_ as the OTLP exporter protocol will export as `http/protobuf`. The OTLP exporter does not support HTTP/JSON.
+
+:::
+
 ## Cloudwatch OTLP Export
 
 The Rotel OTLP exporter can export to the
