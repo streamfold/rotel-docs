@@ -4,14 +4,15 @@ sidebar_position: 1
 
 # OTLP Exporter
 
-Export OpenTelemetry metrics, logs, and traces to any OTLP endpoint.
+Export OpenTelemetry to any OTLP endpoint.
 
 | Telemetry Type | Support |
-|----------------|---------|
-| Metrics        | Alpha   |
-| Traces         | Alpha   |
-| Logs           | Alpha   |
+| -------------- | ------- |
+| Traces         | ✅      |
+| Logs           | ✅      |
+| Metrics        | ✅      |
 
+---
 
 The OTLP exporter is the default, or can be explicitly selected with `--exporter otlp`.
 

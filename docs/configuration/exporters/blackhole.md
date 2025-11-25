@@ -4,12 +4,15 @@ sidebar_position: 7
 
 # Blackhole Exporter
 
-| Telemetry Type | Support |
-|----------------|---------|
-| Traces         | Alpha   |
-| Metric         | Alpha   |
-| Logs           | Alpha   |
+Discard telemetry.
 
+| Telemetry Type | Support |
+| -------------- | ------- |
+| Traces         | ✅      |
+| Logs           | ✅      |
+| Metrics        | ✅      |
+
+---
 
 The blackhole exporter will drop all telemetry exported immediately. It can be useful when debugging
 and you're using the `--debug-log` option to log telemetry. It can also be useful if you are using

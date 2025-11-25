@@ -24,15 +24,20 @@ Any option above that does not contain a default is considered false or unset by
 | --pid-file                        | /tmp/rotel-agent.pid |                                                              |
 | --log-file                        | /tmp/rotel-agent.log |                                                              |
 | --debug-log                       |                      | metrics, traces, logs                                        |
+| --debug-log-verbosity             | basic                | basic, detailed                                              |
 | --otlp-grpc-endpoint              | localhost:4317       |                                                              |
 | --otlp-http-endpoint              | localhost:4318       |                                                              |
 | --otlp-grpc-max-recv-msg-size-mib | 4                    |                                                              |
+| --receiver                        | otlp                 | otlp, kafka                                                  |
 | --exporter                        | otlp                 | otlp, blackhole, datadog, clickhouse, awsxray, awsemf, kafka |
-| --otlp-receiver-traces-disabled   |                      |                                                              |
-| --otlp-receiver-metrics-disabled  |                      |                                                              |
-| --otlp-receiver-logs-disabled     |                      |                                                              |
-| --otlp-receiver-traces-http-path  | /v1/traces           |                                                              |
-| --otlp-receiver-metrics-http-path | /v1/metrics          |                                                              |
-| --otlp-receiver-logs-http-path    | /v1/logs             |                                                              |
+| --batch-max-size                  | 8192                 |                                                              |
+| --batch-timeout                   | 200ms                |                                                              |
 | --otel-resource-attributes        |                      |                                                              |
 | --enable-internal-telemetry       |                      |                                                              |
+
+## Component configuration
+
+Next, select your configuration for receivers and exporters.
+
+- [Receivers](/docs/category/receivers)
+- [Exporters](/docs/category/exporters)

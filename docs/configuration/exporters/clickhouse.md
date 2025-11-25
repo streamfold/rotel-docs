@@ -4,15 +4,15 @@ sidebar_position: 3
 
 # ClickHouse Exporter
 
-Export OpenTelemetry metrics, logs and traces to ClickHouse.
+Export OpenTelemetry to ClickHouse.
 
 | Telemetry Type | Support |
 | -------------- | ------- |
-| Traces         | Alpha   |
-| Logs           | Alpha   |
-| Metrics        | Alpha   |
+| Traces         | ✅      |
+| Logs           | ✅      |
+| Metrics        | ✅      |
 
-## Options
+---
 
 The ClickHouse exporter can be selected by passing `--exporter clickhouse`. The ClickHouse exporter has full support
 for traces, logs, and metrics.

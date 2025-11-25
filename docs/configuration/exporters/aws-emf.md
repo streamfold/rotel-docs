@@ -8,7 +8,9 @@ Export OpenTelemetry metrics to Cloudwatch Logs in EMF format.
 
 | Telemetry Type | Support |
 | -------------- | ------- |
-| Metrics        | Alpha   |
+| Metrics        | ✅      |
+
+---
 
 The AWS EMF exporter can be selected by passing `--exporter awsemf`. The AWS EMF exporter only supports metrics. The
 AWS EMF exporter will convert metrics into the AWS Cloudwatch [Embedded metric format](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Embedded_Metric_Format_Specification.html) and
