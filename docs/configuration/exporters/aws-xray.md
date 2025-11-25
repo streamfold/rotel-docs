@@ -4,11 +4,13 @@ sidebar_position: 5
 
 # AWS X-Ray Exporter
 
-Export OpenTelemetry traces to AWS X-Ray.
+Export OpenTelemetry to AWS X-Ray.
 
 | Telemetry Type | Support |
 | -------------- | ------- |
-| Traces         | Alpha   |
+| Traces         | ✅      |
+
+---
 
 The AWS X-Ray exporter can be selected by passing `--exporter awsxray`. The X-Ray exporter only supports traces. Note:
 X-Ray

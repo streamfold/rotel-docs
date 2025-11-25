@@ -4,22 +4,20 @@ sidebar_position: 6
 
 # Kafka Exporter
 
-Export OpenTelemetry metrics, logs, and traces to Kafka.
+Export OpenTelemetry to Kafka.
 
 | Telemetry Type | Support |
 | -------------- | ------- |
-| Traces         | Alpha   |
-| Logs           | Alpha   |
-| Metrics        | Alpha   |
+| Traces         | ✅      |
+| Logs           | ✅      |
+| Metrics        | ✅      |
 
+---
 
-### Kafka exporter configuration (Experimental)
-
-The Kafka exporter can be selected by passing `--exporter kafka`. The Kafka exporter supports metrics,
-logs, and traces.
+The Kafka exporter can be selected by passing `--exporter kafka`.
 
 | Option                                                    | Default           | Options                                                                     |
-|-----------------------------------------------------------|-------------------|-----------------------------------------------------------------------------|
+| --------------------------------------------------------- | ----------------- | --------------------------------------------------------------------------- |
 | --kafka-exporter-brokers                                  | localhost:9092    |                                                                             |
 | --kafka-exporter-traces-topic                             | otlp_traces       |                                                                             |
 | --kafka-exporter-metrics-topic                            | otlp_metrics      |                                                                             |
@@ -48,7 +46,7 @@ logs, and traces.
 
 The Kafka broker addresses must be specified (comma-separated for multiple brokers). Data can be serialized as JSON or Protobuf format.
 
-#### Acknowledgement Modes
+## Acknowledgement Modes
 
 The `--kafka-exporter-acks` option controls the producer acknowledgement behavior, balancing between performance and
 durability:
@@ -72,7 +70,7 @@ rotel start --exporter kafka \
   --kafka-exporter-acks "all"
 ```
 
-#### Producer Performance Tuning
+## Producer Performance Tuning
 
 The Kafka exporter provides several options for tuning producer performance and reliability:
 
@@ -90,7 +88,7 @@ The Kafka exporter provides several options for tuning producer performance and 
 - `--kafka-exporter-partitioner`: Controls how messages are distributed across partitions. Options include consistent
   hashing and murmur2/fnv1a hash algorithms.
 
-#### Message Partitioning Control
+## Message Partitioning Control
 
 For improved consumer parallelism and data organization, you can enable custom partitioning based on telemetry data:
 
@@ -101,7 +99,7 @@ For improved consumer parallelism and data organization, you can enable custom p
 
 These options override the global partitioner setting for specific telemetry types when enabled.
 
-#### Advanced Configuration
+## Advanced Configuration
 
 For advanced use cases, you can set arbitrary Kafka producer configuration parameters using the
 `--kafka-exporter-custom-config` option. This accepts comma-separated key=value pairs:
@@ -112,7 +110,7 @@ rotel start --exporter kafka \
   --kafka-exporter-brokers "broker1:9092,broker2:9092"
 ```
 
-**Configuration Precedence**: Custom configuration parameters are applied *after* all built-in options, meaning they
+**Configuration Precedence**: Custom configuration parameters are applied _after_ all built-in options, meaning they
 will override any conflicting built-in settings. For example:
 
 ```bash
@@ -129,4 +127,3 @@ the [librdkafka configuration documentation](https://github.com/confluentinc/lib
 for all available parameters.
 
 The Kafka exporter uses the high-performance rdkafka library and includes built-in retry logic and error handling.
-

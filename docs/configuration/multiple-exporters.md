@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 # Multiple Exporters
@@ -67,14 +67,6 @@ For example, to send logs to both the stats and logging clickhouse exporters,
 you would instead set the `ROTEL_EXPORTERS_LOGS` environment variable to:
 
 - `ROTEL_EXPORTERS_LOGS=stats,logging`
-
-:::note
-
-Sending telemetry to multiple exporters at once is currently in alpha. The telemetry is copied between the
-multiple exporter queues which may cause additional memory use under large volumes. This is an area of
-improvement as we expand on this capability.
-
-:::
 
 The [Python Lamba + Clickhouse Example](/docs/examples/lambda-clickhouse.md) includes an example of multiple
 exporter configuration.
