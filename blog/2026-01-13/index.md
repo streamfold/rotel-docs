@@ -1,6 +1,7 @@
 ---
 slug: otel-to-rotel-petabyte-scaling-tracing-4x-greater-throughput
 title: "From OTel to Rotel: Petabyte-scale tracing with 4x greater throughput"
+description: "Read how Streamfold’s Rotel pushes OpenTelemetry 4x faster into ClickHouse - benchmarking efficiency at scale and revealing the tools that make it happen"
 authors: [mheffner, rjenkins]
 tags: [engineering]
 image: ./header.png
