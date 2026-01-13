@@ -243,13 +243,13 @@ const config: Config = {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
-    announcementBar: {
-      id: "announce_blog_post",
-      content:
-        '📢 Check out our recent <a target="_blank" rel="noopener noreferrer" href="https://clickhouse.com/blog/otel-to-rotel-petabyte-scaling-tracing-4x-greater-throughput">guest post</a> on the ClickHouse blog. 🎉',
-      backgroundColor: "#25c2a0",
-      isCloseable: true,
-    },
+    // announcementBar: {
+    //   id: "announce_blog_post",
+    //   content:
+    //     '📢 Check out our recent <a target="_blank" rel="noopener noreferrer" href="https://clickhouse.com/blog/otel-to-rotel-petabyte-scaling-tracing-4x-greater-throughput">guest post</a> on the ClickHouse blog. 🎉',
+    //   backgroundColor: "#25c2a0",
+    //   isCloseable: true,
+    // },
   } satisfies Preset.ThemeConfig,
 };
 

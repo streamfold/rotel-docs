@@ -2,3 +2,7 @@ announcements:
   label: Announcements
   permalink: /announcements
   description: Announcement posts
+engineering:
+  label: Engineering
+  permalink: /engineering
+  description: Engineering posts
