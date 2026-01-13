@@ -19,7 +19,7 @@ toc_max_heading_level: 2
 
 :::info
 
-This blog post originally appeared as a [guest post]((https://clickhouse.com/blog/otel-to-rotel-petabyte-scaling-tracing-4x-greater-throughput)) on the ClickHouse blog.
+This blog post originally appeared as a [guest post](https://clickhouse.com/blog/otel-to-rotel-petabyte-scaling-tracing-4x-greater-throughput) on the ClickHouse blog.
 
 :::
 
