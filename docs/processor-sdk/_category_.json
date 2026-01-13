@@ -1,6 +1,6 @@
 {
   "label": "Processor SDK",
-  "position": 8,
+  "position": 9,
   "link": {
     "type": "generated-index",
     "description": "Python processor SDK for writing custom processors."
