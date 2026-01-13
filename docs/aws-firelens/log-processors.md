@@ -193,8 +193,4 @@ In this example:
 
 ## Writing Processors
 
-See the [Processor SDK](/docs/category/processor-sdk) documentation for detailed information on writing log processors, including:
-
-- [Python SDK](/docs/processor-sdk/python) - Python API reference
-- [Processor Interface](/docs/processor-sdk/interface) - Processor contract and behavior
-- [Examples](/docs/examples/processors) - More processor examples
+See the [Processor SDK](/docs/category/processor-sdk) documentation for detailed information on writing log processors.
