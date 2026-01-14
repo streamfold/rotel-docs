@@ -21,6 +21,7 @@
     "chart.js": "^4.4.9",
     "clsx": "^2.0.0",
     "fs-extra": "^11.3.0",
+    "plugin-image-zoom": "github:flexanalytics/plugin-image-zoom",
     "prism-react-renderer": "^2.3.0",
     "react": "^19.0.0",
     "react-chartjs-2": "^5.3.0",

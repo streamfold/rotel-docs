@@ -37,9 +37,9 @@ const config: Config = {
 
   markdown: {
     hooks: {
-      onBrokenMarkdownLinks: 'warn',
-      onBrokenMarkdownImages: 'throw',
-    }
+      onBrokenMarkdownLinks: "warn",
+      onBrokenMarkdownImages: "throw",
+    },
   },
 
   // Even if you don't use internationalization, you can use this field to set
@@ -151,6 +151,7 @@ const config: Config = {
         onInlineAuthors: "ignore",
       },
     ],
+    "plugin-image-zoom",
   ],
 
   themeConfig: {
@@ -242,6 +243,18 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
+    },
+    // https://github.com/flexanalytics/plugin-image-zoom
+    imageZoom: {
+      // CSS selector to apply the plugin to, defaults to '.markdown img'
+      // selector: ".markdown img",
+      // Optional medium-zoom options
+      // see: https://www.npmjs.com/package/medium-zoom#options
+      options: {
+        margin: 24,
+        background: "#686868",
+        scrollOffset: 40,
+      },
     },
     // announcementBar: {
     //   id: "announce_blog_post",
