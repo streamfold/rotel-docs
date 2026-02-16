@@ -90,6 +90,15 @@ html[data-theme='dark'] body::before {
   font-weight: 500;
 }
 
+/* Mobile sidebar needs an opaque background (not the translucent navbar bg) */
+.navbar-sidebar {
+  background-color: #0C0E12;
+}
+
+.navbar-sidebar__brand {
+  background-color: #0C0E12;
+}
+
 /* Footer refinements */
 .footer {
   border-top: 1px solid var(--custom-border-color);
