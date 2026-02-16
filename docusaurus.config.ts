@@ -35,13 +35,6 @@ const config: Config = {
 
   onBrokenLinks: "throw",
 
-  markdown: {
-    hooks: {
-      onBrokenMarkdownLinks: "warn",
-      onBrokenMarkdownImages: "throw",
-    },
-  },
-
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
@@ -51,6 +44,13 @@ const config: Config = {
   },
 
   headTags: [
+    {
+      tagName: "link",
+      attributes: {
+        rel: "stylesheet",
+        href: "https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap",
+      },
+    },
     {
       tagName: "link",
       attributes: {
@@ -157,7 +157,7 @@ const config: Config = {
   themeConfig: {
     // Replace with your project's social card
     colorMode: {
-      defaultMode: "dark",
+      defaultMode: "light",
       disableSwitch: true,
       respectPrefersColorScheme: false,
     },
@@ -192,7 +192,7 @@ const config: Config = {
       ],
     },
     footer: {
-      style: "dark",
+      style: "light",
       links: [
         {
           title: "Docs",
