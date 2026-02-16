@@ -183,7 +183,7 @@ export default function Home(): JSX.Element {
                           <div className="col col--6 margin-bottom--md">
                               <div className={clsx(styles.whyRotelItem, styles.featureBox)}>
                                   <h2>⏱️ Blazing Fast Cold-Starts</h2>
-                                  <p>Specifically tailored for serverless environments like AWS Lambda, ensuring your functions start fast.</p>
+                                  <p>Specifically tailored for resource constrained environments like AWS Lambda and MicroVM agent sandboxes, ensuring fast start times.</p>
                               </div>
                           </div>
                           <div className="col col--6 margin-bottom--md">
