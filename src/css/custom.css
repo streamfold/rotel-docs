@@ -27,7 +27,7 @@
   --ifm-heading-font-family: 'General Sans', system-ui, -apple-system, sans-serif;
 
   /* Navbar */
-  --ifm-navbar-background-color: rgba(12, 14, 18, 0.85);
+  --ifm-navbar-background-color: #0C0E12;
   --ifm-navbar-shadow: none;
   --ifm-navbar-link-color: #94A3B8;
   --ifm-navbar-link-hover-color: #E2E8F0;
@@ -77,6 +77,13 @@ html[data-theme='dark'] body::before {
 .navbar {
   border-bottom: 1px solid var(--custom-border-color);
   box-shadow: none;
+}
+
+/* Translucent blur only when mobile sidebar is closed.
+   backdrop-filter creates a containing block that traps the
+   fixed-position sidebar, so we must remove it when open. */
+.navbar:not(.navbar-sidebar--show) {
+  background: rgba(12, 14, 18, 0.85);
   backdrop-filter: blur(12px);
 }
 
@@ -131,6 +138,16 @@ html[data-theme='dark'] body::before {
 /* Code blocks */
 .prism-code {
   border: 1px solid var(--custom-border-color);
+}
+
+/* Blog post titles – match heading color on list and post pages */
+.blog-wrapper h2 a {
+  color: #E2E8F0;
+  text-decoration: none;
+}
+
+.blog-wrapper h2 a:hover {
+  color: var(--ifm-color-primary);
 }
 
 /* Blog post page width override */
