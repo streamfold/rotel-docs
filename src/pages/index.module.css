@@ -67,7 +67,7 @@
 
 /* Feature boxes (Why Rotel grid) */
 .featureBox {
-  border: 1px solid #1E2433;
+  border: 1px solid rgba(222, 83, 35, 0.3);
   border-radius: 8px;
   padding: 1.5rem;
   height: 100%;
@@ -76,7 +76,7 @@
 }
 
 .featureBox:hover {
-  border-color: #2D3548;
+  border-color: #DE5323;
 }
 
 .whyRotelItem h3 {

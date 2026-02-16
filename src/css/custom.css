@@ -66,10 +66,10 @@ html[data-theme='dark'] body::before {
   inset: 0;
   z-index: -1;
   background:
-    radial-gradient(ellipse 80% 50% at 15% 20%, rgba(222, 83, 35, 0.08), transparent 50%),
-    radial-gradient(ellipse 60% 60% at 85% 25%, rgba(160, 182, 50, 0.06), transparent 50%),
-    radial-gradient(ellipse 70% 50% at 50% 80%, rgba(222, 83, 35, 0.05), transparent 50%),
-    radial-gradient(ellipse 50% 40% at 75% 70%, rgba(160, 182, 50, 0.04), transparent 50%);
+    radial-gradient(ellipse 80% 50% at 15% 20%, rgba(222, 83, 35, 0.10), transparent 50%),
+    radial-gradient(ellipse 60% 60% at 85% 25%, rgba(160, 182, 50, 0.08), transparent 50%),
+    radial-gradient(ellipse 70% 50% at 50% 80%, rgba(222, 83, 35, 0.07), transparent 50%),
+    radial-gradient(ellipse 50% 40% at 75% 70%, rgba(160, 182, 50, 0.06), transparent 50%);
   pointer-events: none;
 }
 
