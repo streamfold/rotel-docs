@@ -65,8 +65,8 @@ const memUsageBarData: BarChartData = {
     datasets: [{
         label: 'Memory Usage (MB)',
         data: [23, 98, 23, 98, 18, 98],
-        backgroundColor: ['rgba(59, 130, 246, 0.6)', 'rgba(239, 68, 68, 0.5)', 'rgba(59, 130, 246, 0.6)', 'rgba(239, 68, 68, 0.5)', 'rgba(59, 130, 246, 0.6)', 'rgba(239, 68, 68, 0.5)'],
-        borderColor: ['rgba(59, 130, 246, 0.7)', 'rgba(239, 68, 68, 0.7)', 'rgba(59, 130, 246, 0.7)', 'rgba(239, 68, 68, 0.7)', 'rgba(59, 130, 246, 0.7)', 'rgba(239, 68, 68, 0.7)'],
+        backgroundColor: ['rgba(160, 182, 50, 0.6)', 'rgba(222, 83, 35, 0.7)', 'rgba(160, 182, 50, 0.6)', 'rgba(222, 83, 35, 0.7)', 'rgba(160, 182, 50, 0.6)', 'rgba(222, 83, 35, 0.7)'],
+        borderColor: ['#A0B632', '#DE5323', '#A0B632', '#DE5323', '#A0B632', '#DE5323'],
         borderWidth: 1,
         maxBarThickness: 100,
     }]
@@ -77,8 +77,8 @@ const cpuUsageBarData: BarChartData = {
     datasets: [{
         label: 'CPU (%)',
         data: [5.33, 8.67, 5.67, 10.33, 17.33, 21.00],
-        backgroundColor: ['rgba(59, 130, 246, 0.6)', 'rgba(239, 68, 68, 0.5)', 'rgba(59, 130, 246, 0.6)', 'rgba(239, 68, 68, 0.5)', 'rgba(59, 130, 246, 0.6)', 'rgba(239, 68, 68, 0.5)'],
-        borderColor: ['rgba(59, 130, 246, 0.7)', 'rgba(239, 68, 68, 0.7)', 'rgba(59, 130, 246, 0.7)', 'rgba(239, 68, 68, 0.7)', 'rgba(59, 130, 246, 0.7)', 'rgba(239, 68, 68, 0.7)'],
+        backgroundColor: ['rgba(160, 182, 50, 0.6)', 'rgba(222, 83, 35, 0.7)', 'rgba(160, 182, 50, 0.6)', 'rgba(222, 83, 35, 0.7)', 'rgba(160, 182, 50, 0.6)', 'rgba(222, 83, 35, 0.7)'],
+        borderColor: ['#A0B632', '#DE5323', '#A0B632', '#DE5323', '#A0B632', '#DE5323'],
         borderWidth: 1,
         maxBarThickness: 100,
     }]
@@ -96,8 +96,8 @@ const coldstartData: LineChartData = {
             197.312037,
             150.604963
         ],
-        borderColor: '#00D4FF', // Bright cyan
-        backgroundColor: 'rgba(0, 212, 255, 0.1)',
+        borderColor: '#A0B632',
+        backgroundColor: 'rgba(160, 182, 50, 0.1)',
         borderWidth: 3,
         tension: 0.2,
         pointRadius: 5,
@@ -113,8 +113,8 @@ const coldstartData: LineChartData = {
               426.790238,
               539.534966,
           ],
-          borderColor: '#FF6B6B', // Bright coral red
-          backgroundColor: 'rgba(255, 107, 107, 0.1)',
+          borderColor: '#DE5323',
+          backgroundColor: 'rgba(222, 83, 35, 0.1)',
           borderWidth: 3,
           tension: 0.2,
           pointRadius: 5,
@@ -131,8 +131,8 @@ const coldstartData: LineChartData = {
               636.898040,
 
           ],
-          borderColor: '#4ECDC4', // Bright teal
-          backgroundColor: 'rgba(78, 205, 196, 0.1)',
+          borderColor: '#64748B',
+          backgroundColor: 'rgba(100, 116, 139, 0.1)',
           borderWidth: 3,
           tension: 0.2,
           pointRadius: 5,
@@ -183,7 +183,7 @@ export default function Home(): JSX.Element {
                           <div className="col col--6 margin-bottom--md">
                               <div className={clsx(styles.whyRotelItem, styles.featureBox)}>
                                   <h2>⏱️ Blazing Fast Cold-Starts</h2>
-                                  <p>Specifically tailored for serverless environments like AWS Lambda, ensuring your functions start fast.</p>
+                                  <p>Specifically tailored for resource constrained environments like AWS Lambda and MicroVM agent sandboxes, ensuring fast start times.</p>
                               </div>
                           </div>
                           <div className="col col--6 margin-bottom--md">

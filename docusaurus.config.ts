@@ -7,10 +7,9 @@ import type * as Preset from "@docusaurus/preset-classic";
 const defaultLocale = "en";
 
 // Use the deploy preview URL if in a PR
-const baseUrl =
-  process.env.PULL_REQUEST === "true"
-    ? process.env.DEPLOY_PRIME_URL
-    : "https://rotel.dev";
+const baseUrl = process.env.PULL_REQUEST === "true"
+  ? process.env.DEPLOY_PRIME_URL
+  : "https://rotel.dev";
 
 const config: Config = {
   title: "Rotel",
@@ -51,6 +50,14 @@ const config: Config = {
   },
 
   headTags: [
+    {
+      tagName: "link",
+      attributes: {
+        rel: "stylesheet",
+        href:
+          "https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap",
+      },
+    },
     {
       tagName: "link",
       attributes: {
@@ -238,7 +245,8 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Built with ❤ by <a href="https://streamfold.com">Streamfold</a>`,
+      copyright:
+        `Built with ❤ by <a href="https://streamfold.com">Streamfold</a>`,
     },
     prism: {
       theme: prismThemes.github,

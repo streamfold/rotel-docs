@@ -13,7 +13,7 @@
 .heroSection h1 {
   font-size: 3rem;
   margin-bottom: 2rem;
-  color: white;
+  color: #E2E8F0;
 }
 
 .mission {
@@ -21,7 +21,7 @@
   line-height: 1.8;
   max-width: 800px;
   margin: 0 auto;
-  color: var(--ifm-color-primary-darkest);
+  color: #94A3B8;
 }
 
 .foundersSection {
@@ -32,6 +32,7 @@
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 3rem;
+  color: #E2E8F0;
 }
 
 .foundersGrid {
@@ -51,14 +52,15 @@
 .founderCard {
   text-align: center;
   padding: 2rem;
-  background: var(--ifm-background-surface-color);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid #1E2433;
   border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  box-shadow: none;
+  transition: border-color 0.2s ease;
 }
 
 .founderCard:hover {
-  transform: translateY(-5px);
+  border-color: #2D3548;
 }
 
 .founderImage {
@@ -67,18 +69,18 @@
   border-radius: 50%;
   margin-bottom: 1.5rem;
   object-fit: cover;
-  border: 4px solid var(--ifm-color-primary);
+  border: 4px solid #1E2433;
 }
 
 .founderCard h3 {
   font-size: 1.75rem;
   margin-bottom: 0.5rem;
-  color: var(--ifm-color-primary);
+  color: #E2E8F0;
 }
 
 .founderTitle {
   font-size: 1.1rem;
-  color: var(--ifm-color-secondary);
+  color: #94A3B8;
   margin-bottom: 1rem;
   font-weight: 600;
 }
@@ -86,7 +88,7 @@
 .founderBio {
   font-size: 1.1rem;
   line-height: 1.7;
-  color: var(--ifm-font-color-base);
+  color: #94A3B8;
   text-align: left;
   padding-top: 1rem;
 }
@@ -109,19 +111,19 @@
 .socialIcon {
   width: 24px;
   height: 24px;
-  color: var(--ifm-color-primary);
-  transition: color 0.3s ease, transform 0.3s ease;
+  color: #475569;
+  transition: color 0.2s ease;
 }
 
 .socialIcon:hover {
-  color: var(--ifm-color-primary-darker);
-  transform: translateY(-2px);
+  color: #E2E8F0;
 }
 
 .investorsSection {
   margin-top: 4rem;
   padding: 3rem 0;
-  background: var(--ifm-background-surface-color);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid #1E2433;
   border-radius: 12px;
 }
 
@@ -129,6 +131,7 @@
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 3rem;
+  color: #E2E8F0;
 }
 
 .investorsGrid {
@@ -142,7 +145,7 @@
 .investorItem {
   text-align: center;
   padding: 1rem;
-  transition: transform 0.3s ease;
+  transition: transform 0.2s ease;
 }
 
 .investorItem:hover {
@@ -153,17 +156,19 @@
   max-width: 200px;
   height: 80px;
   object-fit: contain;
-  filter: grayscale(100%);
-  transition: filter 0.3s ease;
+  filter: grayscale(100%) brightness(0.7);
+  opacity: 0.6;
+  transition: filter 0.3s ease, opacity 0.3s ease;
 }
 
 .investorLogo:hover {
-  filter: grayscale(0%);
+  filter: grayscale(0%) brightness(1);
+  opacity: 1;
 }
 
 .investorItem p {
   font-size: 1.1rem;
-  color: var(--ifm-color-primary-dark);
+  color: #94A3B8;
   font-weight: 500;
   margin: 0;
 }
