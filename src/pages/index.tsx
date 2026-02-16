@@ -65,8 +65,8 @@ const memUsageBarData: BarChartData = {
     datasets: [{
         label: 'Memory Usage (MB)',
         data: [23, 98, 23, 98, 18, 98],
-        backgroundColor: ['rgba(37, 99, 235, 0.75)', 'rgba(220, 38, 38, 0.65)', 'rgba(37, 99, 235, 0.75)', 'rgba(220, 38, 38, 0.65)', 'rgba(37, 99, 235, 0.75)', 'rgba(220, 38, 38, 0.65)'],
-        borderColor: ['#2563EB', '#DC2626', '#2563EB', '#DC2626', '#2563EB', '#DC2626'],
+        backgroundColor: ['rgba(222, 83, 35, 0.7)', 'rgba(160, 182, 50, 0.6)', 'rgba(222, 83, 35, 0.7)', 'rgba(160, 182, 50, 0.6)', 'rgba(222, 83, 35, 0.7)', 'rgba(160, 182, 50, 0.6)'],
+        borderColor: ['#DE5323', '#A0B632', '#DE5323', '#A0B632', '#DE5323', '#A0B632'],
         borderWidth: 1,
         maxBarThickness: 100,
     }]
@@ -77,8 +77,8 @@ const cpuUsageBarData: BarChartData = {
     datasets: [{
         label: 'CPU (%)',
         data: [5.33, 8.67, 5.67, 10.33, 17.33, 21.00],
-        backgroundColor: ['rgba(37, 99, 235, 0.75)', 'rgba(220, 38, 38, 0.65)', 'rgba(37, 99, 235, 0.75)', 'rgba(220, 38, 38, 0.65)', 'rgba(37, 99, 235, 0.75)', 'rgba(220, 38, 38, 0.65)'],
-        borderColor: ['#2563EB', '#DC2626', '#2563EB', '#DC2626', '#2563EB', '#DC2626'],
+        backgroundColor: ['rgba(222, 83, 35, 0.7)', 'rgba(160, 182, 50, 0.6)', 'rgba(222, 83, 35, 0.7)', 'rgba(160, 182, 50, 0.6)', 'rgba(222, 83, 35, 0.7)', 'rgba(160, 182, 50, 0.6)'],
+        borderColor: ['#DE5323', '#A0B632', '#DE5323', '#A0B632', '#DE5323', '#A0B632'],
         borderWidth: 1,
         maxBarThickness: 100,
     }]
@@ -96,8 +96,8 @@ const coldstartData: LineChartData = {
             197.312037,
             150.604963
         ],
-        borderColor: '#2563EB',
-        backgroundColor: 'rgba(37, 99, 235, 0.1)',
+        borderColor: '#DE5323',
+        backgroundColor: 'rgba(222, 83, 35, 0.1)',
         borderWidth: 3,
         tension: 0.2,
         pointRadius: 5,
@@ -113,8 +113,8 @@ const coldstartData: LineChartData = {
               426.790238,
               539.534966,
           ],
-          borderColor: '#DC2626',
-          backgroundColor: 'rgba(220, 38, 38, 0.1)',
+          borderColor: '#A0B632',
+          backgroundColor: 'rgba(160, 182, 50, 0.1)',
           borderWidth: 3,
           tension: 0.2,
           pointRadius: 5,
@@ -131,8 +131,8 @@ const coldstartData: LineChartData = {
               636.898040,
 
           ],
-          borderColor: '#7C3AED',
-          backgroundColor: 'rgba(124, 58, 237, 0.1)',
+          borderColor: '#64748B',
+          backgroundColor: 'rgba(100, 116, 139, 0.1)',
           borderWidth: 3,
           tension: 0.2,
           pointRadius: 5,

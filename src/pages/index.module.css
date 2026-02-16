@@ -4,16 +4,16 @@
  */
 
 .heroBanner {
-  background-color: #FFFFFF;
-  color: #1E293B;
+  background: transparent;
+  color: #E2E8F0;
   text-align: center;
   padding: 4rem 0;
-  border-bottom: 1px solid #E2E8F0;
+  border-bottom: 1px solid #1E2433;
 }
 
 .heroBanner .hero__title,
 .heroBanner .hero__subtitle {
-  color: #1E293B;
+  color: #E2E8F0;
 }
 
 .heroBanner .hero__title {
@@ -21,34 +21,36 @@
 }
 
 .heroBanner .hero__subtitle {
-  color: #64748B;
+  color: #94A3B8;
   max-width: 600px;
   margin: 0 auto 1.5rem;
   font-size: 1.2rem;
 }
 
+/* CTA: filled red-orange from chili */
 .heroBanner .button--secondary {
-  background-color: #2563EB;
+  background-color: #DE5323;
   color: #FFFFFF;
   border: none;
   font-weight: 600;
 }
 
 .heroBanner .button--secondary:hover {
-  background-color: #1D4ED8;
+  background-color: #C94A1F;
   color: #FFFFFF;
 }
 
+/* GitHub: ghost outline */
 .heroBanner .button--primary {
   background-color: transparent;
-  color: #64748B;
-  border: 1px solid #CBD5E1;
+  color: #94A3B8;
+  border: 1px solid #2D3548;
 }
 
 .heroBanner .button--primary:hover {
-  background-color: #F8FAFC;
-  color: #1E293B;
-  border-color: #94A3B8;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #E2E8F0;
+  border-color: #475569;
 }
 
 @media screen and (max-width: 996px) {
@@ -65,16 +67,16 @@
 
 /* Feature boxes (Why Rotel grid) */
 .featureBox {
-  border: 1px solid #E2E8F0;
+  border: 1px solid #1E2433;
   border-radius: 8px;
   padding: 1.5rem;
   height: 100%;
-  background: #FFFFFF;
+  background: rgba(255, 255, 255, 0.02);
   transition: border-color 0.2s ease;
 }
 
 .featureBox:hover {
-  border-color: #CBD5E1;
+  border-color: #2D3548;
 }
 
 .whyRotelItem h3 {
@@ -83,29 +85,29 @@
 
 .whyRotelItem p {
   margin-bottom: 0;
-  color: #64748B;
+  color: #94A3B8;
 }
 
 /* Feature sections (benchmarks, code, feature matrix) */
 .featuresSection {
-  background-color: #F8FAFC;
+  background-color: rgba(255, 255, 255, 0.02);
   border-radius: 12px;
 }
 
 .featuresSection h2 {
-  color: #1E293B;
+  color: #E2E8F0;
   margin-bottom: 0.5rem;
 }
 
 .featuresSection .sectionSubtitle {
-  color: #64748B;
+  color: #94A3B8;
   margin-bottom: 2rem;
 }
 
 /* Feature highlight boxes (receivers / exporters) */
 .featureHighlightBox {
-  background: #FFFFFF;
-  border: 1px solid #E2E8F0;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid #1E2433;
   border-radius: 12px;
   padding: 2rem;
   height: 100%;
@@ -113,7 +115,7 @@
 }
 
 .featureHighlightBox:hover {
-  border-color: #CBD5E1;
+  border-color: #2D3548;
 }
 
 .featureIcon {
@@ -123,7 +125,7 @@
 }
 
 .featureHighlightBox h3 {
-  color: #1E293B;
+  color: #E2E8F0;
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
@@ -138,7 +140,7 @@
 }
 
 .featureList li {
-  color: #475569;
+  color: #94A3B8;
   font-size: 0.95rem;
   padding: 0.5rem 0;
   padding-left: 1.5rem;
@@ -147,17 +149,17 @@
 }
 
 .featureList li::before {
-  content: '✓';
+  content: '\2713';
   position: absolute;
   left: 0;
   top: 0.5rem;
-  color: #2563EB;
+  color: #DE5323;
   font-weight: bold;
   font-size: 1rem;
 }
 
 .exportersBox .featureList li::before {
-  color: #059669;
+  color: #A0B632;
 }
 
 /* Chart container */
@@ -167,11 +169,11 @@
 
 /* Example cards section */
 .altSectionBackground {
-  background-color: #F8FAFC;
+  background-color: rgba(255, 255, 255, 0.02);
 }
 
 .sectionSubtitle {
-  color: #64748B;
+  color: #94A3B8;
 }
 
 .exampleCardWrapper {
@@ -179,8 +181,8 @@
 }
 
 .exampleCard {
-  background: #FFFFFF;
-  border: 1px solid #E2E8F0;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid #1E2433;
   box-shadow: none;
   display: flex;
   flex-direction: column;
@@ -189,18 +191,18 @@
 }
 
 .exampleCard:hover {
-  border-color: #CBD5E1;
+  border-color: #2D3548;
 }
 
 .exampleCard .button--primary {
-  background-color: #2563EB;
-  border-color: #2563EB;
+  background-color: #DE5323;
+  border-color: #DE5323;
   color: #FFFFFF;
 }
 
 .exampleCard .button--primary:hover {
-  background-color: #1D4ED8;
-  border-color: #1D4ED8;
+  background-color: #C94A1F;
+  border-color: #C94A1F;
 }
 
 /* Responsive adjustments */
