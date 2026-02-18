@@ -14,7 +14,7 @@ const baseUrl = process.env.PULL_REQUEST === "true"
 const config: Config = {
   title: "Rotel",
   tagline: "High Performance, Resource Efficient OpenTelemetry Collection",
-  favicon: "img/favicon.ico",
+  favicon: "img/favicon.svg",
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -63,7 +63,15 @@ const config: Config = {
       attributes: {
         rel: "apple-touch-icon",
         sizes: "180x180",
-        href: "/apple-touch-icon.png",
+        href: "/img/apple-touch-icon.png",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "icon",
+        type: "image/svg+xml",
+        href: "/img/favicon.svg",
       },
     },
     {
@@ -72,16 +80,7 @@ const config: Config = {
         rel: "icon",
         type: "image/png",
         sizes: "32x32",
-        href: "/favicon-32x32.png",
-      },
-    },
-    {
-      tagName: "link",
-      attributes: {
-        rel: "icon",
-        type: "image/png",
-        sizes: "16x16",
-        href: "/favicon-16x16.png",
+        href: "/img/favicon-32x32.png",
       },
     },
     {
