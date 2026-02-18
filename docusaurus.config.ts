@@ -63,7 +63,7 @@ const config: Config = {
       attributes: {
         rel: "apple-touch-icon",
         sizes: "180x180",
-        href: "/apple-touch-icon.png",
+        href: "/img/apple-touch-icon.png",
       },
     },
     {
@@ -72,6 +72,15 @@ const config: Config = {
         rel: "icon",
         type: "image/svg+xml",
         href: "/img/favicon.svg",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "icon",
+        type: "image/png",
+        sizes: "32x32",
+        href: "/img/favicon-32x32.png",
       },
     },
     {
