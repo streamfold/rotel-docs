@@ -35,6 +35,23 @@ Any option above that does not contain a default is considered false or unset by
 | --otel-resource-attributes        |                      |                                                              |
 | --enable-internal-telemetry       |                      |                                                              |
 
+## Retries and Timeouts
+
+Requests will be retried if they match retryable error codes like 429 (Too Many Requests) or timeout. You can control
+the retry behavior globally for all exporters with the following options:
+
+- `--exporter-retry-initial-backoff`: Initial backoff duration (default: `5s`)
+- `--exporter-retry-max-backoff`: Maximum backoff interval (default: `30s`)
+- `--exporter-retry-max-elapsed-time`: Maximum wall time a request will be retried for until it is marked as a
+  permanent failure (default: `300s`)
+
+These global retry settings apply to all exporters unless overridden by exporter-specific retry options (see individual
+exporter configuration pages for details).
+
+Each exporter can also override the default request timeout. For example, the OTLP exporter default timeout of 5 seconds
+can be overridden with `--otlp-exporter-request-timeout`. All time options should be represented as string time
+durations, e.g. `"250ms"` for 250 milliseconds, `"3s"` for 3 seconds.
+
 ## Component configuration
 
 Next, select your configuration for receivers and exporters.
