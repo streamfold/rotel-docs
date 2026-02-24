@@ -27,9 +27,12 @@ for exporting to Cloudwatch.
 | --awsemf-exporter-log-stream-name                      | otel-stream      |                  |
 | --awsemf-exporter-log-retention                        | 0                |                  |
 | --awsemf-exporter-namespace                            |                  |                  |
-| --awsemf-exporter-retain-initial-value-of-delta-metric | false            |                  |
-| --awsemf-exporter-include-dimensions                   |                  |                  |
-| --awsemf-exporter-exclude-dimensions                   |                  |                  |
+| --awsemf-exporter-retain-initial-value-of-delta-metric | false                          |                  |
+| --awsemf-exporter-include-dimensions                   |                                |                  |
+| --awsemf-exporter-exclude-dimensions                   |                                |                  |
+| --awsemf-exporter-retry-initial-backoff                | (uses global exporter default) |                  |
+| --awsemf-exporter-retry-max-backoff                    | (uses global exporter default) |                  |
+| --awsemf-exporter-retry-max-elapsed-time               | (uses global exporter default) |                  |
 
 ## Dimension Filtering
 

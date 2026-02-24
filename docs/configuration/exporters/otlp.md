@@ -22,7 +22,7 @@ The OTLP exporter is the default, or can be explicitly selected with `--exporter
 | --otlp-exporter-protocol               | grpc    | grpc, http |
 | --otlp-exporter-custom-headers         |         |            |
 | --otlp-exporter-compression            | gzip    | gzip, none |
-| --otlp-exporter-authenticator          |         | sigv4auth  |
+| --otlp-exporter-authenticator          |         | sigv4auth, basic |
 | --otlp-exporter-tls-cert-file          |         |            |
 | --otlp-exporter-tls-cert-pem           |         |            |
 | --otlp-exporter-tls-key-file           |         |            |
@@ -30,10 +30,12 @@ The OTLP exporter is the default, or can be explicitly selected with `--exporter
 | --otlp-exporter-tls-ca-file            |         |            |
 | --otlp-exporter-tls-ca-pem             |         |            |
 | --otlp-exporter-tls-skip-verify        |         |            |
-| --otlp-exporter-request-timeout        | 5s      |            |
-| --otlp-exporter-retry-initial-backoff  | 5s      |            |
-| --otlp-exporter-retry-max-backoff      | 30s     |            |
-| --otlp-exporter-retry-max-elapsed-time | 300s    |            |
+| --otlp-exporter-request-timeout        | 5s                             |            |
+| --otlp-exporter-pool-idle-timeout      | 30s                            |            |
+| --otlp-exporter-pool-max-idle-per-host | 100                            |            |
+| --otlp-exporter-retry-initial-backoff  | (uses global exporter default) |            |
+| --otlp-exporter-retry-max-backoff      | (uses global exporter default) |            |
+| --otlp-exporter-retry-max-elapsed-time | (uses global exporter default) |            |
 
 Any of the options that start with `--otlp-exporter*` can be set per telemetry type: metrics, traces or logs. For
 example, to set a custom endpoint to export traces to, set: `--otlp-exporter-traces-endpoint`. For other telemetry
@@ -94,3 +96,21 @@ To send OTLP logs to Cloudwatch you must create a log group and log stream. Expo
 ahead of time and they are not created by default.
 
 :::
+
+## Basic Authentication
+
+For OTLP endpoints that require HTTP Basic Authentication, you can use the `basic` authenticator:
+
+| Option                              | Default | Options |
+|-------------------------------------|---------|---------|
+| --otlp-exporter-basic-auth-username |         |         |
+| --otlp-exporter-basic-auth-password |         |         |
+
+Example configuration:
+
+```shell
+ROTEL_OTLP_EXPORTER_ENDPOINT=https://collector.example.com:443
+ROTEL_OTLP_EXPORTER_AUTHENTICATOR=basic
+ROTEL_OTLP_EXPORTER_BASIC_AUTH_USERNAME=myuser
+ROTEL_OTLP_EXPORTER_BASIC_AUTH_PASSWORD=mypassword
+```

@@ -22,9 +22,12 @@ batch size of 50 with the warning
 See the [AWS Auth](/docs/configuration/aws-auth) page for instructions on how to retrieve credentials necessary
 for exporting to X-Ray.
 
-| Option                             | Default   | Options          |
-| ---------------------------------- | --------- | ---------------- |
-| --awsxray-exporter-region          | us-east-1 | aws region codes |
-| --awsxray-exporter-custom-endpoint |           |                  |
+| Option                                    | Default                        | Options          |
+| ----------------------------------------- | ------------------------------ | ---------------- |
+| --awsxray-exporter-region                 | us-east-1                      | aws region codes |
+| --awsxray-exporter-custom-endpoint        |                                |                  |
+| --awsxray-exporter-retry-initial-backoff  | (uses global exporter default) |                  |
+| --awsxray-exporter-retry-max-backoff      | (uses global exporter default) |                  |
+| --awsxray-exporter-retry-max-elapsed-time | (uses global exporter default) |                  |
 
 For a list of available AWS X-Ray region codes here: https://docs.aws.amazon.com/general/latest/gr/xray.html

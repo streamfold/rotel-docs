@@ -27,8 +27,11 @@ for traces, logs, and metrics.
 | --clickhouse-exporter-request-timeout | 5s      |             |
 | --clickhouse-exporter-enable-json     |         |             |
 | --clickhouse-exporter-json-underscore |         |             |
-| --clickhouse-exporter-user            |         |             |
-| --clickhouse-exporter-password        |         |             |
+| --clickhouse-exporter-user                   |                                |             |
+| --clickhouse-exporter-password               |                                |             |
+| --clickhouse-exporter-retry-initial-backoff  | (uses global exporter default) |             |
+| --clickhouse-exporter-retry-max-backoff      | (uses global exporter default) |             |
+| --clickhouse-exporter-retry-max-elapsed-time | (uses global exporter default) |             |
 
 ## Table naming
 
