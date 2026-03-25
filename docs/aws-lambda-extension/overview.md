@@ -4,14 +4,14 @@ sidebar_position: 1
 
 # Overview
 
-[Rotel Lambda Extension](https://github.com/streamfold/rotel-lambda-extension) is an advanced AWS Lambda extension layer, built on top of [Rotel](/docs/about/rotel). By minimizing binary size, reducing cold start latency, and lowering memory overhead, this extension optimizes performance and cost efficiency in AWS Lambda deployments.
+[Rotel Lambda Extension](https://github.com/rotel-dev/rotel-lambda-extension) is an advanced AWS Lambda extension layer, built on top of [Rotel](/docs/about/rotel). By minimizing binary size, reducing cold start latency, and lowering memory overhead, this extension optimizes performance and cost efficiency in AWS Lambda deployments.
 
 The Rotel Lambda Extension integrates with the Lambda [TelemetryAPI](https://docs.aws.amazon.com/lambda/latest/dg/telemetry-api.html) to collect **function logs** and **extension logs** and will export them to the configured exporter. This can reduce your Lambda observability costs if you combine it with [disabling CloudWatch Logs](#disabling-cloudwatch-logs). 
 
 ## Using
 
 Choose the Lambda layer that matches your Lambda runtime architecture. The `{version}` field
-is dependent on the AWS region that you are deploying into. Check the [releases](https://github.com/streamfold/rotel-lambda-extension/releases)
+is dependent on the AWS region that you are deploying into. Check the [releases](https://github.com/rotel-dev/rotel-lambda-extension/releases)
 page for the latest version numbers that correspond to your region.
 
 | Architecture | ARN                                                                          |
@@ -48,5 +48,5 @@ By default, AWS Lambda will send all Lambda logs to Amazon CloudWatch. To reduce
 
 These are example repos demonstrating how to use the Rotel Lambda Extension.
 
-* [Node.js Auto Instrumentation](https://github.com/streamfold/nodejs-aws-lambda-example): This uses the Node.js auto instrumentation [layer](https://github.com/open-telemetry/opentelemetry-lambda/blob/main/nodejs/README.md) to instrument a Node.js app and emit metrics, logs and traces to Honeycomb.
-* [Python + Clickhouse](https://github.com/streamfold/python-aws-lambda-clickhouse-example): Python application with manual OpenTelemetry instrumentation, sending OpenTelemetry traces and logs to Clickhouse. All Lambda logs are converted to OTel and immediately sent to Clickhouse, so this can avoid expensive Cloudwatch log costs. This example uses the JSON data type by default to improve the query support for OTel key/value attributes.
+* [Node.js Auto Instrumentation](https://github.com/rotel-dev/nodejs-aws-lambda-example): This uses the Node.js auto instrumentation [layer](https://github.com/open-telemetry/opentelemetry-lambda/blob/main/nodejs/README.md) to instrument a Node.js app and emit metrics, logs and traces to Honeycomb.
+* [Python + Clickhouse](https://github.com/rotel-dev/python-aws-lambda-clickhouse-example): Python application with manual OpenTelemetry instrumentation, sending OpenTelemetry traces and logs to Clickhouse. All Lambda logs are converted to OTel and immediately sent to Clickhouse, so this can avoid expensive Cloudwatch log costs. This example uses the JSON data type by default to improve the query support for OTel key/value attributes.

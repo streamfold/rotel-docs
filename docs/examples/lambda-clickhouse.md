@@ -8,4 +8,4 @@ This example showcases the integration of the Rotel Lambda Extension with Clickh
 
 This also demonstrates [multiple exporters](/docs/configuration/multiple-exporters.md) configuration by exporting metrics to the blackhole exporter.
 
-[python-aws-lambda-clickhouse-example](https://github.com/streamfold/python-aws-lambda-clickhouse-example)
+[python-aws-lambda-clickhouse-example](https://github.com/rotel-dev/python-aws-lambda-clickhouse-example)

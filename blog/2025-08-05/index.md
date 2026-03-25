@@ -35,7 +35,7 @@ Beyond the practical implications, these questions also felt like an **exciting 
 * **Resource Efficiency:** Up to 75% less memory utilization and 50% less cpu usage on [OpenTelemetry collector benchmarks](https://streamfold.github.io/rotel-otel-loadtests/benchmarks/).
 * **Serverless Extension**: Easily deploy Rotel on AWS Lambda as an extension with very fast cold-start times.
 * **Robust Data Delivery:** Built-in batching, retry mechanisms, and configurable timeouts ensure reliable data delivery
-* **Runtime Integrations:** Easily bundle Rotel with popular runtimes. We provide simple to use integrations for Python ([streamfold/pyrotel](https://github.com/streamfold/pyrotel)) and Node.js ([streamfold/rotel-nodejs](https://github.com/streamfold/rotel-nodejs)).
+* **Runtime Integrations:** Easily bundle Rotel with popular runtimes. We provide simple to use integrations for Python ([rotel-dev/pyrotel](https://github.com/rotel-dev/pyrotel)) and Node.js ([rotel-dev/rotel-nodejs](https://github.com/rotel-dev/rotel-nodejs)).
 
 ## Getting Started
 
@@ -61,7 +61,7 @@ See the full [Getting Started](/docs/setup/getting-started) guide for more infor
 
 ### Python Processor SDK
 
-One of Rotel's most innovative features is its [Python processor SDK](https://github.com/streamfold/rotel/blob/main/rotel_python_processor_sdk/rotel_sdk/README.md). This SDK enables developers to write custom Python code to modify OpenTelemetry data in-flight before export. Rust’s zero-overhead FFI allows Rotel to provide a high-performance Python extension for processing OpenTelemetry.
+One of Rotel's most innovative features is its [Python processor SDK](https://github.com/rotel-dev/rotel/blob/main/rotel_python_processor_sdk/rotel_sdk/README.md). This SDK enables developers to write custom Python code to modify OpenTelemetry data in-flight before export. Rust’s zero-overhead FFI allows Rotel to provide a high-performance Python extension for processing OpenTelemetry.
 
 The SDK includes LSP support for code completion and syntax highlighting, along with prebuilt processors for common use cases such as attribute modification and data redaction. You can install the SDK with: `pip install rotel-sdk`.
 
@@ -89,7 +89,7 @@ Check out the Rotel [Python](https://rotel.dev/docs/category/python-rotel) or [N
 
 ### AWS Lambda Extension
 
-We’ve also developed a native AWS Lambda Extension, [available on GitHub](https://github.com/streamfold/rotel-lambda-extension), to deploy OpenTelemetry in serverless applications. Existing OpenTelemetry Lambda builds, such as [ADOT](https://aws-otel.github.io/docs/getting-started/lambda), are often large and can add up to a second of cold-start initialization time, directly impacting Lambda function response and increasing serverless costs. The Rotel Lambda Extension compresses down to a size of **8MB** and starts in **under 70ms**. This, combined with an adaptive flushing technique that minimizes post-function delays, drastically reduces cold-start impacts.
+We’ve also developed a native AWS Lambda Extension, [available on GitHub](https://github.com/rotel-dev/rotel-lambda-extension), to deploy OpenTelemetry in serverless applications. Existing OpenTelemetry Lambda builds, such as [ADOT](https://aws-otel.github.io/docs/getting-started/lambda), are often large and can add up to a second of cold-start initialization time, directly impacting Lambda function response and increasing serverless costs. The Rotel Lambda Extension compresses down to a size of **8MB** and starts in **under 70ms**. This, combined with an adaptive flushing technique that minimizes post-function delays, drastically reduces cold-start impacts.
 
 Beyond reduced cold-start times, the Rotel Lambda Extension integrates with the TelemetryAPI  to convert all function logs to OpenTelemetry format and export them to your configured exporter destinations. This allows you to reduce your CloudWatch costs by replacing it with your preferred logging vendor.
 
@@ -103,7 +103,7 @@ Rotel’s ClickHouse exporter provides complete support for ClickHouse, allowing
 
 Rotel has been built from the ground up using Rust, which allows us to achieve system-level performance reliably, without the concern of undefined behavior. Rust’s strict memory model enables high performance without the overhead associated with traditional garbage-collected memory models. It’s a [popular choice](https://www.datadoghq.com/blog/datadog-next-gen-lambda-extension/) for systems requiring high performance and low resource usage.
 
-To get a sense of Rotel’s performance, we [adapted](https://github.com/streamfold/rotel-otel-loadtests) the OpenTelemetry Collector Contrib benchmarks to run against Rotel. The results: Rotel requires **75% less memory and uses 50% less CPU**. These benchmarks [run nightly](https://streamfold.github.io/rotel-otel-loadtests/benchmarks/) against the latest versions of both the OpenTelemetry Collector and Rotel.
+To get a sense of Rotel’s performance, we [adapted](https://github.com/rotel-dev/rotel-otel-loadtests) the OpenTelemetry Collector Contrib benchmarks to run against Rotel. The results: Rotel requires **75% less memory and uses 50% less CPU**. These benchmarks [run nightly](https://streamfold.github.io/rotel-otel-loadtests/benchmarks/) against the latest versions of both the OpenTelemetry Collector and Rotel.
 
 ## Up next
 
@@ -125,7 +125,7 @@ We also intend to investigate OTTL support. While anything written in a domain s
 
 ### Durable Pipelines
 
-You can hope for the best, but sometimes you have to plan for the worst, and telemetry pipelines are no exception. Rotel should provide the option to build durable pipelines with options like guaranteed at-least-once delivery, for receivers and exporters that support it. Rotel should allow telemetry to be spooled to disk or S3 when export destinations are offline for extended durations. We want to support durability with little to no overhead and in a way that is simple to configure. Check out the [RFC](https://github.com/streamfold/rotel/discussions/186) to join in the discussion on adding delivery acknowledgement to Rotel.
+You can hope for the best, but sometimes you have to plan for the worst, and telemetry pipelines are no exception. Rotel should provide the option to build durable pipelines with options like guaranteed at-least-once delivery, for receivers and exporters that support it. Rotel should allow telemetry to be spooled to disk or S3 when export destinations are offline for extended durations. We want to support durability with little to no overhead and in a way that is simple to configure. Check out the [RFC](https://github.com/rotel-dev/rotel/discussions/186) to join in the discussion on adding delivery acknowledgement to Rotel.
 
 ### OpenTelemetry Arrow
 
@@ -133,6 +133,6 @@ The OTEL Arrow project is an ongoing effort to augment OTLP with the Apache Arro
 
 ## Get Involved
 
-Ready to explore Rotel? Visit [rotel.dev](https://rotel.dev) and [github.com/streamfold/rotel](https://github.com/streamfold/rotel) for detailed documentation and examples.
+Ready to explore Rotel? Visit [rotel.dev](https://rotel.dev) and [github.com/rotel-dev/rotel](https://github.com/rotel-dev/rotel) for detailed documentation and examples.
 
 Join our [Discord server](https://rotel.dev/discord) to discuss the project, share feedback, or ask questions. Whether you're evaluating observability solutions or are simply interested in the technical approach, we welcome your participation.

@@ -258,7 +258,7 @@ aws lambda update-function-code \
 Python log processors are **not supported** with ZIP file deployment. Use Docker container deployment if you need Python processor support.
 :::
 
-Pre-built Lambda ZIP files for x86_64 and arm64 architectures are available from the [Releases](https://github.com/streamfold/rotel-lambda-forwarder/releases) page, or from the following links:
+Pre-built Lambda ZIP files for x86_64 and arm64 architectures are available from the [Releases](https://github.com/rotel-dev/rotel-lambda-forwarder/releases) page, or from the following links:
 
 | **Region** | **x86_64** | **arm64** |
 | ---------- | ---------- | --------- |

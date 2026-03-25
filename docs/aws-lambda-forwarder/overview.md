@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Overview
 
-[Rotel Lambda Forwarder](https://github.com/streamfold/rotel-lambda-forwarder) is an AWS Lambda function written in Rust that forwards CloudWatch and S3-stored logs to OpenTelemetry-compatible backends. It receives requests triggered by either CloudWatch Logs subscription filters or S3 event notifications, transforms them into OpenTelemetry log format, and exports them using the [Rotel](https://github.com/streamfold/rotel) agent. This is built on the existing Rotel OpenTelemetry data plane, so logs can be exported to any [supported exporter](/docs/category/exporters). Logs can be filtered, transformed, or enriched by adding small processor functions written in Python.
+[Rotel Lambda Forwarder](https://github.com/rotel-dev/rotel-lambda-forwarder) is an AWS Lambda function written in Rust that forwards CloudWatch and S3-stored logs to OpenTelemetry-compatible backends. It receives requests triggered by either CloudWatch Logs subscription filters or S3 event notifications, transforms them into OpenTelemetry log format, and exports them using the [Rotel](https://github.com/rotel-dev/rotel) agent. This is built on the existing Rotel OpenTelemetry data plane, so logs can be exported to any [supported exporter](/docs/category/exporters). Logs can be filtered, transformed, or enriched by adding small processor functions written in Python.
 
 By leveraging the high-performance Rotel data plane, Rotel Lambda Forwarder can transform logs at high volume while minimizing Lambda runtime duration costs.
 

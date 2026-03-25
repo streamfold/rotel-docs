@@ -12,5 +12,5 @@ Features:
 - Pushes trace spans to Datadog (using early experimental rotel trace support)
 - Pulls the latest weather forecast from a configurable backend API
 
-[mcp-demo-server-otel](https://github.com/streamfold/mcp-demo-server-otel)
+[mcp-demo-server-otel](https://github.com/rotel-dev/mcp-demo-server-otel)
 

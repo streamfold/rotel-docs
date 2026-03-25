@@ -49,7 +49,7 @@ function HomepageHeader(): JSX.Element {
           </Link>
           <Link
             className={clsx('button button--primary button--lg margin-left--md', styles.githubButton)}
-            href="https://github.com/streamfold/rotel" // Main project repo
+            href="https://github.com/rotel-dev/rotel" // Main project repo
             target="_blank"
             rel="noopener noreferrer">
             View on GitHub <span aria-label="external link icon">↗️</span>
@@ -148,17 +148,17 @@ const exampleRepos: ExampleRepo[] = [
   {
     title: "Rotel with Python FastAPI",
     description: "Integrating Rotel for telemetry in a Python FastAPI application.",
-    link: "https://github.com/streamfold/fastapi-backend-example"
+    link: "https://github.com/rotel-dev/fastapi-backend-example"
   },
   {
     title: "AWS Lambda + Clickhouse",
     description: "Using the Lambda Extension to send Lambda logs and application traces to Clickhouse.",
-    link: "https://github.com/streamfold/python-aws-lambda-clickhouse-example"
+    link: "https://github.com/rotel-dev/python-aws-lambda-clickhouse-example"
   },
   {
     title: "Node.js Lambda + Honeycomb",
     description: "Use OpenTelemetry Node.js auto-instrumentation and send data to Honeycomb.",
-    link: "https://github.com/streamfold/nodejs-aws-lambda-example",
+    link: "https://github.com/rotel-dev/nodejs-aws-lambda-example",
   },
 ];
 
@@ -190,8 +190,8 @@ export default function Home(): JSX.Element {
                               <div className={clsx(styles.whyRotelItem, styles.featureBox)}>
                                   <h2>📦 Flexible and Lightweight Deployment </h2>
                                   <p>Deploy Rotel to the cloud with pre-built Docker
-                                      containers, import as <a href="https://github.com/streamfold/pyrotel">Python</a> / <a href="https://github.com/streamfold/rotel-nodejs">Node.js</a> packages,
-                                      or load the <a href="https://github.com/streamfold/rotel-lambda-extension">extension layer</a> on AWS Lambda.</p>
+                                      containers, import as <a href="https://github.com/rotel-dev/pyrotel">Python</a> / <a href="https://github.com/rotel-dev/rotel-nodejs">Node.js</a> packages,
+                                      or load the <a href="https://github.com/rotel-dev/rotel-lambda-extension">extension layer</a> on AWS Lambda.</p>
                               </div>
                           </div>
                           <div className="col col--6 margin-bottom--md">

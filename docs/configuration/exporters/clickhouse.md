@@ -51,7 +51,7 @@ specifying:
 ## DDL
 
 The exporter will not generate the table schema if it does not exist. Use the
-[clickhouse-ddl](https://github.com/streamfold/rotel/blob/main/src/bin/clickhouse-ddl/README.md) command for generating the necessary table DDL for ClickHouse. The
+[clickhouse-ddl](https://github.com/rotel-dev/rotel/blob/main/src/bin/clickhouse-ddl/README.md) command for generating the necessary table DDL for ClickHouse. The
 DDL matches the schema used in the
 OpenTelemetry [ClickHouse exporter](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/exporter/clickhouseexporter/README.md).
 

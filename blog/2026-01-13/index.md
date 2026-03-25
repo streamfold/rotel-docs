@@ -88,7 +88,7 @@ A key part of our setup was the ClickHouse Null table engine, which let us remov
 
 ### Load generation
 
-We were unable to push the necessary data volume required through the [telemetrygen](https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/cmd/telemetrygen) CLI for the benchmark. Instead, we relied on an internal load generator we had built previously for testing OpenTelemetry and other telemetry pipelines. You can find the project in the [otel-loadgen](https://github.com/streamfold/otel-loadgen) Github repo. It includes additional features for verifying end-to-end data delivery, which we’ll cover in a future post.
+We were unable to push the necessary data volume required through the [telemetrygen](https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/cmd/telemetrygen) CLI for the benchmark. Instead, we relied on an internal load generator we had built previously for testing OpenTelemetry and other telemetry pipelines. You can find the project in the [otel-loadgen](https://github.com/rotel-dev/otel-loadgen) Github repo. It includes additional features for verifying end-to-end data delivery, which we’ll cover in a future post.
 
 We generated approximately 100 spans per trace with varied attributes and metadata. As with any synthetic load test, the dataset won’t identically mirror real production traffic.
 
@@ -118,7 +118,7 @@ We started our benchmark with the OpenTelemetry Collector, running in the benchm
 
 **![rotel-pipeline-3.jpg](images/rotel-pipeline-3.jpg)**
 
-_You can find the docker-compose config [here](https://github.com/streamfold/rotel-clickhouse-benchmark/blob/main/docker-compose-otelcoll.yml)._
+_You can find the docker-compose config [here](https://github.com/rotel-dev/rotel-clickhouse-benchmark/blob/main/docker-compose-otelcoll.yml)._
 
 ### Results
 
@@ -147,7 +147,7 @@ CPU on the gateway collector peaked at a little over 83% during the test and app
 
 **![rotel-pipeline-4.jpg](images/rotel-pipeline-4.jpg)**
 
-_You can find the docker-compose config [here](https://github.com/streamfold/rotel-clickhouse-benchmark/blob/main/docker-compose-rotel.yml)_.
+_You can find the docker-compose config [here](https://github.com/rotel-dev/rotel-clickhouse-benchmark/blob/main/docker-compose-rotel.yml)_.
 
 ### Results
 
@@ -198,7 +198,7 @@ This is much more efficient, reducing any serialization/deserialization time for
 
 ### Rerunning the test
 
-After updating Rotel to use this improved [encoding approach](https://github.com/streamfold/rotel/pull/200), we reran our tests to measure the impact. The results showed that we were not able to exceed the previous peak of 1.45M spans per second, but we did observe roughly a **10% reduction in CPU usage** on the ClickHouse server and a small reduction in CPU on the gateway collector. This reduction appeared consistently across multiple runs, which suggests that the lower server-side deserialization cost provided a real benefit.
+After updating Rotel to use this improved [encoding approach](https://github.com/rotel-dev/rotel/pull/200), we reran our tests to measure the impact. The results showed that we were not able to exceed the previous peak of 1.45M spans per second, but we did observe roughly a **10% reduction in CPU usage** on the ClickHouse server and a small reduction in CPU on the gateway collector. This reduction appeared consistently across multiple runs, which suggests that the lower server-side deserialization cost provided a real benefit.
 
 The synthetic load used in this evaluation does not contain large string values, and the number of attributes per span may differ from production workloads. Although we did not see a significant improvement on the client side, we believe the faster JSON serialization and deserialization path will be more noticeable for spans that contain larger attribute sets.
 
@@ -412,7 +412,7 @@ At the petabyte scale that ClickHouse runs their internal LogHouse platform, eff
 
 This work pushed us to optimize Rotel into a high-throughput pipeline for streaming OpenTelemetry tracing data into ClickHouse. In our tests, Rotel reached nearly **four times the throughput** of the OpenTelemetry Collector on the same hardware, which can translate into meaningful resource savings at large scale. Rotel has first-class support for OpenTelemetry traces, metrics, and logs, and while this post focused on tracing, we plan to evaluate log and metric workloads as part of future benchmarking.
 
-We are also interested in learning which capabilities matter most when operating at this level of volume. If you have ideas or want to share your own scaling challenges, you can join the community on [Discord](https://rotel.dev/discord) or contribute on [GitHub](https://github.com/streamfold/rotel).
+We are also interested in learning which capabilities matter most when operating at this level of volume. If you have ideas or want to share your own scaling challenges, you can join the community on [Discord](https://rotel.dev/discord) or contribute on [GitHub](https://github.com/rotel-dev/rotel).
 
 ### Further work
 
@@ -459,7 +459,7 @@ OpenTelemetry support in Vector is relatively new and not compatible with many d
 
 The [ClickHouse docs](https://clickhouse.com/docs/observability/integrating-opentelemetry#out-of-the-box-schema) recommend that you disable auto schema creation in the exporter and populate the schemas ahead of time. It is not clear how best to deploy these schema migrations since they are bundled in the OTel exporter.
 
-For Rotel we decided to split DDL management out to a separate CLI utility to make it easy to deploy these migrations. The [clickhouse-ddl](https://github.com/streamfold/rotel/blob/main/src/bin/clickhouse-ddl/README.md) tool will create schemas compatible with Rotel and the OTel collector.
+For Rotel we decided to split DDL management out to a separate CLI utility to make it easy to deploy these migrations. The [clickhouse-ddl](https://github.com/rotel-dev/rotel/blob/main/src/bin/clickhouse-ddl/README.md) tool will create schemas compatible with Rotel and the OTel collector.
 
 We've shipped it as a docker container, so you can easily create the necessary tables for ingesting OpenTelemetry data. Here’s an example creating the tables necessary for storing trace spans:
 
@@ -480,6 +480,6 @@ docker run streamfold/rotel-clickhouse-ddl create \
 
 ### References
 
-- Benchmark framework: [https://github.com/streamfold/rotel-clickhouse-benchmark](https://github.com/streamfold/rotel-clickhouse-benchmark)
+- Benchmark framework: [https://github.com/rotel-dev/rotel-clickhouse-benchmark](https://github.com/rotel-dev/rotel-clickhouse-benchmark)
 - Rotel: [https://rotel.dev](https://rotel.dev/)
-- OTel loadgen: [https://github.com/streamfold/otel-loadgen](https://github.com/streamfold/otel-loadgen)
+- OTel loadgen: [https://github.com/rotel-dev/otel-loadgen](https://github.com/rotel-dev/otel-loadgen)

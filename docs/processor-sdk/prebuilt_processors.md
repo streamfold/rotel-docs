@@ -4,7 +4,7 @@ sidebar_position: 8
 
 # Prebuilt Processors
 
-The Rotel Github repository includes a number of prebuilt processors that you can use right out of the box. To the greatest extent possible rotel matches the configuration and behavior of existing processors from [opentelemetry-collector-contrib](https://github.com/open-telemetry/opentelemetry-collector-contrib). Prebuilt processors are found in the [processors](https://github.com/streamfold/rotel/tree/main/rotel_python_processor_sdk/processors) folder under the [rotel_python_processor_sdk](https://github.com/streamfold/rotel/tree/main/rotel_python_processor_sdk) directory.                                                         
+The Rotel Github repository includes a number of prebuilt processors that you can use right out of the box. To the greatest extent possible rotel matches the configuration and behavior of existing processors from [opentelemetry-collector-contrib](https://github.com/open-telemetry/opentelemetry-collector-contrib). Prebuilt processors are found in the [processors](https://github.com/rotel-dev/rotel/tree/main/rotel_python_processor_sdk/processors) folder under the [rotel_python_processor_sdk](https://github.com/rotel-dev/rotel/tree/main/rotel_python_processor_sdk) directory.
 
 ## Available prebuilt processors
 
@@ -23,7 +23,7 @@ sys.path.append('/github/rotel/rotel_python_processor_sdk/processors')
 ```
 
 ## Example: Attribute Processor
-Check out the [attributes_processor_test.py](https://github.com/streamfold/rotel/blob/main/rotel_python_processor_sdk/python_tests/attributes_processor_test.py) for a full example on how to use the prebuilt Attributes processor.
+Check out the [attributes_processor_test.py](https://github.com/rotel-dev/rotel/blob/main/rotel_python_processor_sdk/python_tests/attributes_processor_test.py) for a full example on how to use the prebuilt Attributes processor.
 
 After we import the AttributeProcessor, and a few other configuration types, we create a new `Config` and specify the actions we wish to perform. Then we create a new processor with the constructor `AttributeProcessor(config: Config)`. Finally in our `process_logs` and `process_spans` functions we call our processor.
 

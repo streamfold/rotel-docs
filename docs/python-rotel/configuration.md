@@ -42,7 +42,7 @@ To construct an OTLP exporter, use the method `Config.otlp_exporter()` with the 
 
 ## Datadog Exporter
 
-Rotel provides an experimental [Datadog exporter](https://github.com/streamfold/rotel/blob/main/src/exporters/datadog/README.md)
+Rotel provides an experimental [Datadog exporter](https://github.com/rotel-dev/rotel/blob/main/src/exporters/datadog/README.md)
 that supports traces at the moment. Construct a Datadog exporter
 with the method `Config.datadog_exporter()` using the following options.
 

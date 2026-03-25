@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Overview
 
-[AWS FireLens Rotel](https://github.com/streamfold/aws-firelens-rotel) is a lightweight, high-performance integration that combines [AWS FireLens](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html) with [Rotel](/docs/about/rotel), a high-performance and resource-efficient OpenTelemetry collection data plane written in Rust. This project enables seamless collection and forwarding of container logs and metrics from Amazon ECS tasks to OpenTelemetry-compatible backends.
+[AWS FireLens Rotel](https://github.com/rotel-dev/aws-firelens-rotel) is a lightweight, high-performance integration that combines [AWS FireLens](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html) with [Rotel](/docs/about/rotel), a high-performance and resource-efficient OpenTelemetry collection data plane written in Rust. This project enables seamless collection and forwarding of container logs and metrics from Amazon ECS tasks to OpenTelemetry-compatible backends.
 
 This replaces the use of Fluent Bit or Fluentd as the `log_router` container.
 
