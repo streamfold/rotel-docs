@@ -23,7 +23,7 @@ docker run -ti -p 4317-4318:4317-4318  -v ~/my_processor_director:/processors st
 --exporter blackhole --debug-log traces --debug-log-verbosity detailed --otlp-with-trace-processor /processors/my_processor.py`
 ```
 
-2. Download a prebuilt Rotel python processor enabled binary. You can find prebuilt python processor enabled binaries for rotel at Github on the [releases](https://github.com/streamfold/rotel/releases) page. Python processor versions of Rotel are prefixed with the string `rotel_py_processor`. Choose a release that matches your system architecture and the version of Python you have installed. 
+2. Download a prebuilt Rotel python processor enabled binary. You can find prebuilt python processor enabled binaries for rotel at Github on the [releases](https://github.com/rotel-dev/rotel/releases) page. Python processor versions of Rotel are prefixed with the string `rotel_py_processor`. Choose a release that matches your system architecture and the version of Python you have installed. 
 
 For example if you are running rotel on linux x86_64 with Python 3.13 installed, choose `rotel_py_processor_3.13_v0.0.1-alpha19_x86_64-unknown-linux-gnu.tar.gz`.
 

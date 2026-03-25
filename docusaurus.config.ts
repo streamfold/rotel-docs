@@ -27,11 +27,6 @@ const config: Config = {
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  //organizationName: 'streamfold',
-  //projectName: 'rotel',
-
   onBrokenLinks: "throw",
 
   markdown: {
@@ -190,7 +185,7 @@ const config: Config = {
           className: "navbar-about-link",
         },
         {
-          href: "https://github.com/streamfold/rotel",
+          href: "https://github.com/rotel-dev/rotel",
           label: "GitHub",
           position: "right",
           className: "navbar-github-link",
@@ -216,10 +211,6 @@ const config: Config = {
               label: "Discord",
               href: "https://discord.gg/reUqNWTSGC",
             },
-            {
-              label: "X",
-              href: "https://x.com/streamfold",
-            },
           ],
         },
         {
@@ -239,7 +230,7 @@ const config: Config = {
             },
             {
               label: "GitHub",
-              href: "https://github.com/streamfold/rotel",
+              href: "https://github.com/rotel-dev/rotel",
             },
           ],
         },

@@ -13,7 +13,7 @@ Export OpenTelemetry to Datadog.
 ---
 
 The Datadog exporter can be selected by passing `--exporter datadog`. The Datadog exporter only supports traces at the
-moment. For more information, see the [Datadog Exporter](https://github.com/streamfold/rotel/blob/main/src/exporters/datadog/README.md) docs.
+moment. For more information, see the [Datadog Exporter](https://github.com/rotel-dev/rotel/blob/main/src/exporters/datadog/README.md) docs.
 
 | Option                                    | Default                        | Options                |
 | ----------------------------------------- | ------------------------------ | ---------------------- |
